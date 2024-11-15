@@ -20,7 +20,6 @@ public class Game {
             DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
             Terminal terminal =  terminalFactory.createTerminal();
             screen = new TerminalScreen(terminal);
-            TextGraphics graphics = screen.newTextGraphics();
 
             screen.setCursorPosition(null);
             screen.startScreen();
