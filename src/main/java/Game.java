@@ -11,17 +11,15 @@ import java.io.IOException;
 
 public class Game {
     private Screen screen;
+    private Arena arena;
     public Game() {
         try {
             int width = 50, height = 20;
+            arena = new Arena(width, height);
             TerminalSize terminalSize = new TerminalSize(width, height);
             DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
             Terminal terminal =  terminalFactory.createTerminal();
             screen = new TerminalScreen(terminal);
-            TextGraphics graphics = screen.newTextGraphics();
-
-            graphics.setBackgroundColor(TextColor.Factory.fromString("#000000"));
-            graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), ' ');
 
             screen.setCursorPosition(null);
             screen.startScreen();
@@ -31,5 +29,22 @@ public class Game {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public void draw() throws IOException {
+        screen.clear();
+        arena.draw(screen.newTextGraphics());
+        screen.refresh();
+    }
+
+    public void run() throws IOException {
+        while (true) {
+            draw();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }
