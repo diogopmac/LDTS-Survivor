@@ -16,6 +16,7 @@ import java.net.URL;
 
 public class Game {
     private Screen screen;
+    private Arena arena;
     public Game() {
         try {
             URL resource = getClass().getClassLoader().getResource("square.ttf");
@@ -34,6 +35,8 @@ public class Game {
                     .setForceAWTOverSwing(true)
                     .createTerminal();
             screen = new TerminalScreen(terminal);
+          
+            arena = new Arena(width, height);
 
             TextGraphics graphics = screen.newTextGraphics();
             graphics.setBackgroundColor(TextColor.Factory.fromString("#000000"));
@@ -47,5 +50,22 @@ public class Game {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public void draw() throws IOException {
+        screen.clear();
+        arena.draw(screen.newTextGraphics());
+        screen.refresh();
+    }
+
+    public void run() throws IOException {
+        while (true) {
+            draw();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }
