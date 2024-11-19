@@ -19,17 +19,17 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 public class Game {
-    private Screen screen;
     private Arena arena;
     private final LanternaGUI gui;
     public Game() throws IOException, URISyntaxException, FontFormatException {
         this.gui = new LanternaGUI(70,45);
+        arena = new Arena(70, 45);
     }
 
     public void draw() throws IOException {
-        screen.clear();
-        arena.draw(screen.newTextGraphics());
-        screen.refresh();
+        gui.clear();
+        arena.draw(gui);
+        gui.refresh();
     }
 
     public void run() throws IOException {

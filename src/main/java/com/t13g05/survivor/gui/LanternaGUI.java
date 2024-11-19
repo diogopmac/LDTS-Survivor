@@ -1,11 +1,15 @@
 package com.t13g05.survivor.gui;
 
+import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalSize;
+import com.googlecode.lanterna.TextColor;
+import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import com.t13g05.survivor.model.Position;
 
 import java.awt.*;
 import java.io.File;
@@ -50,5 +54,28 @@ public class LanternaGUI implements GUI{
                 .setTerminalEmulatorFontConfiguration(cfg)
                 .setForceAWTOverSwing(true)
                 .createTerminal();
+    }
+
+    public void drawText(int x, int y, String s, String color) {
+        TextGraphics graphics = screen.newTextGraphics();
+        graphics.setForegroundColor(TextColor.Factory.fromString(color));
+        graphics.enableModifiers(SGR.BOLD);
+        graphics.putString(x, y+1, s);
+    }
+
+    public void drawSurvivor(Position position) {
+        drawText(position.x(), position.y(), "S", "#FFD700");
+    }
+
+    public void clear() {
+        screen.clear();
+    }
+
+    public void refresh() throws IOException {
+        screen.refresh();
+    }
+
+    public void close() throws IOException {
+        screen.close();
     }
 }
