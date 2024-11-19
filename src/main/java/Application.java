@@ -1,3 +1,5 @@
+import pt.up.fe.survivor1305.Game;
+
 import java.io.IOException;
 
 public class Application {

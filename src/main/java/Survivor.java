@@ -2,6 +2,7 @@ import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
+import pt.up.fe.survivor1305.model.Position;
 
 public class Survivor {
     protected Position position;

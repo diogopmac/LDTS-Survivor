@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+import pt.up.fe.survivor1305.model.Position;
 
 public class PositionTest {
 
