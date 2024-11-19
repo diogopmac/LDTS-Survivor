@@ -1,4 +1,8 @@
-public abstract class Entity {
+package com.t13g05.survivor.model.game.entity;
+
+import com.t13g05.survivor.model.Position;
+
+public class Entity {
     protected Position position;
 
     public Entity(int x, int y) {
