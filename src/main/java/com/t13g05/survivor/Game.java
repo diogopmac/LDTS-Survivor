@@ -22,7 +22,7 @@ public class Game {
     private Arena arena;
     public Game() {
         try {
-            URL resource = getClass().getClassLoader().getResource("square.ttf");
+            URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
             File fontFile = new File(resource.toURI());
             Font font =  Font.createFont(Font.TRUETYPE_FONT, fontFile);
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
