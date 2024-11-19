@@ -1,6 +1,6 @@
-package pt.up.fe.survivor1305.model.game.entity;
+package com.t13g05.survivor.model.game.entity;
 
-import pt.up.fe.survivor1305.model.Position;
+import com.t13g05.survivor.model.Position;
 
 public class Entity {
     protected Position position;

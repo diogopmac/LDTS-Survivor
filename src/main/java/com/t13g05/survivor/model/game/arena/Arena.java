@@ -1,10 +1,11 @@
-package pt.up.fe.survivor1305.model.game.arena;
+package com.t13g05.survivor.model.game.arena;
 
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import pt.up.fe.survivor1305.model.Position;
+import com.t13g05.survivor.model.Position;
+import com.t13g05.survivor.model.game.entity.Survivor;
 
 public class Arena {
     private int width;

@@ -1,10 +1,10 @@
-package pt.up.fe.survivor1305.model.game.entity;
+package com.t13g05.survivor.model.game.entity;
 
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import pt.up.fe.survivor1305.model.Position;
+import com.t13g05.survivor.model.Position;
 
 public class Survivor {
     protected Position position;

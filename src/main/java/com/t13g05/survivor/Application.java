@@ -1,4 +1,4 @@
-package pt.up.fe.survivor1305;
+package com.t13g05.survivor;
 
 import java.io.IOException;
 

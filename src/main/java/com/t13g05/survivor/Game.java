@@ -1,4 +1,4 @@
-package pt.up.fe.survivor1305;
+package com.t13g05.survivor;
 
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
@@ -9,6 +9,7 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import com.t13g05.survivor.model.game.arena.Arena;
 
 import java.awt.*;
 import java.io.File;
