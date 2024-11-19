@@ -4,7 +4,7 @@ plugins {
 }
 
 application {
-    mainClass.set("com.t13g05.survivor.Application")
+    mainClass.set("com.t13g05.survivor.Game")
 }
 
 group = 'com.t13g05.survivor'
