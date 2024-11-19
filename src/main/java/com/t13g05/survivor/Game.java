@@ -9,6 +9,7 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import com.t13g05.survivor.gui.GUI;
 import com.t13g05.survivor.gui.LanternaGUI;
 import com.t13g05.survivor.model.game.arena.Arena;
 
@@ -35,8 +36,11 @@ public class Game {
     public void run() throws IOException {
         while (true) {
             draw();
+            for(GUI.ACTION a : gui.getActions()) {
+                System.out.println(a);
+            }
             try {
-                Thread.sleep(1000);
+                Thread.sleep(1000/30);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
