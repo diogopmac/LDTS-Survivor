@@ -4,6 +4,8 @@ import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.googlecode.lanterna.input.KeyStroke;
+import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
@@ -24,7 +26,7 @@ import java.util.Set;
 
 public class LanternaGUI implements GUI{
     private final Screen screen;
-    private Set<KeyEvent> actionSet = new HashSet<KeyEvent>();
+    private Set<ACTION> actionSet = new HashSet<ACTION>();
     public LanternaGUI(Screen screen) {
         this.screen = screen;
     }
@@ -37,12 +39,34 @@ public class LanternaGUI implements GUI{
         ((AWTTerminalFrame)terminal).getComponent(0).addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                actionSet.add(e);
+                ACTION action = processAction(e);
+                actionSet.add(action);
             }
+            @Override
             public void keyReleased(KeyEvent e) {
-                actionSet.remove(e);
+                ACTION action = processAction(e);
+                actionSet.remove(action);
             }
         });
+    }
+
+    private ACTION processAction(KeyEvent e) {
+        int keyCode = e.getKeyCode();
+
+        if (keyCode == 27 /* ESCAPE */) return ACTION.QUIT;
+
+        if (keyCode == 37 /* ARROW_LEFT */) return ACTION.LEFT;
+        if (keyCode == 38 /* ARROW_UP */) return ACTION.UP;
+        if (keyCode == 39 /* ARROW_RIGHT */) return ACTION.RIGHT;
+        if (keyCode == 40 /* ARROW_DOWN */) return ACTION.DOWN;
+
+        if (keyCode == 10 /* ENTER */) return ACTION.SELECT;
+
+        return ACTION.NONE;
+    }
+
+    public Set<ACTION> getActions() {
+        return actionSet;
     }
 
     public AWTTerminalFontConfiguration getFontConfiguration() throws IOException, URISyntaxException, FontFormatException {
