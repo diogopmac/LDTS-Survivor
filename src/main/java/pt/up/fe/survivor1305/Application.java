@@ -1,4 +1,4 @@
-import pt.up.fe.survivor1305.Game;
+package pt.up.fe.survivor1305;
 
 import java.io.IOException;
 

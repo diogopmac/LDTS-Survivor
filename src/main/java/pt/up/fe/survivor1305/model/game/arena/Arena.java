@@ -1,3 +1,5 @@
+package pt.up.fe.survivor1305.model.game.arena;
+
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
