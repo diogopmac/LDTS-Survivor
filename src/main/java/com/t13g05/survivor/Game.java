@@ -9,6 +9,7 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import com.t13g05.survivor.gui.LanternaGUI;
 import com.t13g05.survivor.model.game.arena.Arena;
 
 import java.awt.*;
@@ -20,39 +21,9 @@ import java.net.URL;
 public class Game {
     private Screen screen;
     private Arena arena;
-    public Game() {
-        try {
-            URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
-            File fontFile = new File(resource.toURI());
-            Font font =  Font.createFont(Font.TRUETYPE_FONT, fontFile);
-            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-            ge.registerFont(font);
-            Font newfont = font.deriveFont(Font.PLAIN, 18);
-
-            AWTTerminalFontConfiguration cfg = AWTTerminalFontConfiguration.newInstance(newfont);
-
-            int width = 70, height = 45;
-            Terminal terminal = new DefaultTerminalFactory()
-                    .setInitialTerminalSize(new TerminalSize(width, height))
-                    .setTerminalEmulatorFontConfiguration(cfg)
-                    .setForceAWTOverSwing(true)
-                    .createTerminal();
-            screen = new TerminalScreen(terminal);
-          
-            arena = new Arena(width, height);
-
-            TextGraphics graphics = screen.newTextGraphics();
-            graphics.setBackgroundColor(TextColor.Factory.fromString("#000000"));
-            graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), ' ');
-
-            screen.setCursorPosition(null);
-            screen.startScreen();
-            screen.doResizeIfNecessary();
-
-        } catch (IOException | FontFormatException | URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
-
+    private final LanternaGUI gui;
+    public Game() throws IOException, URISyntaxException, FontFormatException {
+        this.gui = new LanternaGUI(70,45);
     }
 
     public void draw() throws IOException {
@@ -72,7 +43,7 @@ public class Game {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException {
         Game game = new Game();
         try {
             game.run();
