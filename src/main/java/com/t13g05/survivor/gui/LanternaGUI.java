@@ -50,7 +50,7 @@ public class LanternaGUI implements GUI{
         });
     }
 
-    private ACTION processAction(KeyEvent e) {
+    public ACTION processAction(KeyEvent e) {
         int keyCode = e.getKeyCode();
 
         if (keyCode == 27 /* ESCAPE */) return ACTION.QUIT;
