@@ -1,4 +1,4 @@
-package model.game.entity;
+package com.t13g05.survivor.model.game.entity;
 
 import com.t13g05.survivor.model.game.entity.Entity;
 import com.t13g05.survivor.model.Position;

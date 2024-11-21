@@ -1,4 +1,4 @@
-package model.game.arena;
+package com.t13g05.survivor.model.game.arena;
 
 import com.t13g05.survivor.gui.LanternaGUI;
 import com.t13g05.survivor.model.Position;
