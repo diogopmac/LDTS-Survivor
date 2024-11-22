@@ -1,20 +1,16 @@
 package com.t13g05.survivor.model.game.element.entity;
 
 import com.t13g05.survivor.model.Position;
+import com.t13g05.survivor.model.game.element.Element;
 
-public class Entity {
-    protected Position position;
+public class Entity extends Element {
     protected int health;
     
     protected Entity() {
-        position = new Position(0,0);
+        super(new Position(0, 0));
         health = 0;
     }
-
     public Entity(Position position) {
-        this.position = position;
+        super(position);
     }
-
-    public Position getPosition() { return position; }
-    public void setPosition(Position position) { this.position = position; }
 }

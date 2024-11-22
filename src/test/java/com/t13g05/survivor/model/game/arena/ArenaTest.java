@@ -2,8 +2,6 @@ package com.t13g05.survivor.model.game.arena;
 
 import com.t13g05.survivor.gui.LanternaGUI;
 import com.t13g05.survivor.model.Position;
-import com.t13g05.survivor.model.game.arena.Arena;
-import com.t13g05.survivor.model.game.entity.Survivor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
