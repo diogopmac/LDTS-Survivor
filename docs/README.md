@@ -6,12 +6,14 @@ Each enemy, when killed, drops an item\coin that the player can pick up. later i
 Be aware that Survivor is an addictive game that tests the player's IQ, reflexes, instincts and patience. It's a great way to challenge yourself.
 
 Lecturer:
-José Carlos Medeiros de Campos 
+- **José Carlos Medeiros de Campos** 
 
 Developed by:
-Diogo Sousa Campeão (up202307177)
-Hugo Miguel Gomes Silva (up202307383)
-Tomás Costa Barros (up202303664)
+
+- **Diogo Sousa Campeão** (up202307177)
+- **Hugo Miguel Gomes Silva** (up202307383)
+- **Tomás Costa Barros** (up202303664)
+
 LDTS 24/25
 
 ### Implemented Features
