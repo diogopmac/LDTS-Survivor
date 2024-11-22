@@ -10,6 +10,8 @@ public interface GUI {
 
     void drawSurvivor(Position position);
 
+    void drawMonster(Position position);
+
     void clear();
 
     void refresh() throws IOException;

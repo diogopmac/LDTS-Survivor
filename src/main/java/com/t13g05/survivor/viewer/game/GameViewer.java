@@ -15,6 +15,8 @@ public class GameViewer extends Viewer<Arena> {
     @Override
     public void drawElements(GUI gui) {
         drawElement(gui, getModel().getSurvivor(), new SurvivorViewer());
+        drawElements(gui, getModel().getMonsters(), new MonsterViewer());
+
 
         gui.drawText(0, getModel().getHeight()-1, getModel().getSurvivor().getHealth() + "HP", "#ff5445");
     }
