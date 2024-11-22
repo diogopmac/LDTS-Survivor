@@ -58,4 +58,8 @@ public class Game {
             throw new RuntimeException(e);
         }
     }
+
+    public void setState(State state) {
+        this.state = state;
+    }
 }

@@ -28,6 +28,9 @@ public abstract class State<T> {
     public void step(Game game, GUI gui, long time) throws IOException {
         for(GUI.ACTION a : gui.getActions()) {
             System.out.println(a);
+            if (a == GUI.ACTION.QUIT) {
+                game.setState(null);
+            }
         }
         //controller.step(game, action, time);
         viewer.draw(gui);
