@@ -103,7 +103,7 @@ public class LanternaGUI implements GUI{
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setForegroundColor(TextColor.Factory.fromString(color));
         graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(x, y+1, s);
+        graphics.putString(x, y, s);
     }
 
     public void drawSurvivor(Position position) {
