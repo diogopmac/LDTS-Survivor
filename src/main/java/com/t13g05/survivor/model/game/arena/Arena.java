@@ -19,7 +19,19 @@ public class Arena {
         survivor = new Survivor(new Position(width/2, height/2));
     }
 
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
     public void draw(LanternaGUI gui) {
         survivor.draw(gui);
+    }
+
+    public Survivor getSurvivor() {
+        return survivor;
     }
 }

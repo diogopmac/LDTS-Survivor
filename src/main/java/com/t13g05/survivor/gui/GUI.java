@@ -3,6 +3,7 @@ package com.t13g05.survivor.gui;
 import com.t13g05.survivor.model.Position;
 
 import java.io.IOException;
+import java.util.Set;
 
 public interface GUI {
     void drawText(int x, int y, String s, String color);
@@ -16,4 +17,6 @@ public interface GUI {
     void close() throws IOException;
 
     enum ACTION {UP, DOWN, LEFT, RIGHT, NONE, QUIT, SELECT}
+
+    Set<ACTION> getActions();
 }
