@@ -10,6 +10,7 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
+import com.googlecode.lanterna.terminal.swing.AWTTerminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFrame;
 import com.t13g05.survivor.model.Position;
@@ -50,7 +51,8 @@ public class LanternaGUI implements GUI{
         });
     }
 
-    private ACTION processAction(KeyEvent e) {
+
+    public ACTION processAction(KeyEvent e) {
         int keyCode = e.getKeyCode();
 
         if (keyCode == 27 /* ESCAPE */) return ACTION.QUIT;
@@ -59,7 +61,6 @@ public class LanternaGUI implements GUI{
         if (keyCode == 38 /* ARROW_UP */) return ACTION.UP;
         if (keyCode == 39 /* ARROW_RIGHT */) return ACTION.RIGHT;
         if (keyCode == 40 /* ARROW_DOWN */) return ACTION.DOWN;
-
         if (keyCode == 10 /* ENTER */) return ACTION.SELECT;
 
         return ACTION.NONE;
