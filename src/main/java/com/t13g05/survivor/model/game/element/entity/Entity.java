@@ -7,10 +7,16 @@ public class Entity extends Element {
     protected int health;
     
     protected Entity() {
-        super(new Position(0, 0));
+        super(new Position(0,0));
         health = 0;
     }
+    
     public Entity(Position position) {
         super(position);
+        this.health = 100;
+    }
+
+    public int getHealth() {
+        return health;
     }
 }
