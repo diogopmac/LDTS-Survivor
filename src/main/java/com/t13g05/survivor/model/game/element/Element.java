@@ -1,12 +1,16 @@
-package com.t13g05.survivor.model.game.entity;
+package com.t13g05.survivor.model.game.element;
 
 import com.t13g05.survivor.model.Position;
 
-public class Entity {
+public class Element {
     protected Position position;
+    
+    protected Element() {
+        position = new Position(0,0);
+    }
 
-    public Entity(int x, int y) {
-        this.position = new Position(x, y);
+    public Element(Position position) {
+        this.position = position;
     }
 
     public Position getPosition() { return position; }
