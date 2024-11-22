@@ -11,6 +11,7 @@ import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFrame;
 import com.t13g05.survivor.gui.GUI;
 import com.t13g05.survivor.gui.LanternaGUI;
+import com.t13g05.survivor.model.Position;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,13 +25,11 @@ public class LanternaGUITest {
     private Screen screen;
     private LanternaGUI gui;
     private TextGraphics tg;
-    private AWTTerminal terminal;
 
     @BeforeEach
     void setUp() {
         screen = Mockito.mock(Screen.class);
         tg = Mockito.mock(TextGraphics.class);
-        terminal = Mockito.mock(AWTTerminal.class);
         Mockito.when(screen.newTextGraphics()).thenReturn(tg);
         gui = new LanternaGUI(screen);
     }
@@ -77,7 +76,15 @@ public class LanternaGUITest {
         gui.drawText(10,5, "Hello", "#FF0000");
         Mockito.verify(tg).setForegroundColor(TextColor.Factory.fromString("#FF0000"));
         Mockito.verify(tg).enableModifiers(SGR.BOLD);
-        Mockito.verify(tg).putString(10, 6, "Hello");
+        Mockito.verify(tg).putString(10, 5, "Hello");
+    }
+
+    @Test
+    public void survivor_draw_test() throws Exception {
+        LanternaGUI mock_gui = Mockito.mock(LanternaGUI.class);
+        Position position = new Position(0, 0);
+        mock_gui.drawSurvivor(position);
+        Mockito.verify(mock_gui).drawSurvivor(position);
     }
 
     @Test

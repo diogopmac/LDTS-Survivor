@@ -2,6 +2,7 @@ package com.t13g05.survivor.model.game.arena;
 
 import com.t13g05.survivor.gui.LanternaGUI;
 import com.t13g05.survivor.model.Position;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -25,6 +26,11 @@ public class ArenaTest {
         arena.draw(lanternaGUI);
         Position position = new Position(widht/2,height/2);
         Mockito.verify(lanternaGUI,times(1)).drawSurvivor(position);
+
+        Assertions.assertNotNull(arena);
+        Assertions.assertNotNull(arena.getSurvivor());
+        Assertions.assertEquals(arena.getHeight(), height);
+        Assertions.assertEquals(arena.getWidth(), widht);
     }
 
     @Test
