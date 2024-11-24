@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'info.solidsoft.pitest' version '1.15.0'
+    id 'jacoco'
 }
 
 application {
@@ -11,6 +12,10 @@ application {
 pitest {
     junit5PluginVersion = '1.0.0'
     verbose = true
+}
+
+jacocoTestReport {
+    dependsOn test
 }
 
 group = 'com.t13g05.survivor'
@@ -29,4 +34,5 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    finalizedBy(jacocoTestReport)
 }
