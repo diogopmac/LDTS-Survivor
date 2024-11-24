@@ -16,8 +16,15 @@ Developed by:
 
 LDTS 24/25
 
-### Implemented Features
-(What we implemented)
+### Implemented Classes
+- **Model** - Model for all classes in the game implemented
+    - **Element** - Super Class for all viewable elements in the game.
+    - **Entity** - Super Class for all elements that have health in the game. Inherits from Element.
+    - **Survivor** - Playable character in our game. For now, has a position and health. Inherits from Entity
+    - **Monster** - Enemy in the game. For now, only has position and health as well. Inherits from Entity
+    - **Collectible** - Super Class for all elements that can be aquired by the player. Inherits from Element
+    - **Projectile** - Super Class for all elements that are launched on the screen.
+  (TODO COMPLETE)
 
 ### Planned Features
 (What we need to implement)
@@ -29,4 +36,8 @@ LDTS 24/25
 (Design usage)
 
 ### Testing
-(Testing usage)
+Jacoco Report
+<img width="1190" alt="image" src="https://github.com/user-attachments/assets/31f7b7b8-70fa-4ce2-ac76-b3b9f06c65ef">
+Pitest Report
+<img width="1077" alt="image" src="https://github.com/user-attachments/assets/fede68b4-bcf1-491f-824d-1bb4cbc6c2ca">
+
