@@ -32,6 +32,9 @@ LDTS 24/25
 ### Mockups
 (Screenshots of the game)
 
+### UML 
+<img width="1190" alt="image" src="https://github.com/user-attachments/assets/e7814c6e-edb5-4f52-a6de-332042bb7ddb">
+
 ### Patterns Used
 (Design usage)
 
@@ -40,4 +43,6 @@ Jacoco Report
 <img width="1190" alt="image" src="https://github.com/user-attachments/assets/31f7b7b8-70fa-4ce2-ac76-b3b9f06c65ef">
 Pitest Report
 <img width="1077" alt="image" src="https://github.com/user-attachments/assets/fede68b4-bcf1-491f-824d-1bb4cbc6c2ca">
+
+
 
