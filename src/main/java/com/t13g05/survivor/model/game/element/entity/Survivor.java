@@ -10,8 +10,4 @@ public class Survivor extends Entity {
     public Survivor(Position position) {
         super(position);
     }
-
-    public void draw(LanternaGUI gui) {
-        gui.drawSurvivor(position);
-    }
 }
