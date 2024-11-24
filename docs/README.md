@@ -30,6 +30,13 @@ LDTS 24/25
 (What we need to implement)
 
 ### Mockups
+![mockup1](https://github.com/user-attachments/assets/b2a51856-aaac-4c79-80f9-05b5da5c42b7)
+![mockup2](https://github.com/user-attachments/assets/392be7e4-d0e9-4384-8efa-e6899e9bb589)
+![mockup3](https://github.com/user-attachments/assets/c32a3078-6c63-4199-922e-3b8d5401bfd0)
+![mockup4](https://github.com/user-attachments/assets/7948767a-c8fd-4e58-8506-8010fb2285d1)
+
+
+
 (Screenshots of the game)
 
 ### UML 
