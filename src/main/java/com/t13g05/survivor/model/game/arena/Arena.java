@@ -19,6 +19,7 @@ public class Arena {
         this.height = height;
         survivor = new Survivor(new Position(width/2, height/2));
         monsters = new ArrayList<>();
+        // Temporary code for demonstration purpose only
         monsters.add(new Monster(new Position(10,5)));
         monsters.add(new Monster(new Position(30,10)));
         monsters.add(new Monster(new Position(2,30)));
@@ -32,13 +33,6 @@ public class Arena {
 
     public int getWidth() {
         return width;
-    }
-
-    public void draw(LanternaGUI gui) {
-        survivor.draw(gui);
-        for (Monster monster : monsters) {
-            monster.draw(gui);
-        }
     }
 
     public Survivor getSurvivor() {
