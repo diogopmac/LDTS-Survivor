@@ -27,7 +27,34 @@ LDTS 24/25
   (TODO COMPLETE)
 
 ### Planned Features
-(What we need to implement)
+- **Survivor**
+    - **Health** - Add functioning health.
+    - **Movement** - Implement proper movement. Preferably not dependent on FPS.
+    - **Firing** - Make the survivor be able to fire.
+    - **Debuffs** - Add debuffs to the player, such as slowing down when hit.
+    - **Leveling** - Add experience and level to the player and define experience requirements for level-up.
+    - **Level-Up rewards** - Add rewards for leveling up such as increased firing, health and damage.
+- **Projectile**
+    - **Function** - Implement properly working projectiles.
+    - **Variety** - Add different projectiles for all weapons.
+- **Monsters**
+    - **Health** - Add functioning health.
+    - **Damage** - Make monster be able to attack and deal damage to the survivor.
+    - **Spawn** - Add proper random spawning of monsters.
+    - **Difficulty** - Make monsters have more health and deal more damage depending on level.
+    - **Movement** - Add proper monster movement with monsters targeting the survivor and walking towards him.
+    - **Drops** - Add monster drops such as experience to level-up the player.
+- **Arena**
+    - **Lobby** - Add a lobby to select the map prior to starting the game.
+- **Menu**
+    - **Start** - Add start menu.
+    - **Class and weapon** - Add a menu for selecting class and weapon.
+    - **Pause** - Add a pause menu.
+- **Viewer**
+    - **HUD** - Enhance the existing hud and add a level progress bar.
+    - **Textures** - Create proper textures for the survivor, monsters, weapons and projectiles.
+    - **Background** - Add a map background, preferably multiple maps to choose from.
+- **Controller** - Implement controllers for all model classes.
 
 ### Mockups
 ![mockup1](https://github.com/user-attachments/assets/b2a51856-aaac-4c79-80f9-05b5da5c42b7)
