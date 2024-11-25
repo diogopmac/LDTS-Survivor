@@ -16,17 +16,12 @@ Developed by:
 
 LDTS 24/25
 
-### Implemented Classes
-- **Model** - Model for all classes in the game implemented
-    - **Element** - Super Class for all viewable elements in the game.
-    - **Entity** - Super Class for all elements that have health in the game. Inherits from Element.
-    - **Survivor** - Playable character in our game. For now, has a position and health. Inherits from Entity
-    - **Monster** - Enemy in the game. For now, only has position and health as well. Inherits from Entity
-    - **Collectible** - Super Class for all elements that can be aquired by the player. Inherits from Element
-    - **Projectile** - Super Class for all elements that are launched on the screen.
-  (TODO COMPLETE)
+## Implemented Classes
+- Our game for now just represents an arena, with a survivor that has a static health and some monsters moving.
+- <img width="1257" alt="image" src="https://github.com/user-attachments/assets/fa02266a-227f-43d9-a034-f343b25d266b">
 
-### Planned Features
+
+## Planned Features
 - **Survivor**
     - **Health** - Add functioning health.
     - **Movement** - Implement proper movement. Preferably not dependent on FPS.
@@ -56,7 +51,7 @@ LDTS 24/25
     - **Background** - Add a map background, preferably multiple maps to choose from.
 - **Controller** - Implement controllers for all model classes.
 
-### Mockups
+## Mockups
 ![mockup1](https://github.com/user-attachments/assets/b2a51856-aaac-4c79-80f9-05b5da5c42b7)
 ![mockup2](https://github.com/user-attachments/assets/392be7e4-d0e9-4384-8efa-e6899e9bb589)
 ![mockup3](https://github.com/user-attachments/assets/c32a3078-6c63-4199-922e-3b8d5401bfd0)
@@ -66,13 +61,46 @@ LDTS 24/25
 
 (Screenshots of the game)
 
-### UML 
+## UML 
 <img width="1190" alt="image" src="https://github.com/user-attachments/assets/e7814c6e-edb5-4f52-a6de-332042bb7ddb">
 
-### Patterns Used
-(Design usage)
+## Patterns Used
+Structure of the code
+### The Pattern: Model-View-Controller (MVC)
+![MVCSchema](https://github.com/user-attachments/assets/d9b8a570-0ca4-4844-86be-3a3fe711fc48)
 
-### Testing
+#### Motivation
+
+With MVC, we can separate the game's logic into 3 distinct components, making it easier to test and maintain the code. In future implementations, makes it easier to implement new features and functionalities. Here's how it works:
+#### Model: Responsible for Data Management in the project. Present in Arena, Survivor, etc.
+#### View: Responsible for rendering the Elements into the screen. Present in Viewer, GameViewer, SuvivorViewer, etc.
+#### Controller (Not implemented yet): Responsible for managing the interactions and game logic. Present in Controller, ArenaController, etc.
+
+### The Pattern: State Pattern
+
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/a3df5fba-953c-491d-9f64-caa353938da3">
+
+#### Motivation
+
+State pattern is used for managing game and menu states. It simplifies transitions between states by encapsulating the behaviour of each State in its Class and makes it simple to add new states and behaviours by simply adding more classes for each state added. For testing, having various states doing specific things, makes it easier to debug and test. Here's how we did it:
+#### State interface: Provides a common structure (STATE) that all specific states inherit. 
+#### Specific states: Implement a specific behaviour for the game.
+
+### The Pattern: Composite Pattern
+<img width="668" alt="image" src="https://github.com/user-attachments/assets/a8b35ad2-223e-464b-b76f-5fcd12738a7c">
+<img width="533" alt="image" src="https://github.com/user-attachments/assets/d7b8d99d-8fa7-40ab-a682-1f4d4d7666e1">
+
+#### Motivation
+
+Composite pattern allows us to represent different collections of game elements, such as Entities, Projectiles, Weapons, in a uniform way, allowing us to handle specific objects such as Bow, Pistol and specific types of Monster in a consistent and uniform way. Here's how it works:
+#### Base class for all components: Element
+#### Leaf classes for specific elements: Entity (has health), Monster, Projectile, Collectible
+
+#### Future pattern implementation
+We will implement patterns such as Observer, to react to changes in the game, and Factory, to create the different types of Monster and the different customizations of the Surivor class.
+
+
+## Testing
 Jacoco Report
 <img width="1190" alt="image" src="https://github.com/user-attachments/assets/31f7b7b8-70fa-4ce2-ac76-b3b9f06c65ef">
 Pitest Report
