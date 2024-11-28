@@ -27,7 +27,7 @@ import java.util.Set;
 
 public class LanternaGUI implements GUI{
     private final Screen screen;
-    private Set<ACTION> actionSet = new HashSet<ACTION>();
+    private Set<Action> actionSet = new HashSet<Action>();
     public LanternaGUI(Screen screen) {
         this.screen = screen;
     }
@@ -40,33 +40,33 @@ public class LanternaGUI implements GUI{
         ((AWTTerminalFrame)terminal).getComponent(0).addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                ACTION action = processAction(e);
+                Action action = processAction(e);
                 actionSet.add(action);
             }
             @Override
             public void keyReleased(KeyEvent e) {
-                ACTION action = processAction(e);
+                Action action = processAction(e);
                 actionSet.remove(action);
             }
         });
     }
 
 
-    public ACTION processAction(KeyEvent e) {
+    public Action processAction(KeyEvent e) {
         int keyCode = e.getKeyCode();
 
-        if (keyCode == 27 /* ESCAPE */) return ACTION.QUIT;
+        if (keyCode == 27 /* ESCAPE */) return Action.QUIT;
 
-        if (keyCode == 37 /* ARROW_LEFT */) return ACTION.LEFT;
-        if (keyCode == 38 /* ARROW_UP */) return ACTION.UP;
-        if (keyCode == 39 /* ARROW_RIGHT */) return ACTION.RIGHT;
-        if (keyCode == 40 /* ARROW_DOWN */) return ACTION.DOWN;
-        if (keyCode == 10 /* ENTER */) return ACTION.SELECT;
+        if (keyCode == 37 /* ARROW_LEFT */) return Action.LEFT;
+        if (keyCode == 38 /* ARROW_UP */) return Action.UP;
+        if (keyCode == 39 /* ARROW_RIGHT */) return Action.RIGHT;
+        if (keyCode == 40 /* ARROW_DOWN */) return Action.DOWN;
+        if (keyCode == 10 /* ENTER */) return Action.SELECT;
 
-        return ACTION.NONE;
+        return Action.NONE;
     }
 
-    public Set<ACTION> getActions() {
+    public Set<Action> getActions() {
         return actionSet;
     }
 
