@@ -1,6 +1,7 @@
 package com.t13g05.survivor.state;
 
 import com.t13g05.survivor.Game;
+import com.t13g05.survivor.gui.Action;
 import com.t13g05.survivor.viewer.Viewer;
 import com.t13g05.survivor.gui.GUI;
 
@@ -26,9 +27,9 @@ public abstract class State<T> {
     }
 
     public void step(Game game, GUI gui, long time) throws IOException {
-        for(GUI.ACTION a : gui.getActions()) {
+        for(Action a : gui.getActions()) {
             System.out.println(a);
-            if (a == GUI.ACTION.QUIT) {
+            if (a == Action.QUIT) {
                 game.setState(null);
             }
         }
