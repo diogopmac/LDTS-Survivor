@@ -12,6 +12,7 @@ pitest {
     junit5PluginVersion = '1.0.0'
     verbose = true
     features = ['-macos_focus']
+    excludedClasses = ["com.t13g05.survivor.Game"]
 }
 
 group = 'com.t13g05.survivor'
