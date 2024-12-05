@@ -24,9 +24,11 @@ import java.net.URL;
 public class Game {
     private final LanternaGUI gui;
     private State state;
+    public static final int widht = 70;
+    public static final int height = 45;
     public Game() throws IOException, URISyntaxException, FontFormatException {
-        this.gui = new LanternaGUI(70,45);
-        this.state = new GameState(new Arena(70, 45));
+        this.gui = new LanternaGUI(widht,height);
+        this.state = new GameState(new Arena(widht, height));
     }
 
     public void run() throws IOException {
