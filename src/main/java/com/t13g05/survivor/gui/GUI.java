@@ -8,10 +8,6 @@ import java.util.Set;
 public interface GUI {
     void drawText(int x, int y, String s, String color);
 
-    void drawSurvivor(Position position);
-
-    void drawMonster(Position position);
-
     void clear();
 
     void refresh() throws IOException;

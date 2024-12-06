@@ -79,14 +79,6 @@ public class LanternaGUITest {
     }
 
     @Test
-    public void survivor_draw_test() throws Exception {
-        LanternaGUI mock_gui = Mockito.mock(LanternaGUI.class);
-        Position position = new Position(0, 0);
-        mock_gui.drawSurvivor(position);
-        Mockito.verify(mock_gui).drawSurvivor(position);
-    }
-
-    @Test
     public void close_test() throws Exception {
         gui.close();
         Mockito.verify(screen).close();
