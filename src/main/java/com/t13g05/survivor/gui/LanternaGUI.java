@@ -106,14 +106,6 @@ public class LanternaGUI implements GUI{
         graphics.putString(x, y, s);
     }
 
-    public void drawSurvivor(Position position) {
-        drawText(position.x(), position.y(), "S", "#FFD700");
-    }
-
-    public void drawMonster(Position position) {
-        drawText(position.x(), position.y(), "M", "#FF0000");
-    }
-
     @Override
     public void clear() {
         screen.clear();
