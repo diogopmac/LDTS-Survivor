@@ -24,11 +24,11 @@ public class MonsterViewerTest {
 
     @Test
     public void draw_test(){
-        Position position = new Position(0, 0);
+        Position position = new Position(10, 10);
         Mockito.when(monster.getPosition()).thenReturn(position);
         monsterViewer.draw(monster,gui);
-
-        Mockito.verify(gui).drawMonster(position);
+        
+        Mockito.verify(gui).drawText(monster.getPosition().x(), monster.getPosition().y(), "M", "#FF0000");
 
     }
 }
