@@ -5,13 +5,15 @@ import com.t13g05.survivor.controller.Controller;
 import com.t13g05.survivor.gui.Action;
 import com.t13g05.survivor.model.menu.Menu;
 
+import java.util.Set;
+
 public class EntryController extends Controller<Menu> {
     public EntryController(Menu menu) {
         super(menu);
     }
 
     @Override
-    public void step(Game game, Action action, long time){
+    public void step(Game game, Set<Action> action, long time){
         switch (getModel().getEntry().getType()) {
             case START_GAME:
                 // começa o jogo
