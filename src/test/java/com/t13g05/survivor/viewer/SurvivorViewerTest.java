@@ -27,7 +27,7 @@ public class SurvivorViewerTest {
         Mockito.when(survivor.getPosition()).thenReturn(position);
         survivorViewer.draw(survivor,gui);
 
-        Mockito.verify(gui).drawSurvivor(position);
+        Mockito.verify(gui).drawText(position.x(), position.y(), "S", "#FFD700");
 
     }
 }
