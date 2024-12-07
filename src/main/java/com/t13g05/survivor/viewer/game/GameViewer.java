@@ -17,16 +17,6 @@ public class GameViewer extends Viewer<Arena> {
 
     @Override
     public void drawElements(GUI gui) {
-        //Extremely temporary function for demonstration purpose only
-        //Will be removed when proper MonsterController is implemented
-        Random rnd = new Random();
-        for (Monster monster : getModel().getMonsters()) {
-            monster.setPosition(new Position(
-                    monster.getPosition().x() + rnd.nextInt(3)-1,
-                    monster.getPosition().y() + rnd.nextInt(3)-1
-            ));
-        }
-
         drawElement(gui, getModel().getSurvivor(), new SurvivorViewer());
         drawElements(gui, getModel().getMonsters(), new MonsterViewer());
 

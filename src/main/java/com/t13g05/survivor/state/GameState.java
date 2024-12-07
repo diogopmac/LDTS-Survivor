@@ -18,8 +18,6 @@ public class GameState extends State<Arena> {
 
     @Override
     protected Controller<Arena> getController() {
-        // TODO
-        return null;
-       //return new ArenaController(getModel());
+       return new ArenaController(getModel());
     }
 }
