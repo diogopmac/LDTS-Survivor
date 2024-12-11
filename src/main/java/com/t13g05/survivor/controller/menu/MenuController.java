@@ -19,17 +19,20 @@ public abstract class MenuController<T extends Menu> extends Controller<T> {
         for (Action action : actions) {
             switch (action) {
                 case UP:
-                    this.getModel().moveUp();
+                    getModel().moveUp();
                     break;
                 case DOWN:
-                    this.getModel().moveDown();
+                    getModel().moveDown();
                     break;
                 case QUIT:
-                    // sai do jogo
+                    quitGame(game);
+                    break;
                 default:
                     entryController.step(game, actions, time);
             }
         }
 
     }
+
+    protected abstract void quitGame(Game game);
 }
