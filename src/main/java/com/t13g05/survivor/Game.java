@@ -1,15 +1,5 @@
 package com.t13g05.survivor;
 
-import com.googlecode.lanterna.TerminalPosition;
-import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextColor;
-import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.screen.TerminalScreen;
-import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
-import com.googlecode.lanterna.terminal.Terminal;
-import com.googlecode.lanterna.screen.Screen;
-import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
-import com.t13g05.survivor.gui.GUI;
 import com.t13g05.survivor.gui.LanternaGUI;
 import com.t13g05.survivor.model.game.arena.Arena;
 import com.t13g05.survivor.state.GameState;
@@ -23,11 +13,11 @@ import java.net.URL;
 
 public class Game {
     private final LanternaGUI gui;
-    private State state;
+    private State<?> state;
     public static final int widht = 70;
     public static final int height = 45;
     public Game() throws IOException, URISyntaxException, FontFormatException {
-        this.gui = new LanternaGUI(widht,height);
+        this.gui = new LanternaGUI(widht,height, "SURVIVOR");
         this.state = new GameState(new Arena(widht, height));
     }
 
@@ -61,7 +51,7 @@ public class Game {
         }
     }
 
-    public void setState(State state) {
+    public void setState(State<?> state) {
         this.state = state;
     }
 }

@@ -28,13 +28,14 @@ public class LanternaGUITest {
     private Screen screen;
     private LanternaGUI gui;
     private TextGraphics tg;
+    private String title;
 
     @BeforeEach
     void setUp() {
         screen = Mockito.mock(Screen.class);
         tg = Mockito.mock(TextGraphics.class);
         Mockito.when(screen.newTextGraphics()).thenReturn(tg);
-        gui = new LanternaGUI(screen);
+        gui = new LanternaGUI(screen, title);
     }
 
     @Test
