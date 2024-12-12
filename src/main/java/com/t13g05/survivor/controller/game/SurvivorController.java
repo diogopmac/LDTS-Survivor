@@ -5,17 +5,19 @@ import com.t13g05.survivor.controller.Controller;
 import com.t13g05.survivor.gui.Action;
 import com.t13g05.survivor.model.Position;
 import com.t13g05.survivor.model.game.arena.Arena;
+import com.t13g05.survivor.model.game.element.entity.Monster;
 
 import java.util.Set;
 
-public class SurvivorController extends Controller<Arena> {
+public class SurvivorController extends GameController {
     public SurvivorController(Arena arena) {
         super(arena);
     }
 
     private void moveSurvivor(int x, int y) {
-        getModel().getSurvivor().setPosition(new Position(getModel().getSurvivor().getPosition().x() +x,
-                                                        getModel().getSurvivor().getPosition().y() +y));
+        Position newPosition = new Position(getModel().getSurvivor().getPosition().x() +x,
+                                            getModel().getSurvivor().getPosition().y() +y);
+        if (canMove(newPosition)) getModel().getSurvivor().setPosition(newPosition);
     }
 
     @Override
