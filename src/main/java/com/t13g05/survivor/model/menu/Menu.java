@@ -4,7 +4,7 @@ import java.util.List;
 
 public abstract class Menu {
     private final List<Entry> entries;
-    private int entry = 0;
+    private int currentEntry = 0;
 
     public Menu() {
         this.entries = createEntries();
@@ -16,20 +16,20 @@ public abstract class Menu {
         return entries;
     }
     public Entry getEntry() {
-        return entries.get(entry);
+        return entries.get(currentEntry);
     }
     public int getEntryCount() {
-        return entries.size();
+        return this.entries.size();
     }
     public void moveDown(){
-        entry++;
-        entry %= getEntryCount();
+        currentEntry++;
+        currentEntry %= getEntryCount();
     }
     public void moveUp(){
-        entry+= getEntryCount()-1;
-        entry %= getEntryCount();
+        currentEntry+= getEntryCount()-1;
+        currentEntry %= getEntryCount();
     }
     public boolean isSelected(int i){
-        return entry == i;
+        return currentEntry == i;
     }
 }

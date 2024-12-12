@@ -22,6 +22,7 @@ public class EntryController extends Controller<Menu> {
                     if (action == Action.SELECT){
                         game.setState(new GameState(new Arena(70,45)));
                     }
+                    break;
                 case CONTROLS:
                     // abre o ecrã de controlos
                 case OPTIONS:
@@ -30,6 +31,7 @@ public class EntryController extends Controller<Menu> {
                     if (action == Action.SELECT){
                         game.setState(null);
                     }
+                    break;
             }
         }
     }
