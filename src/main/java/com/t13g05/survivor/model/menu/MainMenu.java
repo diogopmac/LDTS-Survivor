@@ -6,9 +6,13 @@ import com.t13g05.survivor.Game;
 import com.t13g05.survivor.model.Position;
 
 public class MainMenu extends Menu {
+    public MainMenu() {
+        super();
+    }
+
     @Override
     public List<Entry> createEntries() {
-        Entry start = new Entry(new Position(Game.widht, Game.height), Type.START_GAME);
+        Entry start = new Entry(new Position(Game.widht-20, Game.height-20), Type.START_GAME);
         Entry settings = new Entry(new Position(Game.widht, Game.height), Type.OPTIONS);
         Entry controls = new Entry(new Position(Game.widht, Game.height), Type.CONTROLS);
         Entry exit = new Entry(new Position(Game.widht, Game.height), Type.QUIT);

@@ -1,10 +1,10 @@
 package com.t13g05.survivor.state;
 
 import com.t13g05.survivor.controller.Controller;
-import com.t13g05.survivor.controller.game.ArenaController;
 import com.t13g05.survivor.model.game.arena.Arena;
 import com.t13g05.survivor.viewer.Viewer;
-import com.t13g05.survivor.viewer.game.GameViewer;
+import com.t13g05.survivor.viewer.menu.EntryViewer;
+import com.t13g05.survivor.viewer.screens.GameViewer;
 
 public class GameState extends State<Arena> {
     public GameState(Arena arena) {
@@ -19,7 +19,7 @@ public class GameState extends State<Arena> {
     @Override
     protected Controller<Arena> getController() {
         // TODO
-        return null;
        //return new ArenaController(getModel());
+        return null;
     }
 }
