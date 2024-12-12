@@ -5,7 +5,7 @@ public enum Type {
 
     private final String text;
 
-    private Type(String text) {
+    Type(String text) {
         this.text = text;
     }
     public String getText() {

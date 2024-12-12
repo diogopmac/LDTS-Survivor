@@ -5,7 +5,6 @@ import com.t13g05.survivor.controller.Controller;
 import com.t13g05.survivor.gui.Action;
 import com.t13g05.survivor.viewer.Viewer;
 import com.t13g05.survivor.gui.GUI;
-import com.t13g05.survivor.viewer.menu.EntryViewer;
 
 import java.io.IOException;
 

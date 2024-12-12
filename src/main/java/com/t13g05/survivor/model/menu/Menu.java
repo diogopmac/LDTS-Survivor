@@ -29,4 +29,7 @@ public abstract class Menu {
         entry+= getEntryCount()-1;
         entry %= getEntryCount();
     }
+    public boolean isSelected(int i){
+        return entry == i;
+    }
 }

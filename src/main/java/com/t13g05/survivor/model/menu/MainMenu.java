@@ -12,10 +12,10 @@ public class MainMenu extends Menu {
 
     @Override
     public List<Entry> createEntries() {
-        Entry start = new Entry(new Position(Game.widht-20, Game.height-20), Type.START_GAME);
-        Entry settings = new Entry(new Position(Game.widht, Game.height), Type.OPTIONS);
-        Entry controls = new Entry(new Position(Game.widht, Game.height), Type.CONTROLS);
-        Entry exit = new Entry(new Position(Game.widht, Game.height), Type.QUIT);
+        Entry start = new Entry(new Position(Game.widht/2-6, Game.height/3), Type.START_GAME);
+        Entry settings = new Entry(new Position(Game.widht/2-6, Game.height/3+5), Type.OPTIONS);
+        Entry controls = new Entry(new Position(Game.widht/2-6, Game.height/3+10), Type.CONTROLS);
+        Entry exit = new Entry(new Position(Game.widht/2-6, Game.height/3+15), Type.QUIT);
         return Arrays.asList(start, settings, controls, exit);
     }
 }
