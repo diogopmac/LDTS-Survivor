@@ -11,7 +11,7 @@ import java.util.Set;
 
 import static java.lang.Math.abs;
 
-public class MonsterController extends Controller<Arena> {
+public class MonsterController extends GameController {
     private long lastMovement;
 
     public MonsterController(Arena arena) {
@@ -28,14 +28,16 @@ public class MonsterController extends Controller<Arena> {
     public void step(Game game, Set<Action> actions, long time) {
         if (time - lastMovement > 500) {
             for (Monster monster : getModel().getMonsters()) {
-                moveMonster(monster, nextMove(monster.getPosition()));
+                Position nextPos = nextMove(monster.getPosition());
+                if (canMove(nextPos) && !getModel().getSurvivor().getPosition().equals(nextPos))
+                    moveMonster(monster, nextPos);
             }
             lastMovement = time;
         }
     }
 
     private Position nextMove(Position position) {
-        Position survivorPos = super.getModel().getSurvivor().getPosition();
+        Position survivorPos = getModel().getSurvivor().getPosition();
         if (abs(survivorPos.x() - position.x()) > abs(survivorPos.y() - position.y())) {
             if (survivorPos.x() > position.x()) return new Position(position.x() +1, position.y());
             return new Position(position.x() -1, position.y());

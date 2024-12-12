@@ -23,11 +23,12 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class LanternaGUI implements GUI{
     private final Screen screen;
-    private Set<Action> actionSet = new HashSet<Action>();
+    private Set<Action> actionSet = new LinkedHashSet<Action>();
     public LanternaGUI(Screen screen) {
         this.screen = screen;
     }
@@ -41,7 +42,7 @@ public class LanternaGUI implements GUI{
             @Override
             public void keyPressed(KeyEvent e) {
                 Action action = processAction(e);
-                actionSet.add(action);
+                if (action != Action.NONE) actionSet.add(action);
             }
             @Override
             public void keyReleased(KeyEvent e) {
