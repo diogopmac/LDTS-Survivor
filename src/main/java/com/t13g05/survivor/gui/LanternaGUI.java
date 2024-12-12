@@ -47,7 +47,7 @@ public class LanternaGUI implements GUI{
             @Override
             public void keyReleased(KeyEvent e) {
                 Action action = processAction(e);
-                actionSet.remove(action);
+                if (action != Action.NONE) actionSet.remove(action);
             }
         });
     }
