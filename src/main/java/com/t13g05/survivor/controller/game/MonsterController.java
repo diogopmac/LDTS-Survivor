@@ -9,6 +9,8 @@ import com.t13g05.survivor.model.game.element.entity.Monster;
 
 import java.util.Set;
 
+import static java.lang.Math.abs;
+
 public class MonsterController extends Controller<Arena> {
     private long lastMovement;
 
@@ -26,19 +28,20 @@ public class MonsterController extends Controller<Arena> {
     public void step(Game game, Set<Action> actions, long time) {
         if (time - lastMovement > 500) {
             for (Monster monster : getModel().getMonsters()) {
-                moveMonster(monster, getRandomNeighbour(monster.getPosition()));
+                moveMonster(monster, nextMove(monster.getPosition()));
             }
             lastMovement = time;
         }
     }
 
-    private Position getRandomNeighbour(Position position) {
-        int n = (int) (Math.random() * 4);
-        return switch (n) {
-            case 0 -> new Position(position.x() + 1, position.y());
-            case 1 -> new Position(position.x() - 1, position.y());
-            case 2 -> new Position(position.x(), position.y() + 1);
-            default -> new Position(position.x(), position.y() - 1);
-        };
+    private Position nextMove(Position position) {
+        Position survivorPos = super.getModel().getSurvivor().getPosition();
+        if (abs(survivorPos.x() - position.x()) > abs(survivorPos.y() - position.y())) {
+            if (survivorPos.x() > position.x()) return new Position(position.x() +1, position.y());
+            return new Position(position.x() -1, position.y());
+        }
+
+        if (survivorPos.y() > position.y()) return new Position(position.x(), position.y() +1);
+        return new Position(position.x(), position.y() -1);
     }
 }
