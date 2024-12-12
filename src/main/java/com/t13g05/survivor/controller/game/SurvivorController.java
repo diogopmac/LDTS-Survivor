@@ -10,6 +10,8 @@ import com.t13g05.survivor.model.game.element.entity.Monster;
 import java.util.Set;
 
 public class SurvivorController extends GameController {
+    private long lastMovement;
+
     public SurvivorController(Arena arena) {
         super(arena);
     }
@@ -22,6 +24,7 @@ public class SurvivorController extends GameController {
 
     @Override
     public void step(Game game, Set<Action> actions, long time) {
+        if (time - lastMovement < 500) return;
         for (Action action : actions) {
             switch (action) {
                 case UP -> moveSurvivor(0, -1);
@@ -30,5 +33,6 @@ public class SurvivorController extends GameController {
                 case RIGHT -> moveSurvivor(1, 0);
             }
         }
+        lastMovement = time;
     }
 }
