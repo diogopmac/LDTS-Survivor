@@ -13,7 +13,7 @@ public class ControlsMenu extends Menu {
 
     @Override
     public List<Entry> createEntries(){
-        Entry back = new Entry(new Position(Game.widht/2-6, Game.height/3), Type.BACK);
+        Entry back = new Entry(new Position(Game.widht/2-6, Game.height-10), Type.BACK);
         return Arrays.asList(back);
     }
 }
