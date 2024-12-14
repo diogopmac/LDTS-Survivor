@@ -1,7 +1,9 @@
 package com.t13g05.survivor.model.menu;
 
 public enum Type {
-    START_GAME("Start Game"), OPTIONS("Options"), CONTROLS("Controls"), QUIT("Quit"), BACK("Back");
+    START_GAME("Start Game"), OPTIONS("Options"),
+    CONTROLS("Controls"), QUIT("Quit"),
+    BACK("Back");
 
     private final String text;
 

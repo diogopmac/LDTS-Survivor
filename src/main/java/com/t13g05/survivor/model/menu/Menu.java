@@ -15,20 +15,25 @@ public abstract class Menu {
     public List<Entry> getEntries() {
         return entries;
     }
+
     public Entry getEntry() {
         return entries.get(currentEntry);
     }
+
     public int getEntryCount() {
         return this.entries.size();
     }
+
     public void moveDown(){
         currentEntry++;
         currentEntry %= getEntryCount();
     }
+
     public void moveUp(){
         currentEntry+= getEntryCount()-1;
         currentEntry %= getEntryCount();
     }
+
     public boolean isSelected(int i){
         return currentEntry == i;
     }

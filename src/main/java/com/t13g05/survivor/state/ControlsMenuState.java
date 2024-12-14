@@ -13,10 +13,12 @@ public class ControlsMenuState extends State<ControlsMenu> {
     public ControlsMenuState(ControlsMenu menu) {
         super(menu);
     }
+
     @Override
     protected Viewer<ControlsMenu> getViewer() {
         return new ControlsMenuViewer(getModel());
     }
+
     @Override
     protected Controller<ControlsMenu> getController() {
         return new ControlsMenuController(getModel(), new EntryController(getModel()));
