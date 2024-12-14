@@ -3,7 +3,7 @@ package com.t13g05.survivor.model.game.arena;
 import com.t13g05.survivor.gui.LanternaGUI;
 import com.t13g05.survivor.model.Position;
 import com.t13g05.survivor.model.game.element.entity.Survivor;
-import com.t13g05.survivor.viewer.screens.GameViewer;
+import com.t13g05.survivor.viewer.game.GameViewer;
 import com.t13g05.survivor.viewer.game.SurvivorViewer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

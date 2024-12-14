@@ -1,4 +1,4 @@
-package com.t13g05.survivor.viewer.screens;
+package com.t13g05.survivor.viewer.menu;
 
 import com.t13g05.survivor.Game;
 import com.t13g05.survivor.gui.GUI;
