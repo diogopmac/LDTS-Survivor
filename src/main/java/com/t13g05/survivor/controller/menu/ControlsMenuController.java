@@ -9,9 +9,4 @@ public class ControlsMenuController extends MenuController<ControlsMenu> {
     public ControlsMenuController(ControlsMenu controlsMenu, EntryController entryController) {
         super(controlsMenu, entryController);
     }
-
-    @Override
-    protected void quitGame(Game game){
-        game.setState(new MainMenuState(new MainMenu()));
-    }
 }

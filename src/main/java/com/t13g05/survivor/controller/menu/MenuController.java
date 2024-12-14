@@ -34,6 +34,4 @@ public abstract class MenuController<T extends Menu> extends Controller<T> {
         }
 
     }
-
-    protected abstract void quitGame(Game game);
 }
