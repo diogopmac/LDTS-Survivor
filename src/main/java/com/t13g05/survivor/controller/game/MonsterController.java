@@ -31,6 +31,8 @@ public class MonsterController extends GameController {
                 Position nextPos = nextMove(monster.getPosition());
                 if (canMove(nextPos) && !getModel().getSurvivor().getPosition().equals(nextPos))
                     moveMonster(monster, nextPos);
+                else if (getModel().getSurvivor().getPosition().equals(nextPos))
+                    getModel().getSurvivor().damage(monster.getDamage());
             }
             lastMovement = time;
         }

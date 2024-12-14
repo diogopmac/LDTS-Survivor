@@ -19,4 +19,8 @@ public class Entity extends Element {
     public int getHealth() {
         return health;
     }
+
+    public void damage(int damageDealt) {
+        health = Math.max(health - damageDealt, 0);
+    }
 }
