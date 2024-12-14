@@ -9,6 +9,7 @@ import java.util.Set;
 
 public abstract class MenuController<T extends Menu> extends Controller<T> {
     private final EntryController entryController;
+
     public MenuController(T menu, EntryController entryController) {
         super(menu);
         this.entryController = entryController;
@@ -20,15 +21,16 @@ public abstract class MenuController<T extends Menu> extends Controller<T> {
             switch (action) {
                 case UP:
                     this.getModel().moveUp();
+                    actions.remove(Action.UP);
                     break;
                 case DOWN:
                     this.getModel().moveDown();
+                    actions.remove(Action.DOWN);
                     break;
-                case QUIT:
-                    quitGame(game);
-                    break;
-                default:
+                case SELECT:
                     entryController.step(game, actions, time);
+                    actions.remove(Action.SELECT);
+                    break;
             }
         }
 

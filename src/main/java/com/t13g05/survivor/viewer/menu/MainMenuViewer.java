@@ -18,7 +18,7 @@ public class MainMenuViewer extends Viewer<MainMenu> {
     @Override
     public void drawElements(GUI gui) throws IOException {
         gui.clear();
-        gui.drawText(Game.widht/2-6,Game.height/10, "Survivor", "#FFFFFF");
+        gui.drawText(Game.width/2-6,Game.height/10, "Survivor", "#FFFFFF");
         drawEntries(gui, getModel().getEntries());
         gui.refresh();
     }
