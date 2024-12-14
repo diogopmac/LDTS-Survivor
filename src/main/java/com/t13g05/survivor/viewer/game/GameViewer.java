@@ -1,14 +1,12 @@
 package com.t13g05.survivor.viewer.game;
 
 import com.t13g05.survivor.gui.GUI;
-import com.t13g05.survivor.model.Position;
 import com.t13g05.survivor.model.game.arena.Arena;
 import com.t13g05.survivor.model.game.element.Element;
-import com.t13g05.survivor.model.game.element.entity.Monster;
 import com.t13g05.survivor.viewer.Viewer;
 
+
 import java.util.List;
-import java.util.Random;
 
 public class GameViewer extends Viewer<Arena> {
     public GameViewer(Arena arena) {

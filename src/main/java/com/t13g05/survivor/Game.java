@@ -12,7 +12,9 @@ import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.t13g05.survivor.gui.GUI;
 import com.t13g05.survivor.gui.LanternaGUI;
 import com.t13g05.survivor.model.game.arena.Arena;
+import com.t13g05.survivor.model.menu.MainMenu;
 import com.t13g05.survivor.state.GameState;
+import com.t13g05.survivor.state.MainMenuState;
 import com.t13g05.survivor.state.State;
 
 import java.awt.*;
@@ -23,16 +25,16 @@ import java.net.URL;
 
 public class Game {
     private final LanternaGUI gui;
-    private State state;
+    private State<?> state;
     public static final int widht = 70;
     public static final int height = 45;
     public Game() throws IOException, URISyntaxException, FontFormatException {
-        this.gui = new LanternaGUI(widht,height);
-        this.state = new GameState(new Arena(widht, height));
+        this.gui = new LanternaGUI(widht,height, "SURVIVOR");
+        this.state = new MainMenuState(new MainMenu());
     }
 
     public void run() throws IOException {
-        int FPS = 30;
+        int FPS = 7;
         int frameTime = 1000 / FPS;
 
         while (this.state != null) {
@@ -61,7 +63,7 @@ public class Game {
         }
     }
 
-    public void setState(State state) {
+    public void setState(State<?> state) {
         this.state = state;
     }
 }

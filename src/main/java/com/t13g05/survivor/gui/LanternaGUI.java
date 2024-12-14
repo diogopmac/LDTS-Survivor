@@ -29,14 +29,17 @@ import java.util.Set;
 public class LanternaGUI implements GUI{
     private final Screen screen;
     private Set<Action> actionSet = new LinkedHashSet<Action>();
-    public LanternaGUI(Screen screen) {
+    private String title;
+    public LanternaGUI(Screen screen, String title) {
         this.screen = screen;
+        this.title = title;
     }
 
-    public LanternaGUI(int width, int height) throws IOException, FontFormatException, URISyntaxException {
+    public LanternaGUI(int width, int height, String title) throws IOException, FontFormatException, URISyntaxException {
         AWTTerminalFontConfiguration fontConfig = getFontConfiguration();
-        Terminal terminal = createTerminal(width, height, fontConfig);
+        Terminal terminal = createTerminal(width, height, fontConfig, title);
         this.screen = createScreen(terminal);
+        this.title = title;
 
         ((AWTTerminalFrame)terminal).getComponent(0).addKeyListener(new KeyAdapter() {
             @Override
@@ -92,11 +95,11 @@ public class LanternaGUI implements GUI{
         return screen;
     }
 
-    public Terminal createTerminal(int width, int height, AWTTerminalFontConfiguration cfg) throws IOException {
+    public Terminal createTerminal(int width, int height, AWTTerminalFontConfiguration cfg, String title) throws IOException {
         return new DefaultTerminalFactory()
                 .setInitialTerminalSize(new TerminalSize(width, height))
                 .setTerminalEmulatorFontConfiguration(cfg)
-                .setForceAWTOverSwing(true)
+                .setForceAWTOverSwing(true).setTerminalEmulatorTitle(title)
                 .createTerminal();
     }
 
