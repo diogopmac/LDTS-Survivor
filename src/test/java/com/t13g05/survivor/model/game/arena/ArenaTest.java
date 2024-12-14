@@ -15,7 +15,7 @@ import static org.mockito.Mockito.times;
 
 public class ArenaTest {
     private Arena arena;
-    private int widht = 20;
+    private int width = 20;
     private int height = 20;
     private LanternaGUI lanternaGUI;
     private GameViewer gameViewer;
@@ -24,7 +24,7 @@ public class ArenaTest {
 
     @BeforeEach
     public void setUp() {
-        arena = new Arena(widht,height);
+        arena = new Arena(width,height);
         gameViewer = new GameViewer(arena);
         lanternaGUI = Mockito.mock(LanternaGUI.class);
         survivor = arena.getSurvivor();
@@ -41,7 +41,7 @@ public class ArenaTest {
         Assertions.assertNotNull(arena);
         Assertions.assertNotNull(arena.getSurvivor());
         Assertions.assertEquals(arena.getHeight(), height);
-        Assertions.assertEquals(arena.getWidth(), widht);
+        Assertions.assertEquals(arena.getWidth(), width);
     }
 
     @Test

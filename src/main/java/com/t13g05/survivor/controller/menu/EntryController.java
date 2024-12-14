@@ -20,30 +20,21 @@ public class EntryController extends Controller<Menu> {
 
     @Override
     public void step(Game game, Set<Action> actions, long time){
-        for (Action action : actions) {
-            switch (getModel().getEntry().getType()) {
-                case START_GAME:
-                    if (action == Action.SELECT){
-                        game.setState(new GameState(new Arena(70,45)));
-                    }
-                    break;
-                case OPTIONS:
-                    // abre o ecrã de opções
-                case CONTROLS:
-                    if (action == Action.SELECT){
-                        game.setState(new ControlsMenuState(new ControlsMenu()));
-                        break;
-                    }
-                case QUIT:
-                    if (action == Action.SELECT){
-                        game.setState(null);
-                    }
-                    break;
-                case BACK:
-                    if (action == Action.SELECT){
-                        game.setState(new MainMenuState(new MainMenu()));
-                    }
-            }
+        switch (getModel().getEntry().getType()) {
+            case START_GAME:
+                game.setState(new GameState(new Arena(70,45)));
+                break;
+            case OPTIONS:
+                // abre o ecrã de opções
+                break;
+            case CONTROLS:
+                game.setState(new ControlsMenuState(new ControlsMenu()));
+                break;
+            case QUIT:
+                game.setState(null);
+                break;
+            case BACK:
+                game.setState(new MainMenuState(new MainMenu()));
         }
     }
 }

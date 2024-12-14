@@ -26,15 +26,15 @@ import java.net.URL;
 public class Game {
     private final LanternaGUI gui;
     private State<?> state;
-    public static final int widht = 70;
+    public static final int width = 70;
     public static final int height = 45;
     public Game() throws IOException, URISyntaxException, FontFormatException {
-        this.gui = new LanternaGUI(widht,height, "SURVIVOR");
+        this.gui = new LanternaGUI(width,height, "SURVIVOR");
         this.state = new MainMenuState(new MainMenu());
     }
 
     public void run() throws IOException {
-        int FPS = 7;
+        int FPS = 30;
         int frameTime = 1000 / FPS;
 
         while (this.state != null) {
