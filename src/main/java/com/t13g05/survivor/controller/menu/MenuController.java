@@ -30,7 +30,6 @@ public abstract class MenuController<T extends Menu> extends Controller<T> {
                 case SELECT:
                     entryController.step(game, actions, time);
                     actions.remove(Action.SELECT);
-                    break;
             }
         }
 

@@ -26,6 +26,7 @@ public class EntryController extends Controller<Menu> {
                 break;
             case OPTIONS:
                 // abre o ecrã de opções
+                break;
             case CONTROLS:
                 game.setState(new ControlsMenuState(new ControlsMenu()));
                 break;
