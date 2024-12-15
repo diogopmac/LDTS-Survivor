@@ -11,9 +11,9 @@ public class Entity extends Element {
         health = 0;
     }
     
-    public Entity(Position position) {
+    public Entity(Position position, int health) {
         super(position);
-        this.health = 100;
+        this.health = health;
     }
 
     public int getHealth() {

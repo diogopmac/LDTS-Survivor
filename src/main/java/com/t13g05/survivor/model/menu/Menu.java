@@ -3,7 +3,7 @@ package com.t13g05.survivor.model.menu;
 import java.util.List;
 
 public abstract class Menu {
-    private final List<Entry> entries;
+    protected final List<Entry> entries;
     private int currentEntry = 0;
 
     public Menu() {

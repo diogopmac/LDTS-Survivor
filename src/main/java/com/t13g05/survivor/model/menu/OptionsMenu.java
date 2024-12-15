@@ -11,6 +11,15 @@ public class OptionsMenu extends Menu {
         super();
     }
 
+    public Type getSelectedOption(Type type) {
+        for (Entry entry : entries) {
+            if (entry instanceof OptionsEntry optionsEntry && optionsEntry.getType() == type) {
+                return optionsEntry.getSelectedOption();
+            }
+        }
+        return null;
+    }
+
     @Override
     public List<Entry> createEntries() {
         OptionsEntry classEntry = new OptionsEntry(new Position(Game.width/2-6, Game.height/3),

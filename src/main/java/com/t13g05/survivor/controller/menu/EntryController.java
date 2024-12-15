@@ -1,9 +1,12 @@
 package com.t13g05.survivor.controller.menu;
 
 import com.t13g05.survivor.Game;
+import com.t13g05.survivor.GameConfig;
 import com.t13g05.survivor.controller.Controller;
 import com.t13g05.survivor.gui.Action;
 import com.t13g05.survivor.model.game.arena.Arena;
+import com.t13g05.survivor.model.game.arena.ArenaCreator;
+import com.t13g05.survivor.model.game.arena.ArenaFactory;
 import com.t13g05.survivor.model.menu.ControlsMenu;
 import com.t13g05.survivor.model.menu.MainMenu;
 import com.t13g05.survivor.model.menu.Menu;
@@ -24,7 +27,14 @@ public class EntryController extends Controller<Menu> {
     public void step(Game game, Set<Action> actions, long time){
         switch (getModel().getEntry().getType()) {
             case START_GAME:
-                game.setState(new GameState(new Arena(70,45)));
+                GameConfig config = GameConfig.getInstance();
+                ArenaFactory factory = new ArenaCreator();
+                Arena arena = factory.createArena(
+                        Game.width,
+                        Game.height,
+                        config.getSelectedClass(),
+                        config.getSelectedWeapon());
+                game.setState(new GameState(arena));
                 break;
             case OPTIONS:
                 game.setState(new OptionsMenuState(new OptionsMenu()));
