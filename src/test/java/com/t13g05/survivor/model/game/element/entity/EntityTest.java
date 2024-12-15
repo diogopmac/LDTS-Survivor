@@ -13,7 +13,7 @@ public class EntityTest {
         Assertions.assertEquals(entity.getHealth(),0);
         Assertions.assertEquals(entity.getPosition(),new Position(0,0));
 
-        Entity entity_with_position = new Entity(new Position(1,1));
+        Entity entity_with_position = new Entity(new Position(1,1), 100);
         Assertions.assertNotNull(entity_with_position);
         Assertions.assertEquals(entity_with_position.getPosition(),new Position(1,1));
         Assertions.assertEquals(entity_with_position.getHealth(),100);
@@ -23,7 +23,7 @@ public class EntityTest {
     public void position_test() {
         int x = 5;
         int y = 7;
-        Entity entity = new Entity(new Position(x, y));
+        Entity entity = new Entity(new Position(x, y), 100);
 
         Assertions.assertEquals(new Position(x, y), entity.getPosition());
     }
@@ -32,7 +32,7 @@ public class EntityTest {
     public void setPosition_test() {
         int x = 5;
         int y = 7;
-        Entity entity = new Entity(new Position(x, y));
+        Entity entity = new Entity(new Position(x, y), 100);
         Position newPosition = new Position(10, 10);
         entity.setPosition(newPosition);
         Assertions.assertEquals(newPosition, entity.getPosition());

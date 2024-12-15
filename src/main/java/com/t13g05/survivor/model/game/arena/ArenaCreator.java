@@ -12,7 +12,9 @@ public class ArenaCreator implements ArenaFactory{
     public Arena createArena(int width, int height, String selectedClass, String selectedWeapon){
         Survivor survivor = createSurvivor(selectedClass, selectedWeapon, width, height);
         Arena arena = new Arena(width, height);
+
         arena.setSurvivor(survivor);
+
         List<Monster> monsters = createMonsters();
         arena.setMonsters(monsters);
         return arena;
@@ -20,6 +22,7 @@ public class ArenaCreator implements ArenaFactory{
 
     private Survivor createSurvivor(String selectedClass, String selectedWeapon, int width, int height){
         Position position = new Position(width/2, height/2);
+
         return switch (selectedClass) {
             case "Warrior" -> new Survivor(position, 150);
             case "Mage" -> new Survivor(position, 90);

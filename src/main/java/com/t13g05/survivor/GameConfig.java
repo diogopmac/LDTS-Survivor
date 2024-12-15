@@ -7,8 +7,8 @@ public class GameConfig {
     private String selectedWeapon;
 
     private GameConfig() {
-        this.selectedClass = "WARRIOR";
-        this.selectedWeapon = "BOW";
+        this.selectedClass = "Warrior";
+        this.selectedWeapon = "Bow";
     }
 
     public static GameConfig getInstance() {

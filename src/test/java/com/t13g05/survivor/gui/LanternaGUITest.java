@@ -47,7 +47,7 @@ public class LanternaGUITest {
     @Test
     public void terminal_test() throws Exception {
         AWTTerminalFontConfiguration fontConfig = gui.getFontConfiguration();
-        Terminal terminal = gui.createTerminal(40, 20, fontConfig);
+        Terminal terminal = gui.createTerminal(40, 20, fontConfig, "TEST");
 
         Assertions.assertNotNull(terminal);
     }
@@ -55,7 +55,7 @@ public class LanternaGUITest {
     @Test
     public void screen_test() throws Exception {
         AWTTerminalFontConfiguration fontConfig = gui.getFontConfiguration();
-        Terminal terminal = gui.createTerminal(40, 20, fontConfig);
+        Terminal terminal = gui.createTerminal(40, 20, fontConfig, "TEST");
         Screen screen = gui.createScreen(terminal);
 
         Assertions.assertNotNull(screen);
