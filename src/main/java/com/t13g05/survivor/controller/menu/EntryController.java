@@ -7,9 +7,11 @@ import com.t13g05.survivor.model.game.arena.Arena;
 import com.t13g05.survivor.model.menu.ControlsMenu;
 import com.t13g05.survivor.model.menu.MainMenu;
 import com.t13g05.survivor.model.menu.Menu;
+import com.t13g05.survivor.model.menu.OptionsMenu;
 import com.t13g05.survivor.state.ControlsMenuState;
 import com.t13g05.survivor.state.GameState;
 import com.t13g05.survivor.state.MainMenuState;
+import com.t13g05.survivor.state.OptionsMenuState;
 
 import java.util.Set;
 
@@ -25,7 +27,7 @@ public class EntryController extends Controller<Menu> {
                 game.setState(new GameState(new Arena(70,45)));
                 break;
             case OPTIONS:
-                // abre o ecrã de opções
+                game.setState(new OptionsMenuState(new OptionsMenu()));
                 break;
             case CONTROLS:
                 game.setState(new ControlsMenuState(new ControlsMenu()));

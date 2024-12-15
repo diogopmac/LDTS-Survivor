@@ -13,15 +13,19 @@ public class OptionsEntry extends Entry {
         this.options = options;
     }
 
+    public int getEntryCount() {
+        return options.size();
+    }
+
     public Type getSelectedOption() {
         return options.get(currentEntryIndex);
     }
     public void nextEntry() {
         currentEntryIndex++;
-        currentEntryIndex %= options.size();
+        currentEntryIndex %= getEntryCount();
     }
     public void previousEntry() {
-        currentEntryIndex--;
-        currentEntryIndex %= options.size();
+        currentEntryIndex+= getEntryCount() -1 ;
+        currentEntryIndex %= getEntryCount();
     }
 }
