@@ -1,5 +1,7 @@
 package com.t13g05.survivor.model.menu;
 
+import com.t13g05.survivor.Game;
+import com.t13g05.survivor.model.Position;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,6 +28,16 @@ public class MainMenuTest {
         Assertions.assertEquals(Type.OPTIONS, entries.get(1).getType());
         Assertions.assertEquals(Type.CONTROLS, entries.get(2).getType());
         Assertions.assertEquals(Type.QUIT, entries.get(3).getType());
+
+        Assertions.assertEquals(new Position(Game.width/2-6, Game.height/3), entries.get(0).getPosition());
+        Assertions.assertEquals(new Position(Game.width/2-6, Game.height/3+5), entries.get(1).getPosition());
+        Assertions.assertEquals(new Position(Game.width/2-6, Game.height/3+10), entries.get(2).getPosition());
+        Assertions.assertEquals(new Position(Game.width/2-6, Game.height/3+15), entries.get(3).getPosition());
+
+        Assertions.assertEquals(Type.START_GAME.getText(), "Start Game");
+        Assertions.assertEquals(Type.OPTIONS.getText(), "Options");
+        Assertions.assertEquals(Type.CONTROLS.getText(), "Controls");
+        Assertions.assertEquals(Type.QUIT.getText(), "Quit");
     }
 
     @Test
