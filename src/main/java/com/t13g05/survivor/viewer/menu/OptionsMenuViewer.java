@@ -19,6 +19,8 @@ public class OptionsMenuViewer extends Viewer<OptionsMenu> {
 protected void drawElements(GUI gui) throws IOException {
         gui.clear();
         gui.drawText(Game.width / 2 - 8, Game.height / 10, "Settings ", "#FFFFFF");
+        gui.drawText(Game.width / 2 - 12, Game.height / 3, "Class ", "#FFFFFF");
+        gui.drawText(Game.width / 2 - 12, Game.height / 3+5, "Weapon ", "#FFFFFF");
         drawEntries(gui, getModel().getEntries());
         gui.refresh();
 
