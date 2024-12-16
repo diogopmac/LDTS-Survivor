@@ -27,6 +27,10 @@ public class ArenaController extends Controller<Arena> {
                 return;
             }
         }
+        if (getModel().getSurvivor().getHealth() == 0) {
+            game.setState(new MainMenuState(new MainMenu()));
+            return;
+        }
         survivorController.step(game, actions, time);
         monsterController.step(game, actions, time);
     }
