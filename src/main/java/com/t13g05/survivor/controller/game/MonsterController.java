@@ -30,16 +30,17 @@ public class MonsterController extends GameController {
 
     private void spawnMonster() {
         Random rnd = new Random();
-        Position position;
-        int random = rnd.nextInt(4);
-        if (random <= 1) {
-            int x = rnd.nextInt(1, getModel().getWidth()-1);
-            position = new Position(x, random == 0 ? 1 : getModel().getHeight()-2);
-        } else {
-            int y = rnd.nextInt(1, getModel().getHeight()-1);
-            position = new Position(random == 2 ? 1 : getModel().getWidth()-2, y);
+        Position position = new Position(-1, -1);
+        while (!canMove(position)) {
+            int random = rnd.nextInt(4);
+            if (random <= 1) {
+                int x = rnd.nextInt(1, getModel().getWidth() - 1);
+                position = new Position(x, random == 0 ? 1 : getModel().getHeight() - 2);
+            } else {
+                int y = rnd.nextInt(1, getModel().getHeight() - 1);
+                position = new Position(random == 2 ? 1 : getModel().getWidth() - 2, y);
+            }
         }
-        System.out.println(position);
         List<Monster> newMonsters = getModel().getMonsters();
         newMonsters.add(new Monster(position));
         getModel().setMonsters(newMonsters);
