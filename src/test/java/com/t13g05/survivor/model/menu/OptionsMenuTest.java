@@ -46,6 +46,9 @@ public class OptionsMenuTest {
         optionsEntry = (OptionsEntry) optionsMenu.getEntry();
         Assertions.assertEquals(Type.WARRIOR, optionsEntry.getSelectedOption());
 
+        Assertions.assertEquals(Type.WARRIOR, optionsMenu.getSelectedOption(Type.CLASS));
+        Assertions.assertEquals(Type.SWORD, optionsMenu.getSelectedOption(Type.WEAPON));
+
         optionsMenu.moveDown();
 
         Assertions.assertInstanceOf(OptionsEntry.class, optionsMenu.getEntry());
