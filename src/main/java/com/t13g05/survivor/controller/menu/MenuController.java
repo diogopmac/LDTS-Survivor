@@ -4,6 +4,7 @@ import com.t13g05.survivor.Game;
 import com.t13g05.survivor.controller.Controller;
 import com.t13g05.survivor.gui.Action;
 import com.t13g05.survivor.model.menu.Menu;
+import com.t13g05.survivor.model.menu.OptionsEntry;
 
 import java.util.Set;
 
@@ -26,6 +27,14 @@ public abstract class MenuController<T extends Menu> extends Controller<T> {
                 case DOWN:
                     this.getModel().moveDown();
                     actions.remove(Action.DOWN);
+                    break;
+                case RIGHT:
+                    getModel().moveRight();
+                    actions.remove(Action.RIGHT);
+                    break;
+                case LEFT:
+                    getModel().moveLeft();
+                    actions.remove(Action.LEFT);
                     break;
                 case SELECT:
                     entryController.step(game, actions, time);

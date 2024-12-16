@@ -17,14 +17,8 @@ public class Arena {
     public Arena(int width, int height) {
         this.width = width;
         this.height = height;
-        survivor = new Survivor(new Position(width/2, height/2));
-        monsters = new ArrayList<>();
-        // Temporary code for demonstration purpose only
-        monsters.add(new Monster(new Position(10,5)));
-        monsters.add(new Monster(new Position(30,10)));
-        monsters.add(new Monster(new Position(2,30)));
-        monsters.add(new Monster(new Position(50,30)));
-        monsters.add(new Monster(new Position(60,3)));
+        this.survivor = new Survivor(new Position(width/2, height/2), 100);
+        this.monsters = new ArrayList<>();
     }
 
     public int getHeight() {
@@ -39,7 +33,15 @@ public class Arena {
         return survivor;
     }
 
+    public void setSurvivor(Survivor survivor) {
+        this.survivor = survivor;
+    }
+
     public List<Monster> getMonsters() {
         return monsters;
+    }
+
+    public void setMonsters(List<Monster> monsters) {
+        this.monsters = monsters;
     }
 }

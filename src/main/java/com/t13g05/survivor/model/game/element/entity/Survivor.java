@@ -7,7 +7,7 @@ import com.t13g05.survivor.model.weapon.Weapon;
 public class Survivor extends Entity {
     Weapon weapon;
 
-    public Survivor(Position position) {
-        super(position);
+    public Survivor(Position position, int health) {
+        super(position, health);
     }
 }
