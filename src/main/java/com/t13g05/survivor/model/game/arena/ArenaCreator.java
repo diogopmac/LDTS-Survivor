@@ -15,8 +15,6 @@ public class ArenaCreator implements ArenaFactory{
 
         arena.setSurvivor(survivor);
 
-        List<Monster> monsters = createMonsters();
-        arena.setMonsters(monsters);
         return arena;
     }
 
@@ -30,15 +28,5 @@ public class ArenaCreator implements ArenaFactory{
             case "Paladin" -> new Survivor(position, 200);
             default -> null;
         };
-    }
-
-    private List<Monster> createMonsters(){
-        List<Monster> monsters = new ArrayList<>();
-        monsters.add(new Monster(new Position(10,5)));
-        monsters.add(new Monster(new Position(30,10)));
-        monsters.add(new Monster(new Position(2,30)));
-        monsters.add(new Monster(new Position(50,30)));
-        monsters.add(new Monster(new Position(60,3)));
-        return monsters;
     }
 }
