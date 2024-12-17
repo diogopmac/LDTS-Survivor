@@ -22,10 +22,10 @@ public class ArenaCreator implements ArenaFactory{
         Position position = new Position(width/2, height/2);
 
         return switch (selectedClass) {
-            case "Warrior" -> new Survivor(position, 150);
-            case "Mage" -> new Survivor(position, 90);
-            case "Rogue" -> new Survivor(position, 110);
-            case "Paladin" -> new Survivor(position, 200);
+            case "Warrior" -> new Survivor(position, 150, selectedWeapon);
+            case "Mage" -> new Survivor(position, 90, selectedWeapon);
+            case "Rogue" -> new Survivor(position, 110, selectedWeapon);
+            case "Paladin" -> new Survivor(position, 200, selectedWeapon);
             default -> null;
         };
     }

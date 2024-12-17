@@ -2,6 +2,7 @@ package com.t13g05.survivor.model.game.arena;
 
 import com.t13g05.survivor.gui.LanternaGUI;
 import com.t13g05.survivor.model.Position;
+import com.t13g05.survivor.model.game.element.Projectile;
 import com.t13g05.survivor.model.game.element.entity.Monster;
 import com.t13g05.survivor.model.game.element.entity.Survivor;
 
@@ -13,12 +14,13 @@ public class Arena {
     private int height;
     private Survivor survivor;
     private List<Monster> monsters;
+    private List<Projectile> projectiles;
 
     public Arena(int width, int height) {
         this.width = width;
         this.height = height;
-        this.survivor = new Survivor(new Position(width/2, height/2), 100);
         this.monsters = new ArrayList<>();
+        this.projectiles = new ArrayList<>();
     }
 
     public int getHeight() {
@@ -43,5 +45,13 @@ public class Arena {
 
     public void setMonsters(List<Monster> monsters) {
         this.monsters = monsters;
+    }
+
+    public List<Projectile> getProjectiles() {
+        return projectiles;
+    }
+
+    public void setProjectiles(List<Projectile> projectiles) {
+        this.projectiles = projectiles;
     }
 }
