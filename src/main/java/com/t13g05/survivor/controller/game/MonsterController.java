@@ -7,6 +7,7 @@ import com.t13g05.survivor.model.Position;
 import com.t13g05.survivor.model.game.arena.Arena;
 import com.t13g05.survivor.model.game.element.entity.Monster;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
@@ -41,7 +42,7 @@ public class MonsterController extends GameController {
                 position = new Position(random == 2 ? 1 : getModel().getWidth() - 2, y);
             }
         }
-        List<Monster> newMonsters = getModel().getMonsters();
+        List<Monster> newMonsters = new ArrayList<>(getModel().getMonsters());
         newMonsters.add(new Monster(position));
         getModel().setMonsters(newMonsters);
     }

@@ -5,14 +5,14 @@ import com.t13g05.survivor.model.game.element.Projectile;
 
 public abstract class Weapon {
     int delay;
-    int base_damage;
-    int projectile_type;
+    int baseDamage;
+    int projectileType;
     int range;
 
     protected Weapon(int delay, int base_damage, int projectile_type, int range) {
         this.delay = delay;
-        this.base_damage = base_damage;
-        this.projectile_type = projectile_type;
+        this.baseDamage = base_damage;
+        this.projectileType = projectile_type;
         this.range = range;
     }
 
@@ -25,6 +25,18 @@ public abstract class Weapon {
     }
 
     public Projectile createProjectile(Position position, Position direction) {
-        return new Projectile(position, direction, projectile_type);
+        return new Projectile(position, direction, this);
+    }
+
+    public int getRange() {
+        return range;
+    }
+
+    public int getBaseDamage() {
+        return baseDamage;
+    }
+
+    public int getDelay() {
+        return delay;
     }
 }
