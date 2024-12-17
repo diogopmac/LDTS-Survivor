@@ -13,6 +13,10 @@ public class OptionsEntry extends Entry {
         this.options = options;
     }
 
+    public List<Type> getOptions() {
+        return options;
+    }
+
     public int getEntryCount() {
         return options.size();
     }

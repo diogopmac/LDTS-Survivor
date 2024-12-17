@@ -17,7 +17,7 @@ public class ControlsMenuViewer extends Viewer<ControlsMenu> {
     @Override
     public void drawElements(GUI gui) throws IOException{
         gui.clear();
-        gui.drawText(Game.width/2-6,Game.height/10, "Survivor", "#FFFFFF");
+        gui.drawText(Game.width/2-6,Game.height/10, "Controls", "#FFFFFF");
         drawControls(gui, Arrays.asList("Move UP", "W", "Move DOWN", "S",
                 "Move Right", "D", "Move LEFT", "A",
                 "Shoot", "P", "Ability 1", "O", "Ability 2", "U"));
