@@ -47,6 +47,10 @@ public class EntryController extends Controller<Menu> {
                 break;
             case BACK:
                 game.setState(new MainMenuState(new MainMenu()));
+                break;
+            case HP_UP:
+                //TODO give hp to player
+
         }
     }
 }
