@@ -64,7 +64,7 @@ public class ArenaTest {
     public void draw_test() throws Exception {
         gameViewer.draw(lanternaGUI);
         Position new_pos = new Position(10,10);
-        Survivor new_survivor = new Survivor(new_pos, 100);
+        Survivor new_survivor = new Survivor(new_pos, 100, "Sword");
         survivorViewer.draw(new_survivor, lanternaGUI);
         Mockito.verify(survivorViewer,times(1)).draw(new_survivor, lanternaGUI);
     }
