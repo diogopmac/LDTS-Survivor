@@ -15,11 +15,13 @@ import java.util.Set;
 
 public class SurvivorController extends GameController {
     private long lastShot;
+    private long lastMovement;
 
     public SurvivorController(Arena arena) {
         super(arena);
 
         lastShot = 0;
+        lastMovement = 0;
     }
 
     private void moveSurvivor(int x, int y) {
@@ -40,6 +42,7 @@ public class SurvivorController extends GameController {
 
     @Override
     public void step(Game game, Set<Action> actions, long time) {
+        if (time - lastMovement < 50) return;
         for (Action action : actions) {
             switch (action) {
                 case UP -> moveSurvivor(0, -1);
@@ -54,5 +57,6 @@ public class SurvivorController extends GameController {
                 }
             }
         }
+        lastMovement = time;
     }
 }
