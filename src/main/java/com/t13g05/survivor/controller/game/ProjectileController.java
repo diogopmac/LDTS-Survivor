@@ -39,7 +39,7 @@ public class ProjectileController extends GameController {
     public void step(Game game, Set<Action> actions, long time) {
         List<Projectile> newProjectiles = new ArrayList<>(getModel().getProjectiles());
         for (Projectile projectile : getModel().getProjectiles()) {
-            if (projectile.getDistanceTraveled() >= projectile.getWeapon().getRange() || hit(projectile.getPosition(), projectile)) {
+            if (hit(projectile.getPosition(), projectile) || projectile.getDistanceTraveled() >= projectile.getWeapon().getRange()) {
                 newProjectiles.remove(projectile);
                 continue;
             }

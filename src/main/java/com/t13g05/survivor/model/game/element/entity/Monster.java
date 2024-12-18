@@ -7,9 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Monster extends Entity {
-    private int damage = 10;
+    private int damage;
 
-    public Monster(Position position) {super(position, 10);}
+    public Monster(Position position) {
+        super(position, 10);
+        this.damage = 0;
+    }
+    public Monster(Position position, int health, int damage) {
+        super(position, health);
+        this.damage = damage;
+    }
 
     public int getDamage() {
         return damage;

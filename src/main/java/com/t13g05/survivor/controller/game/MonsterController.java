@@ -43,7 +43,10 @@ public class MonsterController extends GameController {
             }
         }
         List<Monster> newMonsters = new ArrayList<>(getModel().getMonsters());
-        newMonsters.add(new Monster(position));
+        newMonsters.add(new Monster(position,
+                10 + getModel().getSurvivor().getLevel()* rnd.nextInt(16),
+                10 + getModel().getSurvivor().getLevel()* rnd.nextInt(16)
+        ));
         getModel().setMonsters(newMonsters);
     }
 
