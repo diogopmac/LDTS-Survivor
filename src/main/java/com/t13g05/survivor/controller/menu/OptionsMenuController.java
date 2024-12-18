@@ -3,14 +3,14 @@ package com.t13g05.survivor.controller.menu;
 import com.t13g05.survivor.Game;
 import com.t13g05.survivor.GameConfig;
 import com.t13g05.survivor.gui.Action;
-import com.t13g05.survivor.model.menu.OptionsMenu;
+import com.t13g05.survivor.model.menu.SettingsMenu;
 import com.t13g05.survivor.model.menu.Type;
 
 import java.util.Set;
 
-public class OptionsMenuController extends MenuController<OptionsMenu> {
-    public OptionsMenuController(OptionsMenu optionsMenu, EntryController entryController) {
-        super(optionsMenu, entryController);
+public class OptionsMenuController extends MenuController<SettingsMenu> {
+    public OptionsMenuController(SettingsMenu settingsMenu, EntryController entryController) {
+        super(settingsMenu, entryController);
     }
 
     @Override

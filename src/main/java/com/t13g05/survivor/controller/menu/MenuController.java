@@ -4,7 +4,6 @@ import com.t13g05.survivor.Game;
 import com.t13g05.survivor.controller.Controller;
 import com.t13g05.survivor.gui.Action;
 import com.t13g05.survivor.model.menu.Menu;
-import com.t13g05.survivor.model.menu.OptionsEntry;
 
 import java.util.Set;
 
@@ -40,6 +39,7 @@ public abstract class MenuController<T extends Menu> extends Controller<T> {
                     entryController.step(game, actions, time);
                     actions.remove(Action.SELECT);
             }
+            break;
         }
 
     }

@@ -2,15 +2,14 @@ package com.t13g05.survivor.viewer.menu;
 
 import com.t13g05.survivor.Game;
 import com.t13g05.survivor.gui.GUI;
-import com.t13g05.survivor.model.menu.OptionsMenu;
+import com.t13g05.survivor.model.menu.SettingsMenu;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
-public class OptionsMenuViewerTest {
-    private OptionsMenuViewer viewer;
-    private OptionsMenu optionsMenu;
+public class SettingsMenuViewerTest {
+    private SettingsMenuViewer viewer;
+    private SettingsMenu settingsMenu;
     private GUI gui;
     private Game game;
 
@@ -18,8 +17,8 @@ public class OptionsMenuViewerTest {
     public void setUp() {
         game = Mockito.mock(Game.class);
         gui = Mockito.mock(GUI.class);
-        optionsMenu = new OptionsMenu();
-        viewer = new OptionsMenuViewer(optionsMenu);
+        settingsMenu = new SettingsMenu();
+        viewer = new SettingsMenuViewer(settingsMenu);
     }
 
     @Test

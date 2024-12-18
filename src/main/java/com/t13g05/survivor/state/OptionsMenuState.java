@@ -2,27 +2,22 @@ package com.t13g05.survivor.state;
 
 import com.t13g05.survivor.controller.Controller;
 import com.t13g05.survivor.controller.menu.EntryController;
-import com.t13g05.survivor.controller.menu.MainMenuController;
 import com.t13g05.survivor.controller.menu.OptionsMenuController;
-import com.t13g05.survivor.model.menu.ControlsMenu;
-import com.t13g05.survivor.model.menu.MainMenu;
-import com.t13g05.survivor.model.menu.OptionsMenu;
+import com.t13g05.survivor.model.menu.SettingsMenu;
 import com.t13g05.survivor.viewer.Viewer;
-import com.t13g05.survivor.viewer.menu.ControlsMenuViewer;
-import com.t13g05.survivor.viewer.menu.MainMenuViewer;
-import com.t13g05.survivor.viewer.menu.OptionsMenuViewer;
+import com.t13g05.survivor.viewer.menu.SettingsMenuViewer;
 
-public class OptionsMenuState extends State<OptionsMenu> {
-    public OptionsMenuState(OptionsMenu menu) {
+public class OptionsMenuState extends State<SettingsMenu> {
+    public OptionsMenuState(SettingsMenu menu) {
         super(menu);
     }
     @Override
-    protected Viewer<OptionsMenu> getViewer() {
-        return new OptionsMenuViewer(getModel());
+    protected Viewer<SettingsMenu> getViewer() {
+        return new SettingsMenuViewer(getModel());
     }
 
     @Override
-    protected Controller<OptionsMenu> getController() {
+    protected Controller<SettingsMenu> getController() {
         return new OptionsMenuController(getModel(), new EntryController(getModel()));
     }
 }
