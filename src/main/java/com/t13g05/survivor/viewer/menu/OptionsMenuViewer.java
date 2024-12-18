@@ -21,6 +21,8 @@ protected void drawElements(GUI gui) throws IOException {
         gui.drawText(Game.width / 2 - 8, Game.height / 10, "Settings ", "#FFFFFF");
         gui.drawText(Game.width / 2 - 12, Game.height / 3, "Class ", "#FFFFFF");
         gui.drawText(Game.width / 2 - 12, Game.height / 3+5, "Weapon ", "#FFFFFF");
+
+
         drawEntries(gui, getModel().getEntries());
         gui.refresh();
 
@@ -38,7 +40,7 @@ protected void drawElements(GUI gui) throws IOException {
                 gui.drawText(
                         entry.getPosition().x(),
                         entry.getPosition().y(),
-                        entry.getType().getText(),
+                        (i != 2) ? entry.getType().getText() : "Apply",
                         getModel().isSelected(i) ? "#FFFF00" : "#FFFFFF");
 
             }
