@@ -42,9 +42,8 @@ public class ProjectileTest {
         Assertions.assertEquals(weapon.getRange(), 3);
         projectile.setPosition(new Position(5, 10));
         Assertions.assertEquals(projectile.getDistanceTraveled(), 4);
+        projectile.setPosition(new Position(5, 11));
 
         Assertions.assertEquals(projectile.getPosition(), new Position(5,10));
-
-
     }
 }
