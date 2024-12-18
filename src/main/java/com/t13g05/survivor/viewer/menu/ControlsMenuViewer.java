@@ -17,7 +17,7 @@ public class ControlsMenuViewer extends Viewer<ControlsMenu> {
     @Override
     public void drawElements(GUI gui) throws IOException{
         gui.clear();
-        gui.drawText(Game.width/2-6,Game.height/10, "Controls", "#FFFFFF");
+        gui.drawText((Game.width-8)/2,Game.height/10, "Controls", "#FFFFFF");
         drawControls(gui, Arrays.asList("Move UP", "W", "Move DOWN", "S",
                 "Move Right", "D", "Move LEFT", "A",
                 "Shoot", "P", "Ability 1", "O", "Ability 2", "U"));
@@ -39,7 +39,7 @@ public class ControlsMenuViewer extends Viewer<ControlsMenu> {
 
     private void drawControls(GUI gui, List<String> controls){
         for (int i = 0; i < controls.size(); i++) {
-            gui.drawText(Game.width/2-((i%2==0 ? 10 : -4)),
+            gui.drawText(Game.width/2-((i%2==0 ? 7 : -7)),
                     Game.height/4+((i%2==0 ? i : (i-1))),
                     controls.get(i), "#FFFFFF");
 

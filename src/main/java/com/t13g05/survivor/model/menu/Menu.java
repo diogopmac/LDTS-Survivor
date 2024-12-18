@@ -36,15 +36,15 @@ public abstract class Menu {
 
     public void moveRight(){
         Entry current = getEntry();
-        if (current instanceof OptionsEntry){
-            ((OptionsEntry) current).nextEntry();
+        if (current instanceof SettingsEntry){
+            ((SettingsEntry) current).nextEntry();
         }
     }
 
     public void moveLeft(){
         Entry current = getEntry();
-        if (current instanceof OptionsEntry){
-            ((OptionsEntry) current).previousEntry();
+        if (current instanceof SettingsEntry){
+            ((SettingsEntry) current).previousEntry();
         }
     }
 

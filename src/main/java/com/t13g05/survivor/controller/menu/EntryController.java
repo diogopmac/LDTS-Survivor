@@ -10,7 +10,7 @@ import com.t13g05.survivor.model.game.arena.ArenaFactory;
 import com.t13g05.survivor.model.menu.ControlsMenu;
 import com.t13g05.survivor.model.menu.MainMenu;
 import com.t13g05.survivor.model.menu.Menu;
-import com.t13g05.survivor.model.menu.OptionsMenu;
+import com.t13g05.survivor.model.menu.SettingsMenu;
 import com.t13g05.survivor.state.ControlsMenuState;
 import com.t13g05.survivor.state.GameState;
 import com.t13g05.survivor.state.MainMenuState;
@@ -37,7 +37,7 @@ public class EntryController extends Controller<Menu> {
                 game.setState(new GameState(arena));
                 break;
             case OPTIONS:
-                game.setState(new OptionsMenuState(new OptionsMenu()));
+                game.setState(new OptionsMenuState(new SettingsMenu()));
                 break;
             case CONTROLS:
                 game.setState(new ControlsMenuState(new ControlsMenu()));
