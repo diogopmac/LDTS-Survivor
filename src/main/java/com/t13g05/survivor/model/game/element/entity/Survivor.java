@@ -47,9 +47,13 @@ public class Survivor extends Entity {
 
     public void giveExperience(int experience) {
         this.experience += experience;
-        while (this.experience >= necessaryExp()) {
-            this.experience -= necessaryExp();
-            this.level++;
-        }
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    public void levelUp() {
+        this.level++;
     }
 }

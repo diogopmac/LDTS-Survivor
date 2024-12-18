@@ -7,6 +7,7 @@ import com.t13g05.survivor.model.Position;
 import com.t13g05.survivor.model.game.arena.Arena;
 import com.t13g05.survivor.model.game.element.Projectile;
 import com.t13g05.survivor.model.game.element.entity.Monster;
+import com.t13g05.survivor.model.game.element.entity.Survivor;
 import com.t13g05.survivor.model.weapon.Weapon;
 
 import java.util.ArrayList;
@@ -42,6 +43,11 @@ public class SurvivorController extends GameController {
 
     @Override
     public void step(Game game, Set<Action> actions, long time) {
+        Survivor survivor = getModel().getSurvivor();
+        while (survivor.getExperience() >= survivor.necessaryExp()) {
+            survivor.setExperience(survivor.getExperience() - survivor.necessaryExp());
+            survivor.levelUp();
+        }
         if (time - lastMovement < 50) return;
         for (Action action : actions) {
             switch (action) {
