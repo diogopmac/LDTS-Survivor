@@ -17,34 +17,38 @@ Developed by:
 LDTS 24/25
 
 ## Implemented Classes
-- Our game for now just represents an arena, with a survivor that has a static health and some monsters moving.
+- Our game for now just represents an arena, with a survivor and some monsters going after the survivor trying to damage him.
+- **Survivor**
+    - **Health** - Add functioning health.
+    - **Movement** - Implement proper movement. Preferably not dependent on FPS.
+    - **Firing** - Make the survivor be able to fire.
+- **Projectile**
+    - **Function** - Implement properly working projectiles.
+- **Monsters**
+    - **Health** - Add functioning health.
+    - **Damage** - Make monster be able to attack and deal damage to the survivor.
+    - **Spawn** - Add proper random spawning of monsters.
+    - **Movement** - Add proper monster movement with monsters targeting the survivor and walking towards him.
+- **Menu**
+    - **Start** - Add start menu.
+    - **Class and weapon** - Add a menu for selecting class and weapon.
+    - **Pause** - Add a pause menu.
+     
 - <img width="1257" alt="image" src="https://github.com/user-attachments/assets/fa02266a-227f-43d9-a034-f343b25d266b">
 
 
 ## Planned Features
 - **Survivor**
-    - **Health** - Add functioning health.
-    - **Movement** - Implement proper movement. Preferably not dependent on FPS.
-    - **Firing** - Make the survivor be able to fire.
     - **Debuffs** - Add debuffs to the player, such as slowing down when hit.
     - **Leveling** - Add experience and level to the player and define experience requirements for level-up.
     - **Level-Up rewards** - Add rewards for leveling up such as increased firing, health and damage.
 - **Projectile**
-    - **Function** - Implement properly working projectiles.
     - **Variety** - Add different projectiles for all weapons.
 - **Monsters**
-    - **Health** - Add functioning health.
-    - **Damage** - Make monster be able to attack and deal damage to the survivor.
-    - **Spawn** - Add proper random spawning of monsters.
     - **Difficulty** - Make monsters have more health and deal more damage depending on level.
-    - **Movement** - Add proper monster movement with monsters targeting the survivor and walking towards him.
     - **Drops** - Add monster drops such as experience to level-up the player.
 - **Arena**
     - **Lobby** - Add a lobby to select the map prior to starting the game.
-- **Menu**
-    - **Start** - Add start menu.
-    - **Class and weapon** - Add a menu for selecting class and weapon.
-    - **Pause** - Add a pause menu.
 - **Viewer**
     - **HUD** - Enhance the existing hud and add a level progress bar.
     - **Textures** - Create proper textures for the survivor, monsters, weapons and projectiles.
