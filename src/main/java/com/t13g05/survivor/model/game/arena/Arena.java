@@ -21,6 +21,7 @@ public class Arena {
         this.height = height;
         this.monsters = new ArrayList<>();
         this.projectiles = new ArrayList<>();
+        this.survivor = null;
     }
 
     public int getHeight() {
