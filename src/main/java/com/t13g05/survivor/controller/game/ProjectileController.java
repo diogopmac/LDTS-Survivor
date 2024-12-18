@@ -12,8 +12,6 @@ import java.util.List;
 import java.util.Set;
 
 public class ProjectileController extends GameController {
-    private long lastMovement;
-
     public ProjectileController(Arena arena) {
         super(arena);
     }
@@ -35,7 +33,6 @@ public class ProjectileController extends GameController {
 
     @Override
     public void step(Game game, Set<Action> actions, long time) {
-        if (time - lastMovement < 100) return;
         List<Projectile> newProjectiles = new ArrayList<>(getModel().getProjectiles());
         for (Projectile projectile : getModel().getProjectiles()) {
             if (projectile.getDistanceTraveled() >= projectile.getWeapon().getRange() || hit(projectile.getPosition(), projectile)) {
