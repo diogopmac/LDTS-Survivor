@@ -21,6 +21,7 @@ public class GameViewer extends Viewer<Arena> {
 
 
         gui.drawText(0, getModel().getHeight()-1, getModel().getSurvivor().getHealth() + "HP", "#ff5445");
+        gui.drawText(0, 0, "Level: " + getModel().getSurvivor().getLevel() + " (" + getModel().getSurvivor().getExperience() + "/" + getModel().getSurvivor().necessaryExp() + ")", "#5c54eb");
     }
 
     private <T extends Element> void drawElements(GUI gui, List<T> elements, ElementViewer<T> viewer) {

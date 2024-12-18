@@ -9,6 +9,7 @@ import com.t13g05.survivor.model.game.element.entity.Monster;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 public class ProjectileController extends GameController {
@@ -24,6 +25,9 @@ public class ProjectileController extends GameController {
                     List<Monster> newMonsters = new ArrayList<>(getModel().getMonsters());
                     newMonsters.remove(monster);
                     getModel().setMonsters(newMonsters);
+
+                    Random rnd = new Random();
+                    getModel().getSurvivor().giveExperience(10 + rnd.nextInt(21));
                 }
                 return true;
             }
