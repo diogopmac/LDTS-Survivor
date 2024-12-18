@@ -11,8 +11,8 @@ public class WeaponTest {
         Assertions.assertNotNull(sword);
 
         Assertions.assertEquals(800, sword.delay);
-        Assertions.assertEquals(50, sword.base_damage);
-        Assertions.assertEquals(2, sword.projectile_type);
+        Assertions.assertEquals(50, sword.baseDamage);
+        Assertions.assertEquals(2, sword.projectileType);
         Assertions.assertEquals(2, sword.range);
     }
 
@@ -23,8 +23,8 @@ public class WeaponTest {
         Assertions.assertNotNull(pistol);
 
         Assertions.assertEquals(1500, pistol.delay);
-        Assertions.assertEquals(40, pistol.base_damage);
-        Assertions.assertEquals(1, pistol.projectile_type);
+        Assertions.assertEquals(40, pistol.baseDamage);
+        Assertions.assertEquals(1, pistol.projectileType);
         Assertions.assertEquals(15, pistol.range);
     }
 
@@ -35,8 +35,8 @@ public class WeaponTest {
         Assertions.assertNotNull(bow);
 
         Assertions.assertEquals(2000, bow.delay);
-        Assertions.assertEquals(60, bow.base_damage);
-        Assertions.assertEquals(0, bow.projectile_type);
+        Assertions.assertEquals(60, bow.baseDamage);
+        Assertions.assertEquals(0, bow.projectileType);
         Assertions.assertEquals(10, bow.range);
     }
 }
