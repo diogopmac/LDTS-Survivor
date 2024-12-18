@@ -18,7 +18,7 @@ public class Arena {
         this.width = width;
         this.height = height;
         this.survivor = null;
-        this.monsters = null;
+        this.monsters = new ArrayList<>();
     }
 
     public int getHeight() {
