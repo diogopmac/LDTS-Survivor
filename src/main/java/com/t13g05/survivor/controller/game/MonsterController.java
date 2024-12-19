@@ -62,7 +62,7 @@ public class MonsterController extends GameController {
             }
 
             if (time - lastSpawn > 1000) {
-                int chance = 10;
+                int chance = 10 + getModel().getSurvivor().getLevel();
                 if (Math.random()*100 >= 100-chance) {
                     spawnMonster();
                 }
