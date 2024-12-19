@@ -69,6 +69,10 @@ public class Game {
         this.state = state;
     }
 
+    public State<?> getState() {
+        return state;
+    }
+
     public void saveState() {
         previousState = state;
     }

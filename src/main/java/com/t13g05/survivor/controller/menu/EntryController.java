@@ -49,14 +49,19 @@ public class EntryController extends Controller<Menu> {
                 game.setState(new MainMenuState(new MainMenu()));
                 break;
             case HP_UP:
-                //TODO give hp to player
                 game.loadPreviousState();
+                GameState hpState = (GameState) game.getState();
+                hpState.getModel().getSurvivor().upHealth();
                 break;
             case DMG_UP:
                 game.loadPreviousState();
+                GameState dmgState = (GameState) game.getState();
+                dmgState.getModel().getSurvivor().upDamage();
                 break;
             case FR_UP:
                 game.loadPreviousState();
+                GameState gameState = (GameState) game.getState();
+                gameState.getModel().getSurvivor().upFireRate();
                 break;
 
         }
