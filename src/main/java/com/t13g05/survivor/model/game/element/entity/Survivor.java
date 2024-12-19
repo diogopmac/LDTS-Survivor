@@ -7,6 +7,7 @@ import com.t13g05.survivor.model.weapon.Weapon;
 public class Survivor extends Entity {
     Weapon weapon;
     Position direction = new Position(1, 0);
+    int fireRateReduction;
     int level;
     int experience;
 
@@ -19,6 +20,7 @@ public class Survivor extends Entity {
         }
         this.level = 0;
         this.experience = 0;
+        this.fireRateReduction = 0;
     }
 
     public Weapon getWeapon() {
@@ -55,5 +57,9 @@ public class Survivor extends Entity {
 
     public void levelUp() {
         this.level++;
+    }
+
+    public int getFireRateReduction() {
+        return fireRateReduction;
     }
 }

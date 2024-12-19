@@ -20,7 +20,7 @@ public class ProjectileController extends GameController {
     private boolean hit(Position position, Projectile projectile) {
         for (Monster monster : getModel().getMonsters()) {
             if (monster.getPosition().equals(position)) {
-                monster.damage(projectile.getWeapon().getBaseDamage());
+                monster.damage(projectile.getWeapon().getBaseDamage() + getModel().getSurvivor().getDamage());
                 if (monster.getHealth() == 0) {
                     List<Monster> newMonsters = new ArrayList<>(getModel().getMonsters());
                     newMonsters.remove(monster);

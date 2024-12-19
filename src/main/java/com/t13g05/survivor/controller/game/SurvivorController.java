@@ -60,7 +60,7 @@ public class SurvivorController extends GameController {
                 case LEFT -> moveSurvivor(-1, 0);
                 case RIGHT -> moveSurvivor(1, 0);
                 case SHOOT -> {
-                    if (time - lastShot > getModel().getSurvivor().getWeapon().getDelay()) {
+                    if (time - lastShot > getModel().getSurvivor().getWeapon().getDelay() - getModel().getSurvivor().getFireRateReduction()) {
                         shoot(getModel().getSurvivor().getPosition(), getModel().getSurvivor().getDirection(), getModel().getSurvivor().getWeapon());
                         lastShot = time;
                     }
