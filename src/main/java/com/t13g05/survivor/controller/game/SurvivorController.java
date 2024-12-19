@@ -8,7 +8,9 @@ import com.t13g05.survivor.model.game.arena.Arena;
 import com.t13g05.survivor.model.game.element.Projectile;
 import com.t13g05.survivor.model.game.element.entity.Monster;
 import com.t13g05.survivor.model.game.element.entity.Survivor;
+import com.t13g05.survivor.model.menu.LevelUpMenu;
 import com.t13g05.survivor.model.weapon.Weapon;
+import com.t13g05.survivor.state.LevelUpMenuState;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +49,8 @@ public class SurvivorController extends GameController {
         while (survivor.getExperience() >= survivor.necessaryExp()) {
             survivor.setExperience(survivor.getExperience() - survivor.necessaryExp());
             survivor.levelUp();
+            game.saveState();
+            game.setState(new LevelUpMenuState(new LevelUpMenu()));
         }
         if (time - lastMovement < 50) return;
         for (Action action : actions) {

@@ -23,6 +23,9 @@ public class LevelUpMenuController extends MenuController<LevelUpMenu> {
                     this.getModel().moveUp();
                     actions.remove(Action.LEFT);
                     break;
+                case SELECT:
+                    entryController.step(game, actions, time);
+                    actions.remove(Action.SELECT);
             }
         }
     }

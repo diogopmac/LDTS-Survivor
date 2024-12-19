@@ -9,7 +9,7 @@ import com.t13g05.survivor.model.menu.OptionsEntry;
 import java.util.Set;
 
 public abstract class MenuController<T extends Menu> extends Controller<T> {
-    private final EntryController entryController;
+    protected final EntryController entryController;
 
     public MenuController(T menu, EntryController entryController) {
         super(menu);

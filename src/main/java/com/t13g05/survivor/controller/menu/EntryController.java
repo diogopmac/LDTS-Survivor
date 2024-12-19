@@ -50,6 +50,14 @@ public class EntryController extends Controller<Menu> {
                 break;
             case HP_UP:
                 //TODO give hp to player
+                game.loadPreviousState();
+                break;
+            case DMG_UP:
+                game.loadPreviousState();
+                break;
+            case FR_UP:
+                game.loadPreviousState();
+                break;
 
         }
     }
