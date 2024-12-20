@@ -7,7 +7,7 @@ import com.t13g05.survivor.model.menu.MainMenu;
 import com.t13g05.survivor.state.ControlsMenuState;
 import com.t13g05.survivor.state.GameState;
 import com.t13g05.survivor.state.MainMenuState;
-import com.t13g05.survivor.state.OptionsMenuState;
+import com.t13g05.survivor.state.SettingsMenuState;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -41,7 +41,7 @@ public class EntryControllerTest {
     public void selectOptionsMenuTest(){
         mainMenu.moveDown();
         entryController.step(game, Set.of(), System.currentTimeMillis());
-        Mockito.verify(game).setState(Mockito.any(OptionsMenuState.class));
+        Mockito.verify(game).setState(Mockito.any(SettingsMenuState.class));
     }
 
     @Test

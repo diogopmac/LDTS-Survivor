@@ -8,7 +8,8 @@ public enum Type {
     WARRIOR("Warrior"), MAGE("Mage"), ROGUE("Rogue"), PALADIN("Paladin"),
     WEAPON("Weapon"),
     BOW("Bow"), PISTOL("Pistol"), SWORD("Sword"),
-    HP_UP("Health"), FR_UP("Fire Rate"), DMG_UP("Damage");
+    HP_UP("Health"), FR_UP("Fire Rate"), DMG_UP("Damage"),
+    RESUME("Resume");
 
     private final String text;
 
