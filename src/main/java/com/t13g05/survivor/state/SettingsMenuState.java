@@ -7,8 +7,8 @@ import com.t13g05.survivor.model.menu.SettingsMenu;
 import com.t13g05.survivor.viewer.Viewer;
 import com.t13g05.survivor.viewer.menu.SettingsMenuViewer;
 
-public class OptionsMenuState extends State<SettingsMenu> {
-    public OptionsMenuState(SettingsMenu menu) {
+public class SettingsMenuState extends State<SettingsMenu> {
+    public SettingsMenuState(SettingsMenu menu) {
         super(menu);
     }
     @Override

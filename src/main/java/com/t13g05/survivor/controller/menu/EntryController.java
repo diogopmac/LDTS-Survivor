@@ -14,7 +14,7 @@ import com.t13g05.survivor.model.menu.SettingsMenu;
 import com.t13g05.survivor.state.ControlsMenuState;
 import com.t13g05.survivor.state.GameState;
 import com.t13g05.survivor.state.MainMenuState;
-import com.t13g05.survivor.state.OptionsMenuState;
+import com.t13g05.survivor.state.SettingsMenuState;
 
 import java.util.Set;
 
@@ -38,7 +38,7 @@ public class EntryController extends Controller<Menu> {
                 game.setState(new GameState(arena));
                 break;
             case OPTIONS:
-                game.setState(new OptionsMenuState(new SettingsMenu()));
+                game.setState(new SettingsMenuState(new SettingsMenu()));
                 break;
             case CONTROLS:
                 game.setState(new ControlsMenuState(new ControlsMenu()));
@@ -63,6 +63,9 @@ public class EntryController extends Controller<Menu> {
                 game.loadPreviousState();
                 gameState = (GameState) game.getState();
                 gameState.getModel().getSurvivor().upFireRate();
+                break;
+            case RESUME:
+                game.loadPreviousState();
                 break;
 
         }
