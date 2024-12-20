@@ -3,10 +3,12 @@ package com.t13g05.survivor.model.menu;
 public enum Type {
     START_GAME("Start Game"), OPTIONS("Settings"),
     CONTROLS("Controls"), QUIT("Quit"),
-    BACK("Back"), CLASS("Class"), WEAPON("Weapon"),
-    WARRIOR("Warrior"), MAGE("Mage"),
-    ROGUE("Rogue"), PALADIN("Paladin"), BOW("Bow"),
-    PISTOL("Pistol"), SWORD("Sword");
+    BACK("Back"),
+    CLASS("Class"),
+    WARRIOR("Warrior"), MAGE("Mage"), ROGUE("Rogue"), PALADIN("Paladin"),
+    WEAPON("Weapon"),
+    BOW("Bow"), PISTOL("Pistol"), SWORD("Sword"),
+    HP_UP("Health"), FR_UP("Fire Rate"), DMG_UP("Damage");
 
     private final String text;
 

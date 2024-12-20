@@ -12,7 +12,7 @@ public class Projectile extends Element {
     public Projectile(Position position, Position direction, Weapon weapon) {
         this.position = new Position(position.x() + direction.x(), position.y() + direction.y());
         this.direction = direction;
-        distanceTraveled = 0;
+        distanceTraveled = 1;
         this.weapon = weapon;
     }
 

@@ -7,7 +7,10 @@ import com.t13g05.survivor.model.Position;
 import com.t13g05.survivor.model.game.arena.Arena;
 import com.t13g05.survivor.model.game.element.Projectile;
 import com.t13g05.survivor.model.game.element.entity.Monster;
+import com.t13g05.survivor.model.game.element.entity.Survivor;
+import com.t13g05.survivor.model.menu.LevelUpMenu;
 import com.t13g05.survivor.model.weapon.Weapon;
+import com.t13g05.survivor.state.LevelUpMenuState;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +45,13 @@ public class SurvivorController extends GameController {
 
     @Override
     public void step(Game game, Set<Action> actions, long time) {
+        Survivor survivor = getModel().getSurvivor();
+        while (survivor.getExperience() >= survivor.necessaryExp()) {
+            survivor.setExperience(survivor.getExperience() - survivor.necessaryExp());
+            survivor.levelUp();
+            game.saveState();
+            game.setState(new LevelUpMenuState(new LevelUpMenu()));
+        }
         if (time - lastMovement < 50) return;
         for (Action action : actions) {
             switch (action) {
@@ -50,7 +60,7 @@ public class SurvivorController extends GameController {
                 case LEFT -> moveSurvivor(-1, 0);
                 case RIGHT -> moveSurvivor(1, 0);
                 case SHOOT -> {
-                    if (time - lastShot > getModel().getSurvivor().getWeapon().getDelay()) {
+                    if (time - lastShot > getModel().getSurvivor().getWeapon().getDelay() - getModel().getSurvivor().getFireRateReduction()) {
                         shoot(getModel().getSurvivor().getPosition(), getModel().getSurvivor().getDirection(), getModel().getSurvivor().getWeapon());
                         lastShot = time;
                     }

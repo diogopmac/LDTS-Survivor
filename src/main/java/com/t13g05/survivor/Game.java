@@ -26,11 +26,13 @@ import java.net.URL;
 public class Game {
     private final LanternaGUI gui;
     private State<?> state;
+    private State<?> previousState;
     public static final int width = 70;
     public static final int height = 45;
     public Game() throws IOException, URISyntaxException, FontFormatException {
         this.gui = new LanternaGUI(width,height, "SURVIVOR");
         this.state = new MainMenuState(new MainMenu());
+        this.previousState = null;
     }
 
     public void run() throws IOException {
@@ -65,5 +67,17 @@ public class Game {
 
     public void setState(State<?> state) {
         this.state = state;
+    }
+
+    public State<?> getState() {
+        return state;
+    }
+
+    public void saveState() {
+        previousState = state;
+    }
+
+    public void loadPreviousState() {
+        state = previousState;
     }
 }

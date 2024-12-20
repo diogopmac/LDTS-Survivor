@@ -7,6 +7,9 @@ import com.t13g05.survivor.model.weapon.Weapon;
 public class Survivor extends Entity {
     Weapon weapon;
     Position direction = new Position(1, 0);
+    int fireRateReduction;
+    int level;
+    int experience;
 
     public Survivor(Position position, int health, String weapon) {
         super(position, health);
@@ -15,7 +18,9 @@ public class Survivor extends Entity {
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(this.weapon);
+        this.level = 0;
+        this.experience = 0;
+        this.fireRateReduction = 0;
     }
 
     public Weapon getWeapon() {
@@ -28,5 +33,46 @@ public class Survivor extends Entity {
 
     public void setDirection(Position direction) {
         this.direction = direction;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public int necessaryExp() {
+        return level*20 + 100;
+    }
+
+    public void giveExperience(int experience) {
+        this.experience += experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    public void levelUp() {
+        this.level++;
+    }
+
+    public int getFireRateReduction() {
+        return fireRateReduction;
+    }
+
+
+    public void upFireRate() {
+        this.fireRateReduction = getFireRateReduction() + weapon.getDelay()/20;
+    }
+
+    public void upHealth() {
+        this.health = getHealth() + 100;
+    }
+
+    public void upDamage(){
+        this.damage = getDamage() + weapon.getBaseDamage();
     }
 }

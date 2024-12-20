@@ -25,6 +25,7 @@ public class EntryController extends Controller<Menu> {
 
     @Override
     public void step(Game game, Set<Action> actions, long time){
+        GameState gameState;
         switch (getModel().getEntry().getType()) {
             case START_GAME:
                 GameConfig config = GameConfig.getInstance();
@@ -47,6 +48,23 @@ public class EntryController extends Controller<Menu> {
                 break;
             case BACK:
                 game.setState(new MainMenuState(new MainMenu()));
+                break;
+            case HP_UP:
+                game.loadPreviousState();
+                gameState = (GameState) game.getState();
+                gameState.getModel().getSurvivor().upHealth();
+                break;
+            case DMG_UP:
+                game.loadPreviousState();
+                gameState = (GameState) game.getState();
+                gameState.getModel().getSurvivor().upDamage();
+                break;
+            case FR_UP:
+                game.loadPreviousState();
+                gameState = (GameState) game.getState();
+                gameState.getModel().getSurvivor().upFireRate();
+                break;
+
         }
     }
 }
