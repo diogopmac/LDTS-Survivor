@@ -63,7 +63,6 @@ public class Survivor extends Entity {
         return fireRateReduction;
     }
 
-
     public void upFireRate() {
         this.fireRateReduction = getFireRateReduction() + weapon.getDelay()/20;
     }
@@ -74,5 +73,13 @@ public class Survivor extends Entity {
 
     public void upDamage(){
         this.damage = getDamage() + weapon.getBaseDamage();
+    }
+
+    public void upDamage(int damage) {
+        this.damage = getDamage() + damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 }
