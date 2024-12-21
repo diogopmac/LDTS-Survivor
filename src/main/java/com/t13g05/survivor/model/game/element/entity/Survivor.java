@@ -2,6 +2,7 @@ package com.t13g05.survivor.model.game.element.entity;
 
 import com.t13g05.survivor.gui.LanternaGUI;
 import com.t13g05.survivor.model.Position;
+import com.t13g05.survivor.model.game.ability.Ability;
 import com.t13g05.survivor.model.weapon.Weapon;
 
 public class Survivor extends Entity {
@@ -10,8 +11,10 @@ public class Survivor extends Entity {
     int fireRateReduction;
     int level;
     int experience;
+    Ability ability;
+    boolean shield = false;
 
-    public Survivor(Position position, int health, String weapon) {
+    public Survivor(Position position, int health, String weapon, Ability ability) {
         super(position, health);
         try {
             this.weapon = (Weapon) Class.forName("com.t13g05.survivor.model.weapon." + weapon).newInstance();
@@ -21,6 +24,7 @@ public class Survivor extends Entity {
         this.level = 0;
         this.experience = 0;
         this.fireRateReduction = 0;
+        this.ability = ability;
     }
 
     public Weapon getWeapon() {
@@ -81,5 +85,17 @@ public class Survivor extends Entity {
 
     public void setDamage(int damage) {
         this.damage = damage;
+    }
+
+    public boolean isShielded() {
+        return shield;
+    }
+
+    public void setShield(boolean shield) {
+        this.shield = shield;
+    }
+
+    public Ability getAbility() {
+        return ability;
     }
 }

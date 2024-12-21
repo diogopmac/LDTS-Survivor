@@ -43,6 +43,10 @@ public class SurvivorController extends GameController {
         getModel().setProjectiles(newProjectiles);
     }
 
+    private void use() {
+        getModel().getSurvivor().getAbility().use(getModel().getSurvivor());
+    }
+
     @Override
     public void step(Game game, Set<Action> actions, long time) {
         Survivor survivor = getModel().getSurvivor();
@@ -65,8 +69,10 @@ public class SurvivorController extends GameController {
                         lastShot = time;
                     }
                 }
+                case USE -> use();
             }
         }
         lastMovement = time;
+        getModel().getSurvivor().getAbility().update(getModel().getSurvivor(), time);
     }
 }
