@@ -22,6 +22,7 @@ LDTS 24/25
     - **Health** - Add functioning health.
     - **Movement** - Implement proper movement. Preferably not dependent on FPS.
     - **Firing** - Make the survivor be able to fire.
+    - **Leveling** - Add experience and level to the player and define experience requirements for level-up.
 - **Projectile**
     - **Function** - Implement properly working projectiles.
 - **Monsters**
@@ -40,7 +41,6 @@ LDTS 24/25
 ## Planned Features
 - **Survivor**
     - **Debuffs** - Add debuffs to the player, such as slowing down when hit.
-    - **Leveling** - Add experience and level to the player and define experience requirements for level-up.
     - **Level-Up rewards** - Add rewards for leveling up such as increased firing, health and damage.
 - **Projectile**
     - **Variety** - Add different projectiles for all weapons.
