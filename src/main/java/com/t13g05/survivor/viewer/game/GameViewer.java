@@ -20,11 +20,19 @@ public class GameViewer extends Viewer<Arena> {
         drawElements(gui, getModel().getProjectiles(), new ProjectileViewer());
 
 
-        gui.drawText(0, getModel().getHeight()-1,
-                getModel().getSurvivor().getHealth() + "HP    " + "Damage: " +
-                        (getModel().getSurvivor().getDamage()+getModel().getSurvivor().getWeapon().getBaseDamage()),
-                "#ff5445");
+        gui.drawText(0, getModel().getHeight()-1, getModel().getSurvivor().getHealth() + "HP", "#ff5445");
+        String statsDisplay = "DMG: " + (getModel().getSurvivor().getDamage()+getModel().getSurvivor().getWeapon().getBaseDamage()) + "  FR: " + String.format("%.2f", 1000/(float)(getModel().getSurvivor().getWeapon().getDelay() - getModel().getSurvivor().getFireRateReduction()));
+        gui.drawText(getModel().getWidth() - statsDisplay.length(), getModel().getHeight()-1, statsDisplay, "#54f54e");
         gui.drawText(0, 0, "Level: " + getModel().getSurvivor().getLevel() + " (" + getModel().getSurvivor().getExperience() + "/" + getModel().getSurvivor().necessaryExp() + ")", "#5c54eb");
+        gui.drawText(0, 0,
+                "Level: " + getModel().getSurvivor().getLevel() +
+                        " (" + getModel().getSurvivor().getExperience() +
+                        "/" + getModel().getSurvivor().necessaryExp() + ")",
+                  "#5c54eb");
+        gui.drawText(getModel().getWidth()-15, 0,
+                (getModel().getSurvivor().getAbility().getCooldown()==0) ?
+                        "Ability: Ready!" : "Ability: " + getModel().getSurvivor().getAbility().getCooldown(),
+                    "#ff5445");
     }
 
     private <T extends Element> void drawElements(GUI gui, List<T> elements, ElementViewer<T> viewer) {

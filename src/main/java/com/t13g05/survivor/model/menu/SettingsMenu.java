@@ -23,9 +23,9 @@ public class SettingsMenu extends Menu {
     @Override
     public List<Entry> createEntries() {
         SettingsEntry classEntry = new SettingsEntry(new Position(Game.width/2+2, Game.height/3),
-                Type.CLASS, Arrays.asList(Type.WARRIOR, Type.MAGE, Type.PALADIN, Type.ROGUE));
+                Type.CLASS, Arrays.asList(Type.WARRIOR, Type.MAGE, Type.ROGUE));
         SettingsEntry weaponEntry = new SettingsEntry(new Position(Game.width/2+2, Game.height/3+5),
-                Type.WEAPON, Arrays.asList(Type.SWORD, Type.PISTOL, Type.BOW));
+                Type.WEAPON, Arrays.asList(Type.BOW, Type.PISTOL, Type.SWORD));
         Entry back = new Entry(new Position((Game.width-5)/2, Game.height-10), Type.BACK);
         return Arrays.asList(classEntry, weaponEntry, back);
     }
