@@ -15,7 +15,7 @@ public class SettingsMenuTest {
     @BeforeEach
     public void setUp() {
         settingsMenu = new SettingsMenu();
-        entries = settingsMenu.getEntries();
+        entries = settingsMenu.createEntries();
     }
 
     @Test

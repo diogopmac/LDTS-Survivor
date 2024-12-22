@@ -16,7 +16,7 @@ public class MainMenuTest {
     @BeforeEach
     public void setUp() {
         mainMenu = new MainMenu();
-        entries = mainMenu.getEntries();
+        entries = mainMenu.createEntries();
     }
 
     @Test
