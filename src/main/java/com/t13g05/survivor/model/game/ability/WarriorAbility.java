@@ -23,6 +23,7 @@ public class WarriorAbility extends Ability {
         originalDamage = survivor.getDamage();
         weaponDamage = survivor.getWeapon().getBaseDamage();
 
+        survivor.setPreventLevelUp(true);
         active = true;
 
         survivor.setDamage((originalDamage + weaponDamage) * 2);
@@ -32,6 +33,7 @@ public class WarriorAbility extends Ability {
     public void update(Survivor survivor, long time) {
         if (active && System.currentTimeMillis() > endTime){
             survivor.setDamage(originalDamage);
+            survivor.setPreventLevelUp(false);
             active = false;
         }
     }

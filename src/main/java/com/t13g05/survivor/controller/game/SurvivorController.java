@@ -50,7 +50,7 @@ public class SurvivorController extends GameController {
     @Override
     public void step(Game game, Set<Action> actions, long time) {
         Survivor survivor = getModel().getSurvivor();
-        while (survivor.getExperience() >= survivor.necessaryExp()) {
+        while (survivor.getExperience() >= survivor.necessaryExp() && !survivor.getPreventLevelUp()) {
             survivor.setExperience(survivor.getExperience() - survivor.necessaryExp());
             survivor.levelUp();
             game.saveState();

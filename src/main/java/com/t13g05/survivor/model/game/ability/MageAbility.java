@@ -18,12 +18,14 @@ public class MageAbility extends Ability {
         startCooldown();
         endTime = System.currentTimeMillis() + duration;
         survivor.setShield(true);
+        survivor.setPreventLevelUp(true);
     }
 
     @Override
     public void update(Survivor survivor, long time){
         if (System.currentTimeMillis() > endTime && survivor.isShielded()){
             survivor.setShield(false);
+            survivor.setPreventLevelUp(false);
         }
     }
 }
