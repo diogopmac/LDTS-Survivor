@@ -65,7 +65,7 @@ LDTS 24/25
 (Screenshots of the game)
 
 ## UML 
-<img width="1190" alt="image" src="https://github.com/user-attachments/assets/ee31fdcb-d230-4153-883f-dc1eb5142d25">
+<img width="1190" alt="image" src="https://github.com/user-attachments/assets/678c7c19-7a5c-41ca-abbc-454f65aef54a">
 
 ## Patterns Used
 Structure of the code
@@ -110,4 +110,5 @@ Pitest Report
 <img width="1077" alt="image" src="https://github.com/user-attachments/assets/fede68b4-bcf1-491f-824d-1bb4cbc6c2ca">
 
 
-![Blank diagram (4)](https://github.com/user-attachments/assets/ee31fdcb-d230-4153-883f-dc1eb5142d25)
+
+
