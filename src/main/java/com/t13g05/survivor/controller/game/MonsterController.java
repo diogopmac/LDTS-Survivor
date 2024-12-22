@@ -58,7 +58,10 @@ public class MonsterController extends GameController {
                 if (canMove(nextPos) && !getModel().getSurvivor().getPosition().equals(nextPos))
                     moveMonster(monster, nextPos);
                 else if (getModel().getSurvivor().getPosition().equals(nextPos))
-                    getModel().getSurvivor().damage(monster.getDamage());
+                    if (!getModel().getSurvivor().isShielded()){
+                        getModel().getSurvivor().damage(monster.getDamage());
+                    }
+
             }
 
             if (time - lastSpawn > 1000) {
