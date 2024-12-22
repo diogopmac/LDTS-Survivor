@@ -27,14 +27,13 @@ public class SettingsMenuTest {
         Assertions.assertInstanceOf(SettingsEntry.class, entries.get(0));
         settingsEntry = (SettingsEntry) entries.get(0);
         Assertions.assertEquals(
-                Arrays.asList(Type.WARRIOR, Type.MAGE,
-                        Type.PALADIN, Type.ROGUE),
+                Arrays.asList(Type.WARRIOR, Type.MAGE, Type.ROGUE),
                 settingsEntry.getOptions());
 
         Assertions.assertEquals(Type.WEAPON, entries.get(1).getType());
         Assertions.assertInstanceOf(SettingsEntry.class, entries.get(1));
         settingsEntry = (SettingsEntry) entries.get(1);
-        Assertions.assertEquals(Arrays.asList(Type.SWORD, Type.PISTOL, Type.BOW),
+        Assertions.assertEquals(Arrays.asList(Type.BOW, Type.PISTOL, Type.SWORD),
                 settingsEntry.getOptions());
 
         Assertions.assertEquals(Type.BACK, entries.get(2).getType());
@@ -47,13 +46,13 @@ public class SettingsMenuTest {
         Assertions.assertEquals(Type.WARRIOR, settingsEntry.getSelectedOption());
 
         Assertions.assertEquals(Type.WARRIOR, settingsMenu.getSelectedOption(Type.CLASS));
-        Assertions.assertEquals(Type.SWORD, settingsMenu.getSelectedOption(Type.WEAPON));
+        Assertions.assertEquals(Type.BOW, settingsMenu.getSelectedOption(Type.WEAPON));
 
         settingsMenu.moveDown();
 
         Assertions.assertInstanceOf(SettingsEntry.class, settingsMenu.getEntry());
         settingsEntry = (SettingsEntry) settingsMenu.getEntry();
-        Assertions.assertEquals(Type.SWORD, settingsEntry.getSelectedOption());
+        Assertions.assertEquals(Type.BOW, settingsEntry.getSelectedOption());
 
         settingsMenu.moveDown();
         Assertions.assertFalse(settingsMenu.getEntry() instanceof SettingsEntry);
@@ -70,21 +69,19 @@ public class SettingsMenuTest {
         settingsMenu.moveRight();
         Assertions.assertEquals(Type.MAGE, settingsEntry.getSelectedOption());
         settingsMenu.moveRight();
-        Assertions.assertEquals(Type.PALADIN, settingsEntry.getSelectedOption());
-        settingsMenu.moveRight();
         Assertions.assertEquals(Type.ROGUE, settingsEntry.getSelectedOption());
         settingsMenu.moveRight();
         Assertions.assertEquals(Type.WARRIOR, settingsEntry.getSelectedOption());
 
         settingsMenu.moveDown();
         settingsEntry = (SettingsEntry) settingsMenu.getEntry();
-        Assertions.assertEquals(Type.SWORD, settingsEntry.getSelectedOption());
+        Assertions.assertEquals(Type.BOW, settingsEntry.getSelectedOption());
         settingsMenu.moveRight();
         Assertions.assertEquals(Type.PISTOL, settingsEntry.getSelectedOption());
         settingsMenu.moveRight();
-        Assertions.assertEquals(Type.BOW, settingsEntry.getSelectedOption());
-        settingsMenu.moveRight();
         Assertions.assertEquals(Type.SWORD, settingsEntry.getSelectedOption());
+        settingsMenu.moveRight();
+        Assertions.assertEquals(Type.BOW, settingsEntry.getSelectedOption());
     }
 
     @Test
@@ -97,20 +94,18 @@ public class SettingsMenuTest {
         settingsMenu.moveLeft();
         Assertions.assertEquals(Type.ROGUE, settingsEntry.getSelectedOption());
         settingsMenu.moveLeft();
-        Assertions.assertEquals(Type.PALADIN, settingsEntry.getSelectedOption());
-        settingsMenu.moveLeft();
         Assertions.assertEquals(Type.MAGE, settingsEntry.getSelectedOption());
         settingsMenu.moveLeft();
         Assertions.assertEquals(Type.WARRIOR, settingsEntry.getSelectedOption());
 
         settingsMenu.moveDown();
         settingsEntry = (SettingsEntry) settingsMenu.getEntry();
-        Assertions.assertEquals(Type.SWORD, settingsEntry.getSelectedOption());
+        Assertions.assertEquals(Type.BOW, settingsEntry.getSelectedOption());
         settingsMenu.moveRight();
         Assertions.assertEquals(Type.PISTOL, settingsEntry.getSelectedOption());
         settingsMenu.moveRight();
-        Assertions.assertEquals(Type.BOW, settingsEntry.getSelectedOption());
-        settingsMenu.moveRight();
         Assertions.assertEquals(Type.SWORD, settingsEntry.getSelectedOption());
+        settingsMenu.moveRight();
+        Assertions.assertEquals(Type.BOW, settingsEntry.getSelectedOption());
     }
 }

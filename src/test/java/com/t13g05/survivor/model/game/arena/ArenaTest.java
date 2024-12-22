@@ -4,6 +4,7 @@ import com.t13g05.survivor.Game;
 import com.t13g05.survivor.GameConfig;
 import com.t13g05.survivor.gui.LanternaGUI;
 import com.t13g05.survivor.model.Position;
+import com.t13g05.survivor.model.game.ability.WarriorAbility;
 import com.t13g05.survivor.model.game.element.entity.Monster;
 import com.t13g05.survivor.model.game.element.entity.Survivor;
 import com.t13g05.survivor.viewer.game.GameViewer;
@@ -51,7 +52,7 @@ public class ArenaTest {
 
         Assertions.assertTrue(width > survivor.getPosition().x());
         Assertions.assertTrue(height > survivor.getPosition().y());
-        Assertions.assertFalse(monsters.isEmpty());
+        Assertions.assertTrue(monsters.isEmpty());
         Assertions.assertNotNull(monsters);
 
         Assertions.assertNotNull(arena);
@@ -64,7 +65,7 @@ public class ArenaTest {
     public void draw_test() throws Exception {
         gameViewer.draw(lanternaGUI);
         Position new_pos = new Position(10,10);
-        Survivor new_survivor = new Survivor(new_pos, 100, "Sword");
+        Survivor new_survivor = new Survivor(new_pos, 100, "Sword", new WarriorAbility(1,1));
         survivorViewer.draw(new_survivor, lanternaGUI);
         Mockito.verify(survivorViewer,times(1)).draw(new_survivor, lanternaGUI);
     }

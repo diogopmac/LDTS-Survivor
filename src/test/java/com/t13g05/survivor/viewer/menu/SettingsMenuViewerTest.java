@@ -26,19 +26,19 @@ public class SettingsMenuViewerTest {
         viewer.drawElements(gui);
 
         Mockito.verify(gui, Mockito.times(1)).drawText(
-                Game.width / 2 - 8, Game.height / 10, "Settings ", "#FFFFFF");
+                (Game.width-8)/2, Game.height / 10, "Settings ", "#FFFFFF");
         Mockito.verify(gui, Mockito.times(1)).drawText(
-                Game.width / 2 - 12, Game.height / 3, "Class ", "#FFFFFF");
+                (Game.width-6)/2-5, Game.height / 3, "Class ", "#FFFFFF");
         Mockito.verify(gui, Mockito.times(1)).drawText(
-                Game.width / 2 - 12, Game.height / 3+5, "Weapon ", "#FFFFFF");
+                (Game.width-7)/2-4, Game.height / 3+5, "Weapon ", "#FFFFFF");
     }
 
     @Test
     public void drawEntriesTest() throws Exception {
         viewer.drawElements(gui);
 
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 1, Game.height / 3, "Warrior", "#FFFF00");
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 1, Game.height / 3 + 5, "Sword", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 + 2, Game.height / 3, "Warrior", "#FFFF00");
+        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 + 2, Game.height / 3 + 5, "Bow", "#FFFFFF");
 
     }
 

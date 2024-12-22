@@ -88,7 +88,7 @@ public class LanternaGUITest {
     @Test
     public void key_up_test() throws Exception {
         KeyEvent key = Mockito.mock(KeyEvent.class);
-        Mockito.when(key.getKeyCode()).thenReturn(KeyEvent.VK_UP);
+        Mockito.when(key.getKeyCode()).thenReturn(KeyEvent.VK_W);
         Action action = gui.processAction(key);
         Assertions.assertEquals(Action.UP, action);
     }
@@ -96,7 +96,7 @@ public class LanternaGUITest {
     @Test
     public void key_down_test() throws Exception {
         KeyEvent key = Mockito.mock(KeyEvent.class);
-        Mockito.when(key.getKeyCode()).thenReturn(KeyEvent.VK_DOWN);
+        Mockito.when(key.getKeyCode()).thenReturn(KeyEvent.VK_S);
         Action action = gui.processAction(key);
         Assertions.assertEquals(Action.DOWN, action);
     }
@@ -104,7 +104,7 @@ public class LanternaGUITest {
     @Test
     public void key_left_test() throws Exception {
         KeyEvent key = Mockito.mock(KeyEvent.class);
-        Mockito.when(key.getKeyCode()).thenReturn(KeyEvent.VK_LEFT);
+        Mockito.when(key.getKeyCode()).thenReturn(KeyEvent.VK_A);
         Action action = gui.processAction(key);
         Assertions.assertEquals(Action.LEFT, action);
     }
@@ -112,7 +112,7 @@ public class LanternaGUITest {
     @Test
     public void key_right_test() throws Exception {
         KeyEvent key = Mockito.mock(KeyEvent.class);
-        Mockito.when(key.getKeyCode()).thenReturn(KeyEvent.VK_RIGHT);
+        Mockito.when(key.getKeyCode()).thenReturn(KeyEvent.VK_D);
         Action action = gui.processAction(key);
         Assertions.assertEquals(Action.RIGHT, action);
     }

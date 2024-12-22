@@ -28,9 +28,9 @@ public class ControlsViewerTest {
     public void drawEntriesTest() throws Exception {
         viewer.drawElements(gui);
 
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width/2-6,Game.height/10, "Controls", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText((Game.width-8)/2,Game.height/10, "Controls", "#FFFFFF");
 
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 6, Game.height - 10,
+        Mockito.verify(gui, Mockito.times(1)).drawText((Game.width-4)/2, Game.height - 10,
                 "Back", "#FFFF00");
     }
 
@@ -38,27 +38,23 @@ public class ControlsViewerTest {
     public void drawControls() throws Exception {
         viewer.drawElements(gui);
 
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 10, Game.height / 4 + 0, "Move UP", "#FFFFFF");
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 + 4, Game.height / 4 + 0, "W", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 7, Game.height / 4 + 0, "Move UP", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 + 7, Game.height / 4 + 0, "W", "#FFFFFF");
 
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 10, Game.height / 4 + 2, "Move DOWN", "#FFFFFF");
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 + 4, Game.height / 4 + 2, "S", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 7, Game.height / 4 + 2, "Move DOWN", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 + 7, Game.height / 4 + 2, "S", "#FFFFFF");
 
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 10, Game.height / 4 + 4, "Move Right", "#FFFFFF");
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 + 4, Game.height / 4 + 4, "D", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 7, Game.height / 4 + 4, "Move Right", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 + 7, Game.height / 4 + 4, "D", "#FFFFFF");
 
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 10, Game.height / 4 + 6, "Move LEFT", "#FFFFFF");
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 + 4, Game.height / 4 + 6, "A", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 7, Game.height / 4 + 6, "Move LEFT", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 + 7, Game.height / 4 + 6, "A", "#FFFFFF");
 
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 10, Game.height / 4 + 8, "Shoot", "#FFFFFF");
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 + 4, Game.height / 4 + 8, "P", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 7, Game.height / 4 + 8, "Shoot", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 + 7, Game.height / 4 + 8, "P", "#FFFFFF");
 
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 10, Game.height / 4 + 10, "Ability 1", "#FFFFFF");
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 + 4, Game.height / 4 + 10, "O", "#FFFFFF");
-
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 10, Game.height / 4 + 12, "Ability 2", "#FFFFFF");
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 + 4, Game.height / 4 + 12, "U", "#FFFFFF");
-
+        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 7, Game.height / 4 + 10, "Ability", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 + 7, Game.height / 4 + 10, "O", "#FFFFFF");
     }
 
     @Test
