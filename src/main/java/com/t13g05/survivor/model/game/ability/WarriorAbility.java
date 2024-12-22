@@ -6,6 +6,8 @@ public class WarriorAbility extends Ability {
     private final long duration;
     private long endTime;
     private int originalDamage;
+    private int weaponDamage;
+    private boolean active = false;
 
     public WarriorAbility(long duration, long cooldown) {
         super(cooldown);
@@ -19,13 +21,18 @@ public class WarriorAbility extends Ability {
         startCooldown();
         endTime = System.currentTimeMillis() + duration;
         originalDamage = survivor.getDamage();
-        survivor.setDamage(originalDamage * 2);
+        weaponDamage = survivor.getWeapon().getBaseDamage();
+
+        active = true;
+
+        survivor.setDamage((originalDamage + weaponDamage) * 2);
     }
 
     @Override
     public void update(Survivor survivor, long time) {
-        if (System.currentTimeMillis() > endTime) {
+        if (active && System.currentTimeMillis() > endTime){
             survivor.setDamage(originalDamage);
+            active = false;
         }
     }
 }

@@ -5,7 +5,7 @@ public enum Type {
     CONTROLS("Controls"), QUIT("Quit"),
     BACK("Back"),
     CLASS("Class"),
-    WARRIOR("Warrior"), MAGE("Mage"), ROGUE("Rogue"), PALADIN("Paladin"),
+    WARRIOR("Warrior"), MAGE("Mage"), ROGUE("Rogue"),
     WEAPON("Weapon"),
     BOW("Bow"), PISTOL("Pistol"), SWORD("Sword"),
     HP_UP("Health"), FR_UP("Fire Rate"), DMG_UP("Damage"),

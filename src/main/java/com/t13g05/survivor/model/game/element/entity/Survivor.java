@@ -79,10 +79,6 @@ public class Survivor extends Entity {
         this.damage = getDamage() + weapon.getBaseDamage();
     }
 
-    public void upDamage(int damage) {
-        this.damage = getDamage() + damage;
-    }
-
     public void setDamage(int damage) {
         this.damage = damage;
     }
