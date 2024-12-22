@@ -67,7 +67,7 @@ public class LanternaGUI implements GUI{
         if (keyCode == 83 /* S */) return Action.DOWN;
         if (keyCode == 10 /* ENTER */) return Action.SELECT;
 
-        if (keyCode == 80 /* SPACE*/) return Action.SHOOT;
+        if (keyCode == 80 /* P */) return Action.SHOOT;
         if (keyCode == 79 /* O */) return Action.USE;
 
         return Action.NONE;

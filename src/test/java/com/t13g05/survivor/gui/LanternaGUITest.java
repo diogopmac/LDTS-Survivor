@@ -140,4 +140,26 @@ public class LanternaGUITest {
         Action action = gui.processAction(key);
         Assertions.assertEquals(Action.NONE, action);
     }
+
+    @Test
+    public void key_shoot_test() throws Exception {
+        KeyEvent key = Mockito.mock(KeyEvent.class);
+        Mockito.when(key.getKeyCode()).thenReturn(KeyEvent.VK_P);
+        Action action = gui.processAction(key);
+        Assertions.assertEquals(Action.SHOOT, action);
+    }
+
+    @Test
+    public void key_ability_test() throws Exception {
+        KeyEvent key = Mockito.mock(KeyEvent.class);
+        Mockito.when(key.getKeyCode()).thenReturn(KeyEvent.VK_O);
+        Action action = gui.processAction(key);
+        Assertions.assertEquals(Action.USE, action);
+    }
+
+    @Test
+    public void getActionsTest() throws Exception {
+        Set<Action> actions = gui.getActions();
+        Assertions.assertNotNull(actions);
+    }
 }
