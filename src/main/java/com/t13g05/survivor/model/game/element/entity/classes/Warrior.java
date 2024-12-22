@@ -6,6 +6,6 @@ import com.t13g05.survivor.model.game.element.entity.Survivor;
 
 public class Warrior extends Survivor {
     public Warrior(Position position, int health, String weapon) {
-        super(position, health, weapon, new WarriorAbility(5000, 5000));
+        super(position, health, weapon, new WarriorAbility(5000, 10000));
     }
 }

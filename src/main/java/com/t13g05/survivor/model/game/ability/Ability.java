@@ -16,4 +16,12 @@ public abstract class Ability implements AbilityCommand {
         lastUsed = System.currentTimeMillis();
     }
 
+    public long getCooldown() {
+        long now = System.currentTimeMillis()-lastUsed;
+        if(now > cooldown){
+            return 0;
+        }
+        else return (cooldown - now)/1000 +1 ;
+    }
+
 }
