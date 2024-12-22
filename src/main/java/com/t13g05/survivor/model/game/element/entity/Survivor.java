@@ -13,6 +13,7 @@ public class Survivor extends Entity {
     int experience;
     Ability ability;
     boolean shield = false;
+    boolean preventLevelUp = false;
 
     public Survivor(Position position, int health, String weapon, Ability ability) {
         super(position, health);
@@ -93,5 +94,13 @@ public class Survivor extends Entity {
 
     public Ability getAbility() {
         return ability;
+    }
+
+    public void setPreventLevelUp(boolean bool) {
+        preventLevelUp = bool;
+    }
+
+    public boolean getPreventLevelUp() {
+        return preventLevelUp;
     }
 }
