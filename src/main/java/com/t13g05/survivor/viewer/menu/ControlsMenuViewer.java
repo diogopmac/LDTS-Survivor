@@ -20,7 +20,7 @@ public class ControlsMenuViewer extends Viewer<ControlsMenu> {
         gui.drawText((Game.width-8)/2,Game.height/10, "Controls", "#FFFFFF");
         drawControls(gui, Arrays.asList("Move UP", "W", "Move DOWN", "S",
                 "Move Right", "D", "Move LEFT", "A",
-                "Shoot", "P", "Ability 1", "O", "Ability 2", "U"));
+                "Shoot", "P", "Ability", "O"));
         drawEntries(gui, getModel().getEntries());
         gui.refresh();
     }
