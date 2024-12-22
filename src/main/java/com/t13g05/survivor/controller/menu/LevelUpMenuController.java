@@ -27,6 +27,7 @@ public class LevelUpMenuController extends MenuController<LevelUpMenu> {
                     entryController.step(game, actions, time);
                     actions.remove(Action.SELECT);
             }
+            break;
         }
     }
 }
