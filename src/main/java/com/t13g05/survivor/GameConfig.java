@@ -16,9 +16,17 @@ public class GameConfig {
         return instance;
     }
 
-    public String getSelectedClass() { return selectedClass; }
-    public void setSelectedClass(String selectedClass) { this.selectedClass = selectedClass; }
+    public String getSelectedClass() {
+        return selectedClass;
+    }
+    public void setSelectedClass(String selectedClass) {
+        this.selectedClass = selectedClass;
+    }
 
-    public String getSelectedWeapon() { return selectedWeapon; }
-    public void setSelectedWeapon(String selectedWeapon) { this.selectedWeapon = selectedWeapon; }
+    public String getSelectedWeapon() {
+        return selectedWeapon;
+    }
+    public void setSelectedWeapon(String selectedWeapon) {
+        this.selectedWeapon = selectedWeapon;
+    }
 }
