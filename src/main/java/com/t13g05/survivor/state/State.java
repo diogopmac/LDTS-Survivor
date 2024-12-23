@@ -2,7 +2,6 @@ package com.t13g05.survivor.state;
 
 import com.t13g05.survivor.Game;
 import com.t13g05.survivor.controller.Controller;
-import com.t13g05.survivor.gui.Action;
 import com.t13g05.survivor.viewer.Viewer;
 import com.t13g05.survivor.gui.GUI;
 
@@ -19,16 +18,16 @@ public abstract class State<T> {
         this.controller = getController();
     }
 
+    public void step(Game game, GUI gui, long time) throws IOException {
+        controller.step(game, gui.getActions(), time);
+        viewer.draw(gui);
+    }
+
     protected abstract Viewer<T> getViewer();
 
     protected abstract Controller<T> getController();
 
     public T getModel() {
         return model;
-    }
-
-    public void step(Game game, GUI gui, long time) throws IOException {
-        controller.step(game, gui.getActions(), time);
-        viewer.draw(gui);
     }
 }

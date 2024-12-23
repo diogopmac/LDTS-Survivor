@@ -11,10 +11,12 @@ public class PauseMenuState extends State<PauseMenu> {
     public PauseMenuState(PauseMenu pauseMenu) {
         super(pauseMenu);
     }
+
     @Override
     protected Viewer<PauseMenu> getViewer() {
         return new PauseMenuViewer(getModel());
     }
+
     @Override
     protected Controller<PauseMenu> getController() {
         return new PauseMenuController(getModel(), new EntryController(getModel()));

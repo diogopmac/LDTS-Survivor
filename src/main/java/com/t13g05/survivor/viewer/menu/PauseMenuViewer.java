@@ -13,10 +13,11 @@ public class PauseMenuViewer extends Viewer<PauseMenu> {
     public PauseMenuViewer(PauseMenu pauseMenu) {
         super(pauseMenu);
     }
+
     @Override
     public void drawElements(GUI gui) throws IOException {
         gui.clear();
-        gui.drawText((Game.width-5)/2,Game.height/10, "Pause", "#FFFFFF");
+        gui.drawText((Game.width-6)/2,Game.height/10, "Paused", "#FFFFFF");
         drawEntries(gui, getModel().getEntries());
         gui.refresh();
     }

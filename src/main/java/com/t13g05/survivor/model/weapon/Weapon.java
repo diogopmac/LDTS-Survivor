@@ -16,14 +16,6 @@ public abstract class Weapon {
         this.range = range;
     }
 
-    public Weapon(String weaponType) {
-        switch (weaponType) {
-            case "Bow" -> new Bow();
-            case "Sword" -> new Sword();
-            case "Pistol" -> new Pistol();
-        }
-    }
-
     public Projectile createProjectile(Position position, Position direction) {
         return new Projectile(position, direction, this);
     }

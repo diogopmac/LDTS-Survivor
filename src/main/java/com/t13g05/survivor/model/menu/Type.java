@@ -16,6 +16,7 @@ public enum Type {
     Type(String text) {
         this.text = text;
     }
+
     public String getText() {
         return text;
     }

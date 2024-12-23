@@ -11,6 +11,7 @@ public class SettingsMenuState extends State<SettingsMenu> {
     public SettingsMenuState(SettingsMenu menu) {
         super(menu);
     }
+
     @Override
     protected Viewer<SettingsMenu> getViewer() {
         return new SettingsMenuViewer(getModel());

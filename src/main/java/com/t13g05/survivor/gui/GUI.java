@@ -1,7 +1,5 @@
 package com.t13g05.survivor.gui;
 
-import com.t13g05.survivor.model.Position;
-
 import java.io.IOException;
 import java.util.Set;
 

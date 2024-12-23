@@ -16,6 +16,7 @@ public class MainMenu extends Menu {
         Entry settings = new Entry(new Position((Game.width-8)/2, Game.height/3+5), Type.OPTIONS);
         Entry controls = new Entry(new Position((Game.width-8)/2, Game.height/3+10), Type.CONTROLS);
         Entry exit = new Entry(new Position((Game.width-4)/2, Game.height/3+15), Type.QUIT);
+
         return Arrays.asList(start, settings, controls, exit);
     }
 }

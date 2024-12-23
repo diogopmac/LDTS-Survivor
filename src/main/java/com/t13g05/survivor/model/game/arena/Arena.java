@@ -1,7 +1,5 @@
 package com.t13g05.survivor.model.game.arena;
 
-import com.t13g05.survivor.gui.LanternaGUI;
-import com.t13g05.survivor.model.Position;
 import com.t13g05.survivor.model.game.element.Projectile;
 import com.t13g05.survivor.model.game.element.entity.Monster;
 import com.t13g05.survivor.model.game.element.entity.Survivor;
@@ -10,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Arena {
-    private int width;
-    private int height;
+    private final int width;
+    private final int height;
     private Survivor survivor;
     private List<Monster> monsters;
     private List<Projectile> projectiles;

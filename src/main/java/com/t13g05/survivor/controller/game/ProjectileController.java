@@ -21,6 +21,7 @@ public class ProjectileController extends GameController {
         for (Monster monster : getModel().getMonsters()) {
             if (monster.getPosition().equals(position)) {
                 monster.damage(projectile.getWeapon().getBaseDamage() + getModel().getSurvivor().getDamage());
+
                 if (monster.getHealth() == 0) {
                     List<Monster> newMonsters = new ArrayList<>(getModel().getMonsters());
                     newMonsters.remove(monster);
@@ -38,11 +39,13 @@ public class ProjectileController extends GameController {
     @Override
     public void step(Game game, Set<Action> actions, long time) {
         List<Projectile> newProjectiles = new ArrayList<>(getModel().getProjectiles());
+
         for (Projectile projectile : getModel().getProjectiles()) {
             if (hit(projectile.getPosition(), projectile) || projectile.getDistanceTraveled() >= projectile.getWeapon().getRange()) {
                 newProjectiles.remove(projectile);
                 continue;
             }
+
             Position nextPos = new Position(projectile.getPosition().x() + projectile.getDirection().x(),
                                                 projectile.getPosition().y() + projectile.getDirection().y());
             projectile.setPosition(nextPos);

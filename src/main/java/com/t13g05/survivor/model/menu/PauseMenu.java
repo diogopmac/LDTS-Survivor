@@ -10,10 +10,12 @@ public class PauseMenu extends Menu {
     public PauseMenu() {
         super();
     }
+
     @Override
     public List<Entry> createEntries(){
-        Entry resume = new Entry(new Position(Game.width/2-6, Game.height/3), Type.RESUME);
-        Entry back = new Entry(new Position(Game.width/2-6, Game.height/3+5), Type.BACK);
+        Entry resume = new Entry(new Position((Game.width-6)/2, Game.height/3), Type.RESUME);
+        Entry back = new Entry(new Position((Game.width-4)/2, Game.height/3+5), Type.BACK);
+
         return Arrays.asList(resume, back);
     }
 }

@@ -13,6 +13,16 @@ public class SettingsEntry extends Entry {
         this.options = options;
     }
 
+    public void nextEntry() {
+        currentEntryIndex++;
+        currentEntryIndex %= getEntryCount();
+    }
+
+    public void previousEntry() {
+        currentEntryIndex+= getEntryCount() -1 ;
+        currentEntryIndex %= getEntryCount();
+    }
+
     public List<Type> getOptions() {
         return options;
     }
@@ -23,13 +33,5 @@ public class SettingsEntry extends Entry {
 
     public Type getSelectedOption() {
         return options.get(currentEntryIndex);
-    }
-    public void nextEntry() {
-        currentEntryIndex++;
-        currentEntryIndex %= getEntryCount();
-    }
-    public void previousEntry() {
-        currentEntryIndex+= getEntryCount() -1 ;
-        currentEntryIndex %= getEntryCount();
     }
 }

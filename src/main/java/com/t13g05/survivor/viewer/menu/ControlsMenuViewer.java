@@ -14,6 +14,7 @@ public class ControlsMenuViewer extends Viewer<ControlsMenu> {
     public ControlsMenuViewer(ControlsMenu controlsMenu) {
         super(controlsMenu);
     }
+
     @Override
     public void drawElements(GUI gui) throws IOException{
         gui.clear();
