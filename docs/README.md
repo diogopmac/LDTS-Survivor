@@ -1,8 +1,19 @@
 ## LDTS_1305 - Survivor
 
-In this exciting game your the last survivor after and apocalipse. How will you stay alive?
+In this game you're the last survivor after an apocalipse. How will you stay alive?
 
-Be aware that Survivor is an addictive game that tests the player's IQ, reflexes, instincts and patience. It's a great way to challenge yourself.
+Survivor is a game where you control the main character (the Survivor) in a post apocalyptic arena filled with monsters. In the start you can choose your class, that will affect your special ability that can be used during the game.
+#### Warrior: Has increased damage for 7 seconds
+#### Mage: Activates a shield that makes you immortal for 5 seconds
+#### Rogue: Does a small teleport in front.
+
+The class of the survivor also affects its health. Besides the class you can also choose your weapon.
+#### Bow: The weapon with the longest range, slow fire rate and medium damage.
+#### Pistol: Weapon with medium range, low damage but high fire rate.
+#### Sword: The weapon with the smallest range but highest fire rate and damage.
+
+You have to battle various waves of monsters with spawn rate, damage and health increasing as the player levels up.
+When killing a monster the player gets some experience that enables him to level up. Whenever the player levels up he has a choice to increase the fire rate, damage or health. You have to choose wisely to be able to progress in the game and get to higher levels.
 
 Lecturer:
 - **José Carlos Medeiros de Campos** 
@@ -15,44 +26,27 @@ Developed by:
 
 LDTS 24/25
 
-## Implemented Classes
-- Our game for now just represents an arena, with a survivor and some monsters going after the survivor trying to damage him.
-- **Survivor**
-    - **Health** - Add functioning health.
-    - **Movement** - Implement proper movement. Preferably not dependent on FPS.
-    - **Firing** - Make the survivor be able to fire.
-    - **Leveling** - Add experience and level to the player and define experience requirements for level-up.
-- **Projectile**
-    - **Function** - Implement properly working projectiles.
-- **Monsters**
-    - **Health** - Add functioning health.
-    - **Damage** - Make monster be able to attack and deal damage to the survivor.
-    - **Spawn** - Add proper random spawning of monsters.
-    - **Movement** - Add proper monster movement with monsters targeting the survivor and walking towards him.
-- **Menu**
-    - **Start** - Add start menu.
-    - **Class and weapon** - Add a menu for selecting class and weapon.
-    - **Pause** - Add a pause menu.
+## Implemented Features
+- **Working Menus** - All the menus are working correctly and are connected. The user can brouse through the pause, options, settings and main menu freely.
+- **Game repeatability** - Whenever the player dies he can instantly restart the game and play again. Also, at any point in the game the player can leave to the main menu and start again with a different class or weapon.
+- **Keyboard Control** - The game is controlled exclusively with the keyboard.
+- **Player Control** - The user can make the survivor move, shoot and use abilities.
+- **Monster Spawning** - Monster spawning is completely random. All the monsters spawn on the border of the map and the spawn rate is increased with player level.
+- **Fully working leveling system** - As mentioned before, the player can level up and the player's level affects every aspect of the game. Such as monster damage, health and spawn rate.
+- **Leveling Upgrades** - Whenever the player levels up the user can choose wich upgrade they want.
+- **Weapon and Class choice** - Before starting the game the user can choose wich class and weapon they want to play with.
+- **Visual Feedback** - Whenever an ability is used and it has a duration the survivor changes color to indicate to the user that the ability is active.
+- **Hud** - The hud has multiple stats showing up. It shows the player's health, damage, fire rate, level, necessary experience to level up and ability cooldown.
+- **Collisions** - Every collision in the game works as expected. The player cant leave the arena, monsters and the survivor collide with other monsters.
+- **Controls** - A controls menu is present to inform the user wich keys are used to control the survivor.
      
 - <img width="1257" alt="image" src="https://github.com/user-attachments/assets/fa02266a-227f-43d9-a034-f343b25d266b">
 
 
 ## Planned Features
-- **Survivor**
-    - **Debuffs** - Add debuffs to the player, such as slowing down when hit.
-    - **Level-Up rewards** - Add rewards for leveling up such as increased firing, health and damage.
-- **Projectile**
-    - **Variety** - Add different projectiles for all weapons.
-- **Monsters**
-    - **Difficulty** - Make monsters have more health and deal more damage depending on level.
-    - **Drops** - Add monster drops such as experience to level-up the player.
-- **Arena**
-    - **Lobby** - Add a lobby to select the map prior to starting the game.
-- **Viewer**
-    - **HUD** - Enhance the existing hud and add a level progress bar.
-    - **Textures** - Create proper textures for the survivor, monsters, weapons and projectiles.
-    - **Background** - Add a map background, preferably multiple maps to choose from.
-- **Controller** - Implement controllers for all model classes.
+#### Although for the most part the game is working as expected and most planned features were implemented there were some things we couldn't do in time.
+- **Sound** - The game currently lacks any sound feedback, when a monster is killed, damage is taken or menu is accessed.
+- **Images** - The game currently is lacking in visuals. Both the survivor, the monsters and the projectiles are just characters, a font or images could be used to improve the game's graphics.
 
 ## Mockups
 ![mockup1](https://github.com/user-attachments/assets/b2a51856-aaac-4c79-80f9-05b5da5c42b7)
@@ -68,8 +62,9 @@ LDTS 24/25
 <img width="1190" alt="image" src="https://github.com/user-attachments/assets/678c7c19-7a5c-41ca-abbc-454f65aef54a">
 
 ## Patterns Used
-Structure of the code
-### The Pattern: Model-View-Controller (MVC)
+### Structure
+Two main patterns were used throughout our project. One architectural: Model-View-Controller and the State Pattern that enables objects to change their behaviour based on their internal state.
+#### Model-View-Controller
 ![MVCSchema](https://github.com/user-attachments/assets/d9b8a570-0ca4-4844-86be-3a3fe711fc48)
 
 #### Motivation
@@ -77,9 +72,9 @@ Structure of the code
 With MVC, we can separate the game's logic into 3 distinct components, making it easier to test and maintain the code. In future implementations, makes it easier to implement new features and functionalities. Here's how it works:
 #### Model: Responsible for Data Management in the project. Present in Arena, Survivor, etc.
 #### View: Responsible for rendering the Elements into the screen. Present in Viewer, GameViewer, SuvivorViewer, etc.
-#### Controller (Not implemented yet): Responsible for managing the interactions and game logic. Present in Controller, ArenaController, etc.
+#### Controller: Responsible for managing the interactions and game logic. Present in Controller, ArenaController, etc.
 
-### The Pattern: State Pattern
+### State Pattern
 
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/a3df5fba-953c-491d-9f64-caa353938da3">
 
@@ -89,7 +84,7 @@ State pattern is used for managing game and menu states. It simplifies transitio
 #### State interface: Provides a common structure (STATE) that all specific states inherit. 
 #### Specific states: Implement a specific behaviour for the game.
 
-### The Pattern: Composite Pattern
+### Composite Pattern
 <img width="668" alt="image" src="https://github.com/user-attachments/assets/a8b35ad2-223e-464b-b76f-5fcd12738a7c">
 <img width="533" alt="image" src="https://github.com/user-attachments/assets/d7b8d99d-8fa7-40ab-a682-1f4d4d7666e1">
 
@@ -97,11 +92,20 @@ State pattern is used for managing game and menu states. It simplifies transitio
 
 Composite pattern allows us to represent different collections of game elements, such as Entities, Projectiles, Weapons, in a uniform way, allowing us to handle specific objects such as Bow, Pistol and specific types of Monster in a consistent and uniform way. Here's how it works:
 #### Base class for all components: Element
-#### Leaf classes for specific elements: Entity (has health), Monster, Projectile, Collectible
+#### Leaf classes for specific elements: Entity (Element with health), Monster and Survivor (Specific entities), Projectile, Bow, Pistol and Sword (Different weapons used by the Survivor), etc.
 
-#### Future pattern implementation
-We will implement patterns such as Observer, to react to changes in the game, and Factory, to create the different types of Monster and the different customizations of the Surivor class.
+### Factory
 
+### Builder
+
+## Known code Smells
+All major bugs that affect playability have been patched. Although there are some bugs present that were not fixed because we didn't think they affected the game enough to be worth trying to fix them.
+
+### Monster "Dodge"
+When a monster moves at the exact moment a projectile hits him he "dodges" the projectile and does not receive damage.
+
+### Rogue teleport
+If a rogue teleports and lands exactly where a monster is the game won't prevent hit and the Survivor will be placed on top of the monster. This does not delete the monster nor does it affect the game, that's why it wasn't patched. With some time and better structuring it wouldn't be hard to fix.
 
 ## Testing
 Jacoco Report
