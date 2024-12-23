@@ -25,7 +25,6 @@ protected void drawElements(GUI gui) throws IOException {
 
         drawEntries(gui, getModel().getEntries());
         gui.refresh();
-
     }
 
     private void drawEntries(GUI gui, List<Entry> entries){

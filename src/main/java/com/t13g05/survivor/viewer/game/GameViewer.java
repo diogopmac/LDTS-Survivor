@@ -19,18 +19,24 @@ public class GameViewer extends Viewer<Arena> {
         drawElements(gui, getModel().getMonsters(), new MonsterViewer());
         drawElements(gui, getModel().getProjectiles(), new ProjectileViewer());
 
-
+        // Health indicator
         gui.drawText(0, getModel().getHeight()-1, getModel().getSurvivor().getHealth() + "HP", "#ff5445");
-        String statsDisplay = "DMG: " + (getModel().getSurvivor().getDamage()+getModel().getSurvivor().getWeapon().getBaseDamage()) + "  FR: " + String.format("%.2f", 1000/(float)(getModel().getSurvivor().getWeapon().getDelay() - getModel().getSurvivor().getFireRateReduction()));
+
+        // Damage and fire rate display
+        String statsDisplay = "DMG: " + (getModel().getSurvivor().getDamage()+getModel().getSurvivor().getWeapon().getBaseDamage()) +
+                "  FR: " + String.format("%.2f", 1000/(float)(getModel().getSurvivor().getWeapon().getDelay() - getModel().getSurvivor().getFireRateReduction()));
         gui.drawText(getModel().getWidth() - statsDisplay.length(), getModel().getHeight()-1, statsDisplay, "#54f54e");
-        gui.drawText(0, 0, "Level: " + getModel().getSurvivor().getLevel() + " (" + getModel().getSurvivor().getExperience() + "/" + getModel().getSurvivor().necessaryExp() + ")", "#5c54eb");
+
+        // Level and experience indicator
         gui.drawText(0, 0,
                 "Level: " + getModel().getSurvivor().getLevel() +
                         " (" + getModel().getSurvivor().getExperience() +
                         "/" + getModel().getSurvivor().necessaryExp() + ")",
                   "#5c54eb");
+
+        // Ability cooldown display
         gui.drawText(getModel().getWidth()-15, 0,
-                (getModel().getSurvivor().getAbility().getCooldown()==0) ?
+                (getModel().getSurvivor().getAbility().getCooldown() == 0) ?
                         "Ability: Ready!" : "Ability: " + getModel().getSurvivor().getAbility().getCooldown(),
                     "#ff5445");
     }

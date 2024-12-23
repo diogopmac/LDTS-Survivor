@@ -5,10 +5,8 @@ import com.t13g05.survivor.controller.Controller;
 import com.t13g05.survivor.model.game.arena.Arena;
 import com.t13g05.survivor.gui.Action;
 import com.t13g05.survivor.model.menu.GameOverMenu;
-import com.t13g05.survivor.model.menu.MainMenu;
 import com.t13g05.survivor.model.menu.PauseMenu;
 import com.t13g05.survivor.state.GameOverMenuState;
-import com.t13g05.survivor.state.MainMenuState;
 import com.t13g05.survivor.state.PauseMenuState;
 
 import java.util.Set;
@@ -34,10 +32,12 @@ public class ArenaController extends Controller<Arena> {
                 return;
             }
         }
+
         if (getModel().getSurvivor().getHealth() == 0) {
             game.setState(new GameOverMenuState(new GameOverMenu()));
             return;
         }
+
         survivorController.step(game, actions, time);
         monsterController.step(game, actions, time);
         projectileController.step(game, actions, time);

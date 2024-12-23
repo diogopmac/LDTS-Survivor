@@ -13,6 +13,7 @@ public class PauseMenuViewer extends Viewer<PauseMenu> {
     public PauseMenuViewer(PauseMenu pauseMenu) {
         super(pauseMenu);
     }
+
     @Override
     public void drawElements(GUI gui) throws IOException {
         gui.clear();
