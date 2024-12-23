@@ -13,7 +13,7 @@ public class MageTest {
 
     @BeforeEach
     public void setUp() {
-        mage = new Mage(new Position(1,1), 100, "Bow");
+        mage = new Mage(new Position(1,1),"Bow");
     }
 
     @Test

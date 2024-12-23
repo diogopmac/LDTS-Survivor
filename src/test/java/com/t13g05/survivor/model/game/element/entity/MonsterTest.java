@@ -11,15 +11,15 @@ public class MonsterTest {
 
     @BeforeEach
     public void setUp() {
-        monster = new Monster(new Position(2,2));
+        monster = new Monster(new Position(2,2), 100, 10);
         monsterWithAttributes = new Monster(new Position(3,3), 14, 23);
     }
 
     @Test
     public void testMonster() {
         Assertions.assertNotNull(monster);
-        Assertions.assertEquals(0, monster.getDamage());
-        Assertions.assertEquals(10, monster.getHealth());
+        Assertions.assertEquals(10, monster.getDamage());
+        Assertions.assertEquals(100, monster.getHealth());
 
         Assertions.assertNotNull(monsterWithAttributes);
         Assertions.assertEquals(23, monsterWithAttributes.getDamage());

@@ -12,7 +12,7 @@ public class WarriorTest {
 
     @BeforeEach
     public void setUp() {
-        warrior = new Warrior(new Position(1,1), 100, "Bow");
+        warrior = new Warrior(new Position(1,1), "Bow");
     }
 
     @Test

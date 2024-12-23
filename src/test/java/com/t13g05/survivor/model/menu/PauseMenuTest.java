@@ -29,7 +29,7 @@ public class PauseMenuTest {
         Assertions.assertEquals(Type.RESUME, entries.get(0).getType());
         Assertions.assertEquals(Type.BACK, entries.get(1).getType());
 
-        Assertions.assertEquals(new Position(width/2-6, height/3), entries.get(0).getPosition());
-        Assertions.assertEquals(new Position(width/2-6, height/3+5), entries.get(1).getPosition());
+        Assertions.assertEquals(new Position((width-6)/2, height/3), entries.get(0).getPosition());
+        Assertions.assertEquals(new Position((width-4)/2, height/3+5), entries.get(1).getPosition());
     }
 }

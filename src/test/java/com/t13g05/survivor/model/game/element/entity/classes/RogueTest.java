@@ -13,7 +13,7 @@ public class RogueTest {
 
     @BeforeEach
     public void setUp() {
-        rogue = new Rogue(new Position(1,1), 100, "Bow");
+        rogue = new Rogue(new Position(1,1),  "Bow");
     }
 
     @Test
