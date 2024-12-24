@@ -4,7 +4,7 @@ In this game you're the last survivor after an apocalipse. How will you stay ali
 
 Survivor is a game where you control the main character (the Survivor) in a post apocalyptic arena filled with monsters. In the start you can choose your class, that will affect your special ability that can be used during the game.
 #### Warrior: Has increased damage for 7 seconds
-#### Mage: Activates a shield that makes you immortal for 5 seconds
+#### Mage: Activates a shield that makes the player immortal for 5 seconds
 #### Rogue: Does a small teleport in front.
 
 The class of the survivor also affects its health. Besides the class you can also choose your weapon.
