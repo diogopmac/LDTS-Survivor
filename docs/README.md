@@ -68,7 +68,8 @@ All features were sucessfully implemented.
 
 
 ## UML 
-TODO
+![Survivor3](https://github.com/user-attachments/assets/0aa95b32-d5d3-45d7-9106-791ace1e3465)
+
 ## Patterns Used
 ### MVC
 #### Motivation
