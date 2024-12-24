@@ -33,7 +33,7 @@ LDTS 24/25
 - **Player Control** - The user can make the survivor move, shoot and use abilities.
 - **Monster Spawning** - Monster spawning is completely random. All the monsters spawn on the border of the map and the spawn rate is increased with player level.
 - **Fully working leveling system** - As mentioned before, the player can level up and the player's level affects every aspect of the game. Such as monster damage, health and spawn rate.
-- **Leveling Upgrades** - Whenever the player levels up the user can choose wich upgrade they want.
+- **Leveling Upgrades** - Whenever the player levels up the user can choose which upgrade they want.
 - **Weapon and Class choice** - Before starting the game the user can choose wich class and weapon they want to play with.
 - **Visual Feedback** - Whenever an ability is used and it has a duration the survivor changes color to indicate to the user that the ability is active.
 - **Hud** - The hud has multiple stats showing up. It shows the player's health, damage, fire rate, level, necessary experience to level up and ability cooldown.
