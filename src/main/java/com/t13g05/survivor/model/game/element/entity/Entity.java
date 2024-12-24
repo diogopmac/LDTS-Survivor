@@ -12,18 +12,18 @@ public class Entity extends Element {
         health = 0;
         damage = 0;
     }
-    
+
     public Entity(Position position, int health) {
         super(position);
         this.health = health;
     }
 
-    public int getHealth() {
-        return health;
-    }
-
     public void damage(int damageDealt) {
         health = Math.max(health - damageDealt, 0);
+    }
+
+    public int getHealth() {
+        return health;
     }
 
     public int getDamage() {

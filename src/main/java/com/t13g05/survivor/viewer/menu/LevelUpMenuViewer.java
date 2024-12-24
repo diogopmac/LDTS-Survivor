@@ -13,15 +13,16 @@ public class LevelUpMenuViewer extends Viewer<LevelUpMenu> {
     public LevelUpMenuViewer(LevelUpMenu levelUpMenu) {
         super(levelUpMenu);
     }
+
     @Override
-    public void drawElements(GUI gui) throws IOException{
+    public void drawElements(GUI gui) throws IOException {
         gui.clear();
         gui.drawText((Game.width-8)/2,Game.height/10, "Level Up", "#FFFFFF");
         drawEntries(gui, getModel().getEntries());
         gui.refresh();
     }
 
-    public void drawEntries(GUI gui, List<Entry> entries) throws IOException {
+    public void drawEntries(GUI gui, List<Entry> entries) {
         int i = 0;
         for (Entry entry : entries) {
             gui.drawText(

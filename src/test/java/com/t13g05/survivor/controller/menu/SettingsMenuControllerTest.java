@@ -66,6 +66,6 @@ public class SettingsMenuControllerTest {
         optionsMenuController.step(game, actions, System.currentTimeMillis());
         Assertions.assertEquals(Type.ROGUE.getText(), GameConfig.getInstance().getSelectedClass());
         Assertions.assertTrue(settingsMenu.isSelected(1));
-        Assertions.assertEquals(Type.SWORD.getText(), GameConfig.getInstance().getSelectedWeapon());
+        Assertions.assertEquals(Type.BOW.getText(), GameConfig.getInstance().getSelectedWeapon());
     }
 }

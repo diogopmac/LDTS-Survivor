@@ -1,11 +1,8 @@
-package com.t13g05.survivor.viewer;
+package com.t13g05.survivor.viewer.game;
 
 import com.t13g05.survivor.gui.GUI;
 import com.t13g05.survivor.model.Position;
 import com.t13g05.survivor.model.game.element.entity.Monster;
-import com.t13g05.survivor.model.game.element.entity.Survivor;
-import com.t13g05.survivor.viewer.game.MonsterViewer;
-import com.t13g05.survivor.viewer.game.SurvivorViewer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

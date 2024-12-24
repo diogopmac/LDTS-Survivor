@@ -4,16 +4,12 @@ import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.input.KeyStroke;
-import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
-import com.googlecode.lanterna.terminal.swing.AWTTerminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFrame;
-import com.t13g05.survivor.model.Position;
 
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -22,7 +18,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -30,6 +25,7 @@ public class LanternaGUI implements GUI{
     private final Screen screen;
     private Set<Action> actionSet = new LinkedHashSet<Action>();
     private String title;
+
     public LanternaGUI(Screen screen, String title) {
         this.screen = screen;
         this.title = title;
@@ -38,6 +34,7 @@ public class LanternaGUI implements GUI{
     public LanternaGUI(int width, int height, String title) throws IOException, FontFormatException, URISyntaxException {
         AWTTerminalFontConfiguration fontConfig = getFontConfiguration();
         Terminal terminal = createTerminal(width, height, fontConfig, title);
+
         this.screen = createScreen(terminal);
         this.title = title;
 
@@ -47,6 +44,7 @@ public class LanternaGUI implements GUI{
                 Action action = processAction(e);
                 if (action != Action.NONE) actionSet.add(action);
             }
+
             @Override
             public void keyReleased(KeyEvent e) {
                 Action action = processAction(e);
@@ -60,14 +58,14 @@ public class LanternaGUI implements GUI{
         int keyCode = e.getKeyCode();
 
         if (keyCode == 27 /* ESCAPE */) return Action.QUIT;
-
-        if (keyCode == 65 /* A */) return Action.LEFT;
-        if (keyCode == 87 /* W */) return Action.UP;
-        if (keyCode == 68 /* D */) return Action.RIGHT;
-        if (keyCode == 83 /* S */) return Action.DOWN;
         if (keyCode == 10 /* ENTER */) return Action.SELECT;
 
-        if (keyCode == 80 /* SPACE*/) return Action.SHOOT;
+        if (keyCode == 65 /* A */ || keyCode == 37 /* LEFT_ARROW */) return Action.LEFT;
+        if (keyCode == 87 /* W */ || keyCode == 38 /* UP_ARROW */) return Action.UP;
+        if (keyCode == 68 /* D */ || keyCode == 39 /* RIGHT_ARROW */) return Action.RIGHT;
+        if (keyCode == 83 /* S */ || keyCode == 40 /* DOWN_ARROW */) return Action.DOWN;
+
+        if (keyCode == 80 /* P */) return Action.SHOOT;
         if (keyCode == 79 /* O */) return Action.USE;
 
         return Action.NONE;

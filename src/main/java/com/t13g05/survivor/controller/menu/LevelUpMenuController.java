@@ -13,19 +13,24 @@ public class LevelUpMenuController extends MenuController<LevelUpMenu> {
 
     @Override
     public void step(Game game, Set<Action> actions, long time) {
+        // For loop only runs once to prevent crashes due to changing the ActionSet
+        // This does not affect the usability of the menu
         for (Action action : actions) {
             switch (action) {
                 case RIGHT:
                     this.getModel().moveDown();
                     actions.remove(Action.RIGHT);
                     break;
+
                 case LEFT:
                     this.getModel().moveUp();
                     actions.remove(Action.LEFT);
                     break;
+
                 case SELECT:
                     entryController.step(game, actions, time);
                     actions.remove(Action.SELECT);
+                    break;
             }
             break;
         }

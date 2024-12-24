@@ -4,7 +4,6 @@ import com.t13g05.survivor.model.Position;
 import com.t13g05.survivor.model.weapon.Weapon;
 
 public class Projectile extends Element {
-    Position position;
     Position direction;
     int distanceTraveled;
     Weapon weapon;
@@ -14,10 +13,6 @@ public class Projectile extends Element {
         this.direction = direction;
         distanceTraveled = 1;
         this.weapon = weapon;
-    }
-
-    public Position getPosition() {
-        return position;
     }
 
     public void setPosition(Position position) {

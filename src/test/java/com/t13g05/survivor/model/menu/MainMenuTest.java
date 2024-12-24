@@ -16,7 +16,7 @@ public class MainMenuTest {
     @BeforeEach
     public void setUp() {
         mainMenu = new MainMenu();
-        entries = mainMenu.getEntries();
+        entries = mainMenu.createEntries();
     }
 
     @Test
@@ -29,13 +29,13 @@ public class MainMenuTest {
         Assertions.assertEquals(Type.CONTROLS, entries.get(2).getType());
         Assertions.assertEquals(Type.QUIT, entries.get(3).getType());
 
-        Assertions.assertEquals(new Position(Game.width/2-6, Game.height/3), entries.get(0).getPosition());
-        Assertions.assertEquals(new Position(Game.width/2-6, Game.height/3+5), entries.get(1).getPosition());
-        Assertions.assertEquals(new Position(Game.width/2-6, Game.height/3+10), entries.get(2).getPosition());
-        Assertions.assertEquals(new Position(Game.width/2-6, Game.height/3+15), entries.get(3).getPosition());
+        Assertions.assertEquals(new Position((Game.width-10)/2, Game.height/3), entries.get(0).getPosition());
+        Assertions.assertEquals(new Position((Game.width-8)/2, Game.height/3+5), entries.get(1).getPosition());
+        Assertions.assertEquals(new Position((Game.width-8)/2, Game.height/3+10), entries.get(2).getPosition());
+        Assertions.assertEquals(new Position((Game.width-4)/2, Game.height/3+15), entries.get(3).getPosition());
 
         Assertions.assertEquals(Type.START_GAME.getText(), "Start Game");
-        Assertions.assertEquals(Type.OPTIONS.getText(), "Options");
+        Assertions.assertEquals(Type.OPTIONS.getText(), "Settings");
         Assertions.assertEquals(Type.CONTROLS.getText(), "Controls");
         Assertions.assertEquals(Type.QUIT.getText(), "Quit");
     }

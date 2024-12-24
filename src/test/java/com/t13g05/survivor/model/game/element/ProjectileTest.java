@@ -38,12 +38,13 @@ public class ProjectileTest {
         projectile.setPosition(new Position(5, 7));
         projectile.setPosition(new Position(5, 8));
         projectile.setPosition(new Position(5, 9));
-        Assertions.assertEquals(projectile.getDistanceTraveled(), 3);
+        Assertions.assertEquals(projectile.getDistanceTraveled(), 4);
         Assertions.assertEquals(weapon.getRange(), 3);
+
         projectile.setPosition(new Position(5, 10));
         Assertions.assertEquals(projectile.getDistanceTraveled(), 4);
         projectile.setPosition(new Position(5, 11));
 
-        Assertions.assertEquals(projectile.getPosition(), new Position(5,10));
+        Assertions.assertEquals(projectile.getPosition(), new Position(5,9));
     }
 }

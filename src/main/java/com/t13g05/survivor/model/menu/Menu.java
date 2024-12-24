@@ -12,6 +12,34 @@ public abstract class Menu {
 
     protected abstract List<Entry> createEntries();
 
+    public void moveDown() {
+        currentEntry++;
+        currentEntry %= getEntryCount();
+    }
+
+    public void moveUp() {
+        currentEntry+= getEntryCount()-1;
+        currentEntry %= getEntryCount();
+    }
+
+    public void moveRight() {
+        Entry current = getEntry();
+        if (current instanceof SettingsEntry){
+            ((SettingsEntry) current).nextEntry();
+        }
+    }
+
+    public void moveLeft() {
+        Entry current = getEntry();
+        if (current instanceof SettingsEntry){
+            ((SettingsEntry) current).previousEntry();
+        }
+    }
+
+    public boolean isSelected(int i) {
+        return currentEntry == i;
+    }
+
     public List<Entry> getEntries() {
         return entries;
     }
@@ -22,33 +50,5 @@ public abstract class Menu {
 
     public int getEntryCount() {
         return this.entries.size();
-    }
-
-    public void moveDown(){
-        currentEntry++;
-        currentEntry %= getEntryCount();
-    }
-
-    public void moveUp(){
-        currentEntry+= getEntryCount()-1;
-        currentEntry %= getEntryCount();
-    }
-
-    public void moveRight(){
-        Entry current = getEntry();
-        if (current instanceof SettingsEntry){
-            ((SettingsEntry) current).nextEntry();
-        }
-    }
-
-    public void moveLeft(){
-        Entry current = getEntry();
-        if (current instanceof SettingsEntry){
-            ((SettingsEntry) current).previousEntry();
-        }
-    }
-
-    public boolean isSelected(int i){
-        return currentEntry == i;
     }
 }

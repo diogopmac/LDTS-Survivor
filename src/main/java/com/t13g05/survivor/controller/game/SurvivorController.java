@@ -1,12 +1,10 @@
 package com.t13g05.survivor.controller.game;
 
 import com.t13g05.survivor.Game;
-import com.t13g05.survivor.controller.Controller;
 import com.t13g05.survivor.gui.Action;
 import com.t13g05.survivor.model.Position;
 import com.t13g05.survivor.model.game.arena.Arena;
 import com.t13g05.survivor.model.game.element.Projectile;
-import com.t13g05.survivor.model.game.element.entity.Monster;
 import com.t13g05.survivor.model.game.element.entity.Survivor;
 import com.t13g05.survivor.model.menu.LevelUpMenu;
 import com.t13g05.survivor.model.weapon.Weapon;
@@ -30,6 +28,7 @@ public class SurvivorController extends GameController {
     private void moveSurvivor(int x, int y) {
         Position newPosition = new Position(getModel().getSurvivor().getPosition().x() +x,
                                             getModel().getSurvivor().getPosition().y() +y);
+
         if (canMove(newPosition)) {
             getModel().getSurvivor().setPosition(newPosition);
             getModel().getSurvivor().setDirection(new Position(x, y));
@@ -38,6 +37,7 @@ public class SurvivorController extends GameController {
 
     private void shoot(Position position, Position direction, Weapon weapon) {
         Projectile projectile = weapon.createProjectile(position, direction);
+
         List<Projectile> newProjectiles = new ArrayList<>(getModel().getProjectiles());
         newProjectiles.add(projectile);
         getModel().setProjectiles(newProjectiles);
@@ -50,13 +50,17 @@ public class SurvivorController extends GameController {
     @Override
     public void step(Game game, Set<Action> actions, long time) {
         Survivor survivor = getModel().getSurvivor();
+
         while (survivor.getExperience() >= survivor.necessaryExp() && !survivor.getPreventLevelUp()) {
             survivor.setExperience(survivor.getExperience() - survivor.necessaryExp());
             survivor.levelUp();
+
             game.saveState();
             game.setState(new LevelUpMenuState(new LevelUpMenu()));
         }
+
         if (time - lastMovement < 50) return;
+
         for (Action action : actions) {
             switch (action) {
                 case UP -> moveSurvivor(0, -1);
@@ -72,6 +76,7 @@ public class SurvivorController extends GameController {
                 case USE -> use();
             }
         }
+
         lastMovement = time;
         getModel().getSurvivor().getAbility().update(getModel().getSurvivor(), time);
     }

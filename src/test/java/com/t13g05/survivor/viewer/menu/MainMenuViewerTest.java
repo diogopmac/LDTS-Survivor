@@ -35,18 +35,18 @@ public class MainMenuViewerTest {
         List<Entry> entries = mainMenu.getEntries();
 
         viewer.drawElements(gui);
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width/2-6,Game.height/10, "Survivor", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText((Game.width-8)/2,Game.height/10, "Survivor", "#FFFFFF");
 
-        Assertions.assertEquals(new Position(Game.width / 2 - 6, Game.height / 3), entries.get(0).getPosition());
+        Assertions.assertEquals(new Position((Game.width-10)/2, Game.height / 3), entries.get(0).getPosition());
         Assertions.assertEquals(Type.START_GAME, entries.get(0).getType());
 
-        Assertions.assertEquals(new Position(Game.width / 2 - 6, Game.height / 3 + 5), entries.get(1).getPosition());
+        Assertions.assertEquals(new Position((Game.width-8)/2, Game.height / 3 + 5), entries.get(1).getPosition());
         Assertions.assertEquals(Type.OPTIONS, entries.get(1).getType());
 
-        Assertions.assertEquals(new Position(Game.width / 2 - 6, Game.height / 3 + 10), entries.get(2).getPosition());
+        Assertions.assertEquals(new Position((Game.width-8)/2, Game.height / 3 + 10), entries.get(2).getPosition());
         Assertions.assertEquals(Type.CONTROLS, entries.get(2).getType());
 
-        Assertions.assertEquals(new Position(Game.width / 2 - 6, Game.height / 3 + 15), entries.get(3).getPosition());
+        Assertions.assertEquals(new Position((Game.width-4)/2, Game.height / 3 + 15), entries.get(3).getPosition());
         Assertions.assertEquals(Type.QUIT, entries.get(3).getType());
     }
 
@@ -55,12 +55,12 @@ public class MainMenuViewerTest {
         viewer.drawElements(gui);
 
         Mockito.verify(gui, Mockito.times(1)).clear();
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 6, Game.height / 10, "Survivor", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText((Game.width-8)/2, Game.height / 10, "Survivor", "#FFFFFF");
 
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 6, Game.height / 3, "Start Game", "#FFFF00");
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 6, Game.height / 3 + 5, "Options", "#FFFFFF");
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 6, Game.height / 3 + 10, "Controls", "#FFFFFF");
-        Mockito.verify(gui, Mockito.times(1)).drawText(Game.width / 2 - 6, Game.height / 3 + 15, "Quit", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText((Game.width-10)/2, Game.height / 3, "Start Game", "#FFFF00");
+        Mockito.verify(gui, Mockito.times(1)).drawText((Game.width-8)/2, Game.height / 3 + 5, "Settings", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText((Game.width-8)/2, Game.height / 3 + 10, "Controls", "#FFFFFF");
+        Mockito.verify(gui, Mockito.times(1)).drawText((Game.width-4)/2, Game.height / 3 + 15, "Quit", "#FFFFFF");
 
         Mockito.verify(gui, Mockito.times(1)).refresh();
     }
