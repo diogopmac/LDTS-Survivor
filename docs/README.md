@@ -81,7 +81,7 @@ The game can quickly transition from States. In every state, we need to have the
 #### The Pattern
 **_State_** pattern is used for managing game and menu states. It simplifies transitions between states by encapsulating the behaviour of each State in its Class and makes it simple to add new states and behaviours by simply adding more classes for each state added. For testing, having various states doing specific things, makes it easier to debug and test, respecting SRP (Single-Responsability-Principle) and OCP (Open/Closed-Principle). Here's how we did it:
 
-![image](https://github.com/user-attachments/assets/41f67843-d67d-4fd1-a440-a1183358a3b2)
+![state_ image](https://github.com/user-attachments/assets/947d75e7-a735-4e46-bbea-583f1e39b0d4)
 
 
 ### Factory
@@ -91,7 +91,7 @@ With the implementation of Survivor classes and the configurations from the Sett
 We used **_Factory_** pattern for this one, allowing us to create different arenas and begin the game with different selected weapons and classes, eliminating the need to bind specific classes into our code, and it only needs to deal with the ArenaFactory interface to create any Arena.
 ### Implementation
 When we need to create an Arena, we call ArenaFactory, that calls ArenaBuilder, that creates the wanted arena with the current selected Class and Weapon. This respected SRP (Single-Responsability-Principle), ISP (Interface-Segregation-Principle) and OCP (Open/Closed Principle).
-![image](https://github.com/user-attachments/assets/71add70b-98e9-4f18-9b18-65665e63c184)
+![factory_image](https://github.com/user-attachments/assets/10d3b234-b1d0-499e-b751-ca212c53e960)
 
 ### Singleton
 ### Motivation
@@ -100,7 +100,7 @@ The Settings Menu can change the way we play the game by changing the Class and 
 To solve this problem, we used a **_Singleton_** GameConfig, responsible for saving and preserving the current options selected by the user.
 ### Implementation
 The GameConfig starts with a default setting, ensuring that even if the game is started without changing anything, the game still works. In the Settings Menu, after a selection is made, the GameConfig saves the selected Class and Weapon. At game start, Arena Builder fetches the GameConfig options and starts the game based on them. We respected SRP (Single-Responsability-Principle) and DIP (Dependency-Inversion-Principle) with this solution.
-![image](https://github.com/user-attachments/assets/7ad09210-4438-4cba-b7e1-a0ee1ed3b1a9)
+![singleton_image](https://github.com/user-attachments/assets/04482886-15ee-4aab-8e14-e9111b189a68)
 
 
 
@@ -114,7 +114,7 @@ The AbilityCommand interface was created with a method use(), and a method updat
 Implementation went well, since the methods from the interface can be called upon any situation or game configuration.
 With this, we respected and went along with SRP (Single-Responsability-Principle), since every Ability executes it's specific behaviour, OCP (Open-Closed-Principle), because the code can be extended and more abilities can be added as we see fit.
 
-![image](https://github.com/user-attachments/assets/938c4a0c-09ae-4679-b4db-8cf8b12c858a)
+![strategy_image](https://github.com/user-attachments/assets/ef95536d-940c-40b9-8dd0-367f538befc1)
 
 
 ## Known code Smells
