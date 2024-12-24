@@ -48,14 +48,19 @@ All features were sucessfully implemented.
 ## Previews of the Game
 ### Main Menu
 <img width="1257" alt="image" src="https://github.com/user-attachments/assets/2dd7273d-50ba-4dfb-ad7c-19c32fe1f1c4" />
+
 ### Game Preview
 <img width="1254" alt="image" src="https://github.com/user-attachments/assets/09f01434-7130-443f-b83c-13fdfe23b2c9" />
+
 ### Level Up Menu
 <img width="1259" alt="image" src="https://github.com/user-attachments/assets/b0a741ee-9721-415d-8599-b34c2cb8fec3" />
+
 ### Game Over Menu
 <img width="1257" alt="image" src="https://github.com/user-attachments/assets/b13c5b32-4702-4236-8081-d1b473085e37" />
+
 ### Settings Menu
 <img width="1257" alt="image" src="https://github.com/user-attachments/assets/694bf1bb-6d13-48d9-8cd3-f65e6ae37daf" />
+
 ### Controls Menu
 <img width="1253" alt="image" src="https://github.com/user-attachments/assets/d849fbca-2816-4063-9bf6-dc03603446a1" />
 
@@ -73,6 +78,7 @@ For this, we used the **_Model-View-Controller_** Pattern. With MVC, we can sepa
 #### Model: Responsible for Data Management in the project. Present in Arena, Survivor, etc.
 #### View: Responsible for rendering the Elements into the screen. Present in Viewer, GameViewer, SuvivorViewer, etc.
 #### Controller: Responsible for managing the interactions and game logic. Present in Controller, ArenaController, etc.
+
 ![image](https://github.com/user-attachments/assets/339007e8-add4-4883-a6a0-935fb658cd5f)
 
 ### State Pattern
@@ -91,6 +97,7 @@ With the implementation of Survivor classes and the configurations from the Sett
 We used **_Factory_** pattern for this one, allowing us to create different arenas and begin the game with different selected weapons and classes, eliminating the need to bind specific classes into our code, and it only needs to deal with the ArenaFactory interface to create any Arena.
 ### Implementation
 When we need to create an Arena, we call ArenaFactory, that calls ArenaBuilder, that creates the wanted arena with the current selected Class and Weapon. This respected SRP (Single-Responsability-Principle), ISP (Interface-Segregation-Principle) and OCP (Open/Closed Principle).
+
 ![factory_image](https://github.com/user-attachments/assets/10d3b234-b1d0-499e-b751-ca212c53e960)
 
 ### Singleton
@@ -100,6 +107,7 @@ The Settings Menu can change the way we play the game by changing the Class and 
 To solve this problem, we used a **_Singleton_** GameConfig, responsible for saving and preserving the current options selected by the user.
 ### Implementation
 The GameConfig starts with a default setting, ensuring that even if the game is started without changing anything, the game still works. In the Settings Menu, after a selection is made, the GameConfig saves the selected Class and Weapon. At game start, Arena Builder fetches the GameConfig options and starts the game based on them. We respected SRP (Single-Responsability-Principle) and DIP (Dependency-Inversion-Principle) with this solution.
+
 ![singleton_image](https://github.com/user-attachments/assets/04482886-15ee-4aab-8e14-e9111b189a68)
 
 
