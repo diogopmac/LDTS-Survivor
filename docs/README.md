@@ -145,7 +145,8 @@ If a rogue teleports and lands exactly where a monster is the game won't prevent
 ### Pitest Report
 <img width="1085" alt="image" src="https://github.com/user-attachments/assets/41d84c6b-fb36-4312-97a5-7e302061a562" />
 
-
-
-
+### Self-Evaluation
+- Diogo Campeão: 45%
+- Hugo Silva: 45%
+- Tomás Barros: 10%
 
