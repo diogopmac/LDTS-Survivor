@@ -40,63 +40,76 @@ LDTS 24/25
 - **Collisions** - Every collision in the game works as expected. The player cant leave the arena, monsters and the survivor collide with other monsters.
 - **Controls** - A controls menu is present to inform the user wich keys are used to control the survivor.
      
-- <img width="1257" alt="image" src="https://github.com/user-attachments/assets/fa02266a-227f-43d9-a034-f343b25d266b">
 
 
 ## Planned Features
-#### Although for the most part the game is working as expected and most planned features were implemented there were some things we couldn't do in time.
-- **Sound** - The game currently lacks any sound feedback, when a monster is killed, damage is taken or menu is accessed.
-- **Images** - The game currently is lacking in visuals. Both the survivor, the monsters and the projectiles are just characters, a font or images could be used to improve the game's graphics.
+All features were sucessfully implemented.
 
-## Mockups
-![mockup1](https://github.com/user-attachments/assets/b2a51856-aaac-4c79-80f9-05b5da5c42b7)
-![mockup2](https://github.com/user-attachments/assets/392be7e4-d0e9-4384-8efa-e6899e9bb589)
-![mockup3](https://github.com/user-attachments/assets/c32a3078-6c63-4199-922e-3b8d5401bfd0)
-![mockup4](https://github.com/user-attachments/assets/7948767a-c8fd-4e58-8506-8010fb2285d1)
+## Previews of the Game
+### Main Menu
+### Game Preview
+### Level Up Menu
+### Game Over Menu
+### Settings Menu
+### Controls Menu
 
 
-
-(Screenshots of the game)
 
 ## UML 
 <img width="1190" alt="image" src="https://github.com/user-attachments/assets/678c7c19-7a5c-41ca-abbc-454f65aef54a">
 
 ## Patterns Used
-### Structure
-Two main patterns were used throughout our project. One architectural: Model-View-Controller and the State Pattern that enables objects to change their behaviour based on their internal state.
-#### Model-View-Controller
-![MVCSchema](https://github.com/user-attachments/assets/d9b8a570-0ca4-4844-86be-3a3fe711fc48)
-
+### MVC
 #### Motivation
-
-With MVC, we can separate the game's logic into 3 distinct components, making it easier to test and maintain the code. In future implementations, makes it easier to implement new features and functionalities. Here's how it works:
+With the increasing complexity of the game itself, it became a must to separate different responsabilities in different locations of the code, so that we could separate different types of functions and responsabilities in the game.
+#### The Pattern
+For this, we used the **_Model-View-Controller_** Pattern. With MVC, we can separate the game's logic into 3 distinct components, making it easier to test and maintain the code. In future implementations, makes it easier to implement new features and functionalities. Here's how it works:
 #### Model: Responsible for Data Management in the project. Present in Arena, Survivor, etc.
 #### View: Responsible for rendering the Elements into the screen. Present in Viewer, GameViewer, SuvivorViewer, etc.
 #### Controller: Responsible for managing the interactions and game logic. Present in Controller, ArenaController, etc.
+![image](https://github.com/user-attachments/assets/339007e8-add4-4883-a6a0-935fb658cd5f)
 
 ### State Pattern
-
-<img width="800" alt="image" src="https://github.com/user-attachments/assets/a3df5fba-953c-491d-9f64-caa353938da3">
-
 #### Motivation
+The game can quickly transition from States. In every state, we need to have the correct behaviour, correct data and handle the inputs the correct way. For example, when the game is running and the game is paused, the behaviour shown is completely diferent from each.
+#### The Pattern
+**_State_** pattern is used for managing game and menu states. It simplifies transitions between states by encapsulating the behaviour of each State in its Class and makes it simple to add new states and behaviours by simply adding more classes for each state added. For testing, having various states doing specific things, makes it easier to debug and test, respecting SRP (Single-Responsability-Principle) and OCP (Open/Closed-Principle). Here's how we did it:
 
-State pattern is used for managing game and menu states. It simplifies transitions between states by encapsulating the behaviour of each State in its Class and makes it simple to add new states and behaviours by simply adding more classes for each state added. For testing, having various states doing specific things, makes it easier to debug and test. Here's how we did it:
-#### State interface: Provides a common structure (STATE) that all specific states inherit. 
-#### Specific states: Implement a specific behaviour for the game.
+![image](https://github.com/user-attachments/assets/41f67843-d67d-4fd1-a440-a1183358a3b2)
 
-### Composite Pattern
-<img width="668" alt="image" src="https://github.com/user-attachments/assets/a8b35ad2-223e-464b-b76f-5fcd12738a7c">
-<img width="533" alt="image" src="https://github.com/user-attachments/assets/d7b8d99d-8fa7-40ab-a682-1f4d4d7666e1">
-
-#### Motivation
-
-Composite pattern allows us to represent different collections of game elements, such as Entities, Projectiles, Weapons, in a uniform way, allowing us to handle specific objects such as Bow, Pistol and specific types of Monster in a consistent and uniform way. Here's how it works:
-#### Base class for all components: Element
-#### Leaf classes for specific elements: Entity (Element with health), Monster and Survivor (Specific entities), Projectile, Bow, Pistol and Sword (Different weapons used by the Survivor), etc.
 
 ### Factory
+#### Motivation
+With the implementation of Survivor classes and the configurations from the Settings menu, the step from the Main Menu to the Game can be different and the game can start in different forms, so, it was necessary to create the arena based on said configurations.
+#### The Pattern
+We used **_Factory_** pattern for this one, allowing us to create different arenas and begin the game with different selected weapons and classes, eliminating the need to bind specific classes into our code, and it only needs to deal with the ArenaFactory interface to create any Arena.
+### Implementation
+When we need to create an Arena, we call ArenaFactory, that calls ArenaBuilder, that creates the wanted arena with the current selected Class and Weapon. This respected SRP (Single-Responsability-Principle), ISP (Interface-Segregation-Principle) and OCP (Open/Closed Principle).
+![image](https://github.com/user-attachments/assets/71add70b-98e9-4f18-9b18-65665e63c184)
 
-### Builder
+### Singleton
+### Motivation
+The Settings Menu can change the way we play the game by changing the Class and Weapon we want to play with. There is not a direct transiction between Settings Menu and the actual game, you'll have to pass again by Main Menu. This would lose the configuration chosen by the user and start the game with the default settings
+### The Pattern
+To solve this problem, we used a **_Singleton_** GameConfig, responsible for saving and preserving the current options selected by the user.
+### Implementation
+The GameConfig starts with a default setting, ensuring that even if the game is started without changing anything, the game still works. In the Settings Menu, after a selection is made, the GameConfig saves the selected Class and Weapon. At game start, Arena Builder fetches the GameConfig options and starts the game based on them. We respected SRP (Single-Responsability-Principle) and DIP (Dependency-Inversion-Principle) with this solution.
+![image](https://github.com/user-attachments/assets/7ad09210-4438-4cba-b7e1-a0ee1ed3b1a9)
+
+
+
+### Strategy
+#### **Motivation:** 
+With the implementation of Abilities in the game, it became necessary to ensure that if we needed to extend the game to have more player Classes, and therefore more Abilities (since every Survivor Class has an ability), we wouldn't need to modify any code, we just needed to add one more class and behaviour for said Ability.
+#### The Pattern:
+We've then applied the **_Strategy_** Pattern, allowing us to, when needed, execute the correct Ability behaviour, based on the selected Survivor class.
+#### Implementation:
+The AbilityCommand interface was created with a method use(), and a method update(). We created as well 3 different abilities, one for each class.
+Implementation went well, since the methods from the interface can be called upon any situation or game configuration.
+With this, we respected and went along with SRP (Single-Responsability-Principle), since every Ability executes it's specific behaviour, OCP (Open-Closed-Principle), because the code can be extended and more abilities can be added as we see fit.
+
+![image](https://github.com/user-attachments/assets/938c4a0c-09ae-4679-b4db-8cf8b12c858a)
+
 
 ## Known code Smells
 All major bugs that affect playability have been patched. Although there are some bugs present that were not fixed because we didn't think they affected the game enough to be worth trying to fix them.
