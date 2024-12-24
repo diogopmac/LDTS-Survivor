@@ -1,9 +1,19 @@
 ## LDTS_1305 - Survivor
-Survivor is a game inspired by the Survivor.io and the Realm of the Mad God games, but with a few twists. The objective of the game is to maneuver a character, the protagonist, through a series of waves of enemies coming from everywhere.
 
-Each enemy, when killed, drops an item\coin that the player can pick up. later in the game the player will have opportunities to upgrade their weapons or craft new ones using those items\coins. The game ends when the player's health bar drops to 0.
+In this game you're the last survivor after an apocalipse. How will you stay alive?
 
-Be aware that Survivor is an addictive game that tests the player's IQ, reflexes, instincts and patience. It's a great way to challenge yourself.
+Survivor is a game where you control the main character (the Survivor) in a post apocalyptic arena filled with monsters. In the start you can choose your class, that will affect your special ability that can be used during the game.
+#### Warrior: Has increased damage for 7 seconds
+#### Mage: Activates a shield that makes the player immortal for 5 seconds
+#### Rogue: Does a small teleport in front.
+
+The class of the survivor also affects its health. Besides the class you can also choose your weapon.
+#### Bow: The weapon with the longest range, slow fire rate and medium damage.
+#### Pistol: Weapon with medium range, low damage but high fire rate.
+#### Sword: The weapon with the smallest range but highest fire rate and damage.
+
+You have to battle various waves of monsters with spawn rate, damage and health increasing as the player levels up.
+When killing a monster the player gets some experience that enables him to level up. Whenever the player levels up he has a choice to increase the fire rate, damage or health. You have to choose wisely to be able to progress in the game and get to higher levels.
 
 Lecturer:
 - **José Carlos Medeiros de Campos** 
@@ -16,95 +26,127 @@ Developed by:
 
 LDTS 24/25
 
-## Implemented Classes
-- Our game for now just represents an arena, with a survivor that has a static health and some monsters moving.
-- <img width="1257" alt="image" src="https://github.com/user-attachments/assets/fa02266a-227f-43d9-a034-f343b25d266b">
+## Implemented Features
+- **Working Menus** - All the menus are working correctly and are connected. The user can brouse through the pause, options, settings and main menu freely.
+- **Game repeatability** - Whenever the player dies he can instantly restart the game and play again. Also, at any point in the game the player can leave to the main menu and start again with a different class or weapon.
+- **Keyboard Control** - The game is controlled exclusively with the keyboard.
+- **Player Control** - The user can make the survivor move, shoot and use abilities.
+- **Monster Spawning** - Monster spawning is completely random. All the monsters spawn on the border of the map and the spawn rate is increased with player level.
+- **Fully working leveling system** - As mentioned before, the player can level up and the player's level affects every aspect of the game. Such as monster damage, health and spawn rate.
+- **Leveling Upgrades** - Whenever the player levels up the user can choose which upgrade they want.
+- **Weapon and Class choice** - Before starting the game the user can choose which class and weapon they want to play with.
+- **Visual Feedback** - Whenever an ability is used and it has a duration the survivor changes color to indicate to the user that the ability is active.
+- **Hud** - The hud has multiple stats showing up. It shows the player's health, damage, fire rate, level, necessary experience to level up and ability cooldown.
+- **Collisions** - Every collision in the game works as expected. The player can't leave the arena, monsters and the survivor collide with other monsters.
+- **Controls** - A controls menu is present to inform the user wich keys are used to control the survivor.
+     
 
 
 ## Planned Features
-- **Survivor**
-    - **Health** - Add functioning health.
-    - **Movement** - Implement proper movement. Preferably not dependent on FPS.
-    - **Firing** - Make the survivor be able to fire.
-    - **Debuffs** - Add debuffs to the player, such as slowing down when hit.
-    - **Leveling** - Add experience and level to the player and define experience requirements for level-up.
-    - **Level-Up rewards** - Add rewards for leveling up such as increased firing, health and damage.
-- **Projectile**
-    - **Function** - Implement properly working projectiles.
-    - **Variety** - Add different projectiles for all weapons.
-- **Monsters**
-    - **Health** - Add functioning health.
-    - **Damage** - Make monster be able to attack and deal damage to the survivor.
-    - **Spawn** - Add proper random spawning of monsters.
-    - **Difficulty** - Make monsters have more health and deal more damage depending on level.
-    - **Movement** - Add proper monster movement with monsters targeting the survivor and walking towards him.
-    - **Drops** - Add monster drops such as experience to level-up the player.
-- **Arena**
-    - **Lobby** - Add a lobby to select the map prior to starting the game.
-- **Menu**
-    - **Start** - Add start menu.
-    - **Class and weapon** - Add a menu for selecting class and weapon.
-    - **Pause** - Add a pause menu.
-- **Viewer**
-    - **HUD** - Enhance the existing hud and add a level progress bar.
-    - **Textures** - Create proper textures for the survivor, monsters, weapons and projectiles.
-    - **Background** - Add a map background, preferably multiple maps to choose from.
-- **Controller** - Implement controllers for all model classes.
+All features were sucessfully implemented.
 
-## Mockups
-![mockup1](https://github.com/user-attachments/assets/b2a51856-aaac-4c79-80f9-05b5da5c42b7)
-![mockup2](https://github.com/user-attachments/assets/392be7e4-d0e9-4384-8efa-e6899e9bb589)
-![mockup3](https://github.com/user-attachments/assets/c32a3078-6c63-4199-922e-3b8d5401bfd0)
-![mockup4](https://github.com/user-attachments/assets/7948767a-c8fd-4e58-8506-8010fb2285d1)
+## Previews of the Game
+### Main Menu
+<img width="1257" alt="image" src="https://github.com/user-attachments/assets/2dd7273d-50ba-4dfb-ad7c-19c32fe1f1c4" />
+
+### Game Preview
+<img width="1254" alt="image" src="https://github.com/user-attachments/assets/09f01434-7130-443f-b83c-13fdfe23b2c9" />
+
+### Level Up Menu
+<img width="1259" alt="image" src="https://github.com/user-attachments/assets/b0a741ee-9721-415d-8599-b34c2cb8fec3" />
+
+### Game Over Menu
+<img width="1257" alt="image" src="https://github.com/user-attachments/assets/b13c5b32-4702-4236-8081-d1b473085e37" />
+
+### Settings Menu
+<img width="1257" alt="image" src="https://github.com/user-attachments/assets/694bf1bb-6d13-48d9-8cd3-f65e6ae37daf" />
+
+### Controls Menu
+<img width="1253" alt="image" src="https://github.com/user-attachments/assets/d849fbca-2816-4063-9bf6-dc03603446a1" />
 
 
 
-(Screenshots of the game)
 
 ## UML 
-<img width="1190" alt="image" src="https://github.com/user-attachments/assets/e7814c6e-edb5-4f52-a6de-332042bb7ddb">
+![Survivor3](https://github.com/user-attachments/assets/0aa95b32-d5d3-45d7-9106-791ace1e3465)
 
 ## Patterns Used
-Structure of the code
-### The Pattern: Model-View-Controller (MVC)
-![MVCSchema](https://github.com/user-attachments/assets/d9b8a570-0ca4-4844-86be-3a3fe711fc48)
-
+### MVC
 #### Motivation
-
-With MVC, we can separate the game's logic into 3 distinct components, making it easier to test and maintain the code. In future implementations, makes it easier to implement new features and functionalities. Here's how it works:
+With the increasing complexity of the game itself, it became a must to separate different responsabilities in different locations of the code, so that we could separate different types of functions and responsabilities in the game.
+#### The Pattern
+For this, we used the **_Model-View-Controller_** Pattern. With MVC, we can separate the game's logic into 3 distinct components, making it easier to test and maintain the code. In future implementations, makes it easier to implement new features and functionalities. Here's how it works:
 #### Model: Responsible for Data Management in the project. Present in Arena, Survivor, etc.
 #### View: Responsible for rendering the Elements into the screen. Present in Viewer, GameViewer, SuvivorViewer, etc.
-#### Controller (Not implemented yet): Responsible for managing the interactions and game logic. Present in Controller, ArenaController, etc.
+#### Controller: Responsible for managing the interactions and game logic. Present in Controller, ArenaController, etc.
 
-### The Pattern: State Pattern
+![image](https://github.com/user-attachments/assets/339007e8-add4-4883-a6a0-935fb658cd5f)
 
-<img width="800" alt="image" src="https://github.com/user-attachments/assets/a3df5fba-953c-491d-9f64-caa353938da3">
-
+### State Pattern
 #### Motivation
+The game can quickly transition from States. In every state, we need to have the correct behaviour, correct data and handle the inputs the correct way. For example, when the game is running and the game is paused, the behaviour shown is completely diferent from each.
+#### The Pattern
+**_State_** pattern is used for managing game and menu states. It simplifies transitions between states by encapsulating the behaviour of each State in its Class and makes it simple to add new states and behaviours by simply adding more classes for each state added. For testing, having various states doing specific things, makes it easier to debug and test, respecting SRP (Single-Responsability-Principle) and OCP (Open/Closed-Principle). Here's how we did it:
 
-State pattern is used for managing game and menu states. It simplifies transitions between states by encapsulating the behaviour of each State in its Class and makes it simple to add new states and behaviours by simply adding more classes for each state added. For testing, having various states doing specific things, makes it easier to debug and test. Here's how we did it:
-#### State interface: Provides a common structure (STATE) that all specific states inherit. 
-#### Specific states: Implement a specific behaviour for the game.
+![state_ image](https://github.com/user-attachments/assets/947d75e7-a735-4e46-bbea-583f1e39b0d4)
 
-### The Pattern: Composite Pattern
-<img width="668" alt="image" src="https://github.com/user-attachments/assets/a8b35ad2-223e-464b-b76f-5fcd12738a7c">
-<img width="533" alt="image" src="https://github.com/user-attachments/assets/d7b8d99d-8fa7-40ab-a682-1f4d4d7666e1">
 
+### Factory
 #### Motivation
+With the implementation of Survivor classes and the configurations from the Settings menu, the step from the Main Menu to the Game can be different and the game can start in different forms, so, it was necessary to create the arena based on said configurations.
+#### The Pattern
+We used **_Factory_** pattern for this one, allowing us to create different arenas and begin the game with different selected weapons and classes, eliminating the need to bind specific classes into our code, and it only needs to deal with the ArenaFactory interface to create any Arena.
+### Implementation
+When we need to create an Arena, we call ArenaFactory, that calls ArenaBuilder, that creates the wanted arena with the current selected Class and Weapon. This respected SRP (Single-Responsability-Principle), ISP (Interface-Segregation-Principle) and OCP (Open/Closed Principle).
 
-Composite pattern allows us to represent different collections of game elements, such as Entities, Projectiles, Weapons, in a uniform way, allowing us to handle specific objects such as Bow, Pistol and specific types of Monster in a consistent and uniform way. Here's how it works:
-#### Base class for all components: Element
-#### Leaf classes for specific elements: Entity (has health), Monster, Projectile, Collectible
+![factory_image](https://github.com/user-attachments/assets/10d3b234-b1d0-499e-b751-ca212c53e960)
 
-#### Future pattern implementation
-We will implement patterns such as Observer, to react to changes in the game, and Factory, to create the different types of Monster and the different customizations of the Surivor class.
+### Singleton
+### Motivation
+The Settings Menu can change the way we play the game by changing the Class and Weapon we want to play with. There is not a direct transiction between Settings Menu and the actual game, you'll have to pass again by Main Menu. This would lose the configuration chosen by the user and start the game with the default settings
+### The Pattern
+To solve this problem, we used a **_Singleton_** GameConfig, responsible for saving and preserving the current options selected by the user.
+### Implementation
+The GameConfig starts with a default setting, ensuring that even if the game is started without changing anything, the game still works. In the Settings Menu, after a selection is made, the GameConfig saves the selected Class and Weapon. At game start, Arena Builder fetches the GameConfig options and starts the game based on them. We respected SRP (Single-Responsability-Principle) and DIP (Dependency-Inversion-Principle) with this solution.
 
+![singleton_image](https://github.com/user-attachments/assets/04482886-15ee-4aab-8e14-e9111b189a68)
+
+
+
+### Strategy
+#### **Motivation:** 
+With the implementation of Abilities in the game, it became necessary to ensure that if we needed to extend the game to have more player Classes, and therefore more Abilities (since every Survivor Class has an ability), we wouldn't need to modify any code, we just needed to add one more class and behaviour for said Ability.
+#### The Pattern:
+We've then applied the **_Strategy_** Pattern, allowing us to, when needed, execute the correct Ability behaviour, based on the selected Survivor class.
+#### Implementation:
+The AbilityCommand interface was created with a method use(), and a method update(). We created as well 3 different abilities, one for each class.
+Implementation went well, since the methods from the interface can be called upon any situation or game configuration.
+With this, we respected and went along with SRP (Single-Responsability-Principle), since every Ability executes it's specific behaviour, OCP (Open-Closed-Principle), because the code can be extended and more abilities can be added as we see fit.
+
+![strategy_image](https://github.com/user-attachments/assets/ef95536d-940c-40b9-8dd0-367f538befc1)
+
+
+## Known code Smells
+All major bugs that affect playability have been patched. Although there are some bugs present that were not fixed because we didn't think they affected the game enough to be worth trying to fix them.
+
+### Monster "Dodge"
+When a monster moves at the exact moment a projectile hits him he "dodges" the projectile and does not receive damage.
+
+### Rogue teleport
+If a rogue teleports and lands exactly where a monster is the game won't prevent hit and the Survivor will be placed on top of the monster. This does not delete the monster nor does it affect the game, that's why it wasn't patched. With some time and better structuring it wouldn't be hard to fix.
 
 ## Testing
-Jacoco Report
-<img width="1190" alt="image" src="https://github.com/user-attachments/assets/31f7b7b8-70fa-4ce2-ac76-b3b9f06c65ef">
-Pitest Report
-<img width="1077" alt="image" src="https://github.com/user-attachments/assets/fede68b4-bcf1-491f-824d-1bb4cbc6c2ca">
+### Jacoco Report
+<img width="1237" alt="image" src="https://github.com/user-attachments/assets/6852d6d6-2c5b-40a7-b889-a23fce47f974" />
 
+### InteliJ Report
+<img width="897" alt="image" src="https://github.com/user-attachments/assets/b8cfea27-7553-4a2b-8299-787dffa65e68" />
 
+### Pitest Report
+<img width="1085" alt="image" src="https://github.com/user-attachments/assets/41d84c6b-fb36-4312-97a5-7e302061a562" />
+
+### Self-Evaluation
+- Diogo Campeão: 45%
+- Hugo Silva: 45%
+- Tomás Barros: 10%
 
