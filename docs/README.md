@@ -47,17 +47,23 @@ All features were sucessfully implemented.
 
 ## Previews of the Game
 ### Main Menu
+<img width="1257" alt="image" src="https://github.com/user-attachments/assets/2dd7273d-50ba-4dfb-ad7c-19c32fe1f1c4" />
 ### Game Preview
+<img width="1254" alt="image" src="https://github.com/user-attachments/assets/09f01434-7130-443f-b83c-13fdfe23b2c9" />
 ### Level Up Menu
+<img width="1259" alt="image" src="https://github.com/user-attachments/assets/b0a741ee-9721-415d-8599-b34c2cb8fec3" />
 ### Game Over Menu
+<img width="1257" alt="image" src="https://github.com/user-attachments/assets/b13c5b32-4702-4236-8081-d1b473085e37" />
 ### Settings Menu
+<img width="1257" alt="image" src="https://github.com/user-attachments/assets/694bf1bb-6d13-48d9-8cd3-f65e6ae37daf" />
 ### Controls Menu
+<img width="1253" alt="image" src="https://github.com/user-attachments/assets/d849fbca-2816-4063-9bf6-dc03603446a1" />
+
 
 
 
 ## UML 
-<img width="1190" alt="image" src="https://github.com/user-attachments/assets/678c7c19-7a5c-41ca-abbc-454f65aef54a">
-
+TODO
 ## Patterns Used
 ### MVC
 #### Motivation
@@ -121,10 +127,15 @@ When a monster moves at the exact moment a projectile hits him he "dodges" the p
 If a rogue teleports and lands exactly where a monster is the game won't prevent hit and the Survivor will be placed on top of the monster. This does not delete the monster nor does it affect the game, that's why it wasn't patched. With some time and better structuring it wouldn't be hard to fix.
 
 ## Testing
-Jacoco Report
-<img width="1190" alt="image" src="https://github.com/user-attachments/assets/31f7b7b8-70fa-4ce2-ac76-b3b9f06c65ef">
-Pitest Report
-<img width="1077" alt="image" src="https://github.com/user-attachments/assets/fede68b4-bcf1-491f-824d-1bb4cbc6c2ca">
+### Jacoco Report
+<img width="1237" alt="image" src="https://github.com/user-attachments/assets/6852d6d6-2c5b-40a7-b889-a23fce47f974" />
+
+### InteliJ Report
+<img width="897" alt="image" src="https://github.com/user-attachments/assets/b8cfea27-7553-4a2b-8299-787dffa65e68" />
+
+### Pitest Report
+<img width="1085" alt="image" src="https://github.com/user-attachments/assets/41d84c6b-fb36-4312-97a5-7e302061a562" />
+
 
 
 
