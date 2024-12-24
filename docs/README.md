@@ -37,7 +37,7 @@ LDTS 24/25
 - **Weapon and Class choice** - Before starting the game the user can choose which class and weapon they want to play with.
 - **Visual Feedback** - Whenever an ability is used and it has a duration the survivor changes color to indicate to the user that the ability is active.
 - **Hud** - The hud has multiple stats showing up. It shows the player's health, damage, fire rate, level, necessary experience to level up and ability cooldown.
-- **Collisions** - Every collision in the game works as expected. The player cant leave the arena, monsters and the survivor collide with other monsters.
+- **Collisions** - Every collision in the game works as expected. The player can't leave the arena, monsters and the survivor collide with other monsters.
 - **Controls** - A controls menu is present to inform the user wich keys are used to control the survivor.
      
 
