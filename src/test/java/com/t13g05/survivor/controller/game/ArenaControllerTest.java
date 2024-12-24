@@ -21,18 +21,12 @@ public class ArenaControllerTest {
     private ArenaController arenaController;
     private Arena arena;
     private Game game;
-    private SurvivorController survivorController;
-    private MonsterController monsterController;
-    private ProjectileController projectileController;
     private Set<Action> actions;
 
     @BeforeEach
     public void setUp() throws Exception {
         arena = Mockito.mock(Arena.class);
         game = Mockito.mock(Game.class);
-        survivorController = Mockito.mock(SurvivorController.class);
-        monsterController = Mockito.mock(MonsterController.class);
-        projectileController = Mockito.mock(ProjectileController.class);
 
         Survivor survivor = Mockito.mock(Survivor.class);
         Mockito.when(arena.getSurvivor()).thenReturn(survivor);

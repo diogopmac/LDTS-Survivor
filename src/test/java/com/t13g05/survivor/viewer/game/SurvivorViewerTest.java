@@ -44,4 +44,23 @@ public class SurvivorViewerTest {
 
 
     }
+
+    @Test
+    public void drawAbilitiesTest(){
+        Position position = new Position(0, 0);
+        Mockito.when(survivor.getPosition()).thenReturn(position);
+        Mockito.when(survivor.getAbility()).thenReturn(ability);
+        Mockito.when(survivor.getAbility().isActive()).thenReturn(true);
+        survivorViewer.draw(survivor,gui);
+
+        if (survivor instanceof Warrior && survivor.getAbility().isActive()){
+            Mockito.verify(gui).drawText(position.x(), position.y(), "£", "#FFD700");
+        }
+        else if (survivor instanceof Mage && survivor.getAbility().isActive()){
+            Mockito.verify(gui).drawText(position.x(), position.y(), "&", "#0000FF");
+        }
+        else if (survivor instanceof Rogue && survivor.getAbility().isActive()){
+            Mockito.verify(gui).drawText(position.x(), position.y(), "@", "#FF0000");
+        }
+    }
 }

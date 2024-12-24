@@ -15,16 +15,14 @@ public class GameStateTest {
     @BeforeEach
     void setUp() {
         arena = Mockito.mock(Arena.class);
+        gameState = new GameState(arena);
     }
 
     @Test
     public void testGameState() {
-        GameState gameState = new GameState(arena);
         Assertions.assertNotNull(gameState);
-
-        Viewer<Arena> viewer = gameState.getViewer();
-        Assertions.assertNotNull(viewer);
-
+        Assertions.assertNotNull(gameState.getViewer());
+        Assertions.assertNotNull(gameState.getController());
         Assertions.assertNotNull(gameState.getModel());
     }
 }
