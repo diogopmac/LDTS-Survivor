@@ -11,7 +11,7 @@ import com.t13g05.survivor.state.PauseMenuState;
 
 import java.util.Set;
 
-public class ArenaController extends Controller<Arena> {
+public class ArenaController extends GameController {
     private final SurvivorController survivorController;
     private final MonsterController monsterController;
     private final ProjectileController projectileController;
