@@ -1,4 +1,4 @@
-## LDTS_1305 - Survivor
+## LDTS_1305 - Survivor (Grade Achieved - 19.1)
 
 In this game you're the last survivor after an apocalipse. How will you stay alive?
 
